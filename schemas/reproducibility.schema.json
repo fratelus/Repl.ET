@@ -1,0 +1,32 @@
+{
+  "title": "Repl.ET Reproducibility Schema",
+  "type": "object",
+  "required": [
+    "data_availability",
+    "code_availability",
+    "environment",
+    "replication_instructions",
+    "doi"
+  ],
+  "properties": {
+    "data_availability": {
+      "type": "string"
+    },
+    "code_availability": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "string"
+    },
+    "replication_instructions": {
+      "type": "string"
+    },
+    "doi": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
