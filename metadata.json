@@ -1,0 +1,14 @@
+{
+  "$schema": "schemas/metadata.schema.json",
+  "study_title": "Code Comprehension with Eye Tracking: A Replication Study",
+  "study_objective": "To investigate how developers read and understand source code using eye tracking.",
+  "paradigm": "Code comprehension",
+  "task_description": "Participants read and answer questions about code snippets while their eye movements are recorded.",
+  "keywords": ["eye tracking", "code comprehension", "software engineering", "replication"],
+  "authors": [
+    {"name": "Alice Smith", "orcid": "0000-0001-2345-6789"},
+    {"name": "Bob Lee", "orcid": "0000-0002-3456-7890"}
+  ],
+  "date": "2024-06-01",
+  "license": "CC-BY-4.0"
+} 
