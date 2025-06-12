@@ -1,0 +1,31 @@
+{
+  "title": "Repl.ET Tracker Specs Schema",
+  "type": "object",
+  "required": [
+    "manufacturer",
+    "model",
+    "sampling_rate_hz",
+    "accuracy_deg",
+    "firmware_version"
+  ],
+  "properties": {
+    "manufacturer": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "sampling_rate_hz": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "accuracy_deg": {
+      "type": "number",
+      "minimum": 0
+    },
+    "firmware_version": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

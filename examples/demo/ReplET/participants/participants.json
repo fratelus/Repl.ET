@@ -1,0 +1,61 @@
+{
+  "$schema": "../schemas/participants.schema.json",
+  "participants": [
+    {
+      "participant_id": "P01",
+      "age": 24,
+      "gender": "female",
+      "handedness": "right",
+      "vision": "normal",
+      "experience_years": 3,
+      "programming_languages": ["Java", "Python", "C++"],
+      "education": "Bachelor in Computer Science",
+      "current_position": "Software Developer"
+    },
+    {
+      "participant_id": "P02",
+      "age": 28,
+      "gender": "male",
+      "handedness": "right",
+      "vision": "corrected",
+      "experience_years": 6,
+      "programming_languages": ["Java", "JavaScript", "C#"],
+      "education": "Master in Software Engineering",
+      "current_position": "Senior Developer"
+    },
+    {
+      "participant_id": "P03",
+      "age": 31,
+      "gender": "female",
+      "handedness": "left",
+      "vision": "normal",
+      "experience_years": 8,
+      "programming_languages": ["Java", "Python", "Scala"],
+      "education": "PhD in Computer Science",
+      "current_position": "Tech Lead"
+    },
+    {
+      "participant_id": "P04",
+      "age": 26,
+      "gender": "male",
+      "handedness": "right",
+      "vision": "normal",
+      "experience_years": 4,
+      "programming_languages": ["Java", "Kotlin", "Go"],
+      "education": "Bachelor in Computer Science",
+      "current_position": "Software Developer"
+    },
+    {
+      "participant_id": "P05",
+      "age": 29,
+      "gender": "female",
+      "handedness": "right",
+      "vision": "corrected",
+      "experience_years": 7,
+      "programming_languages": ["Java", "C++", "Python"],
+      "education": "Master in Computer Science",
+      "current_position": "Senior Developer"
+    }
+  ],
+  "inclusion_criteria": "At least 2 years of Java programming experience, normal or corrected vision, no known cognitive impairments."
+} 

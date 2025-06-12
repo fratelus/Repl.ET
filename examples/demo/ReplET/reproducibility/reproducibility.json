@@ -1,0 +1,12 @@
+{
+  "$schema": "../schemas/reproducibility.schema.json",
+  "data_availability": "All raw eye tracking data (.tsv), preprocessed fixation data (.csv), and behavioral responses (.json) are available in the OSF repository (osf.io/demo123).",
+  "code_availability": "Complete preprocessing pipeline, analysis scripts, and visualization code are available in the GitHub repository (github.com/demo/replet-kip-replication).", 
+  "environment": "See environment.yml for full computational environment specification. All analyses reproducible with conda env create -f environment.yml.",
+  "replication_instructions": "1) Download data from OSF, 2) Clone GitHub repo, 3) Run conda env create -f environment.yml, 4) Execute python run_full_analysis.py, 5) Results will be generated in /results folder.",
+  "doi": "10.31234/osf.io/demo123",
+  "original_study": "Kip, N., et al. (2023). Eye movements in code review. Journal of Software Engineering Research, 45(3), 123-145.",
+  "replication_type": "direct_replication_with_extension",
+  "power_analysis": "Sample size determined via G*Power 3.1.9.7 for repeated measures ANOVA with effect size d=0.8, α=0.05, power=0.80",
+  "preregistration": "Study protocol preregistered at AsPredicted.org (#demo456) before data collection."
+} 

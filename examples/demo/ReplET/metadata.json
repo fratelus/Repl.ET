@@ -1,0 +1,15 @@
+{
+  "$schema": "schemas/metadata.schema.json",
+  "study_title": "Eye Movements in Code Review: Replication of Kip et al. (2023)",
+  "study_objective": "To replicate and extend Kip et al.'s findings on how developers' eye movements differ when reviewing code for bugs versus comprehension tasks.",
+  "paradigm": "Code review and bug detection",
+  "task_description": "Participants performed two tasks: (1) code comprehension questions and (2) bug detection in Java methods, while eye movements were recorded using a remote eye tracker.",
+  "keywords": ["eye tracking", "code review", "bug detection", "software engineering", "replication", "scanpath analysis"],
+  "authors": [
+    {"name": "Dr. Maria Silva", "orcid": "0000-0001-5432-1098"},
+    {"name": "Prof. João Santos", "orcid": "0000-0002-6543-2109"},
+    {"name": "Lucas Oliveira", "orcid": "0000-0003-7654-3210"}
+  ],
+  "date": "2024-11-15",
+  "license": "CC-BY-4.0"
+} 

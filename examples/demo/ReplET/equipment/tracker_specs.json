@@ -1,0 +1,12 @@
+{
+  "$schema": "../schemas/tracker_specs.schema.json",
+  "manufacturer": "Tobii",
+  "model": "Tobii Pro X3-120",
+  "sampling_rate_hz": 120,
+  "accuracy_deg": 0.4,
+  "precision_rms_deg": 0.15,
+  "firmware_version": "1.7.1",
+  "calibration_points": 9,
+  "tracking_area_cm": [37, 30],
+  "freedom_of_movement_cm": [30, 22, 30]
+} 

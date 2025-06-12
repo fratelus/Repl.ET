@@ -1,0 +1,44 @@
+{
+  "title": "Repl.ET Stimuli Annotations Schema",
+  "type": "object",
+  "required": [
+    "annotations"
+  ],
+  "properties": {
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "stimulus_id",
+          "ground_truth"
+        ],
+        "properties": {
+          "stimulus_id": {
+            "type": "string"
+          },
+          "ground_truth": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "line",
+                "label"
+              ],
+              "properties": {
+                "line": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "label": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
