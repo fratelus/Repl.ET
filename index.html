@@ -1,0 +1,1696 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Eye Tracking Replication Template for Software Engineering Research">
+      
+      
+      
+        <link rel="canonical" href="https://username.github.io/replET/">
+      
+      
+      
+        <link rel="next" href="examples/demo-comparison/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>ReplET Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#replet-eye-tracking-replication-template" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="ReplET Documentation" class="md-header__button md-logo" aria-label="ReplET Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ReplET Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="ReplET Documentation" class="md-nav__button md-logo" aria-label="ReplET Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ReplET Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-replet" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Why Repl.ET?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Quick Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Repository Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏆 Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏆 Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprehensive-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Comprehensive Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducibility-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Reproducibility Assessment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Research Standards
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#study-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Study Checklist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-studies" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔬 Example Studies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔬 Example Studies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demo-code-review-eye-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 Demo: Code Review Eye Tracking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Advanced Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoring API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 GitHub Actions Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducibility-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Reproducibility Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Reproducibility Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spider-graph-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      🕷️ Spider Graph Breakdown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overall-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Overall Scores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#score-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Score Interpretation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-criteria-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Detailed Criteria Scores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Detailed Criteria Scores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demo02-publication-ready-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏆 Demo02 (Publication-Ready) Breakdown:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-start_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Quick Start
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spider-graph-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🕷️ Spider Graph Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 Citation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Project Stats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#used-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Used By
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      📞 Support
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started/quick-start.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started/installation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/demo-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Demo Comparison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/demo.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic Demo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/demo02.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enhanced Demo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Schema Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Schema Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributing.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-replet" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Why Repl.ET?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Quick Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Repository Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏆 Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏆 Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprehensive-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Comprehensive Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducibility-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Reproducibility Assessment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Research Standards
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#study-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Study Checklist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-studies" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔬 Example Studies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔬 Example Studies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demo-code-review-eye-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 Demo: Code Review Eye Tracking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Advanced Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoring API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 GitHub Actions Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducibility-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Reproducibility Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Reproducibility Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spider-graph-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      🕷️ Spider Graph Breakdown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overall-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Overall Scores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#score-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Score Interpretation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-criteria-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Detailed Criteria Scores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Detailed Criteria Scores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demo02-publication-ready-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏆 Demo02 (Publication-Ready) Breakdown:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-start_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Quick Start
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spider-graph-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🕷️ Spider Graph Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 Citation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Project Stats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#used-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Used By
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      📞 Support
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="replet-eye-tracking-replication-template">👁️ Repl.ET: Eye Tracking Replication Template</h1>
+<p><a href="https://github.com/fratelus/Repl.ET"><img alt="Tests" src="https://img.shields.io/badge/tests-35%2F35%20passing-brightgreen" /></a>
+<a href="https://github.com/fratelus/Repl.ET"><img alt="Coverage" src="https://img.shields.io/badge/coverage-100%25-brightgreen" /></a>
+<a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue" /></a>
+<a href="#"><img alt="DOI" src="https://img.shields.io/badge/DOI-pending-blue" /></a></p>
+<p>A <strong>standardized, validated template</strong> for eye tracking experiments in <strong>Software Engineering</strong> and <strong>Human-Computer Interaction</strong> research. Designed to promote reproducibility and align with international guidelines.</p>
+<h2 id="why-replet">🎯 Why Repl.ET?</h2>
+<ul>
+<li><strong>🔬 Scientific Rigor</strong>: Follows FAIR, PRISMA-Eye, iGuidelines, and TRRRACED standards</li>
+<li><strong>📋 Complete Template</strong>: 13 JSON schemas covering all aspects of eye tracking studies  </li>
+<li><strong>✅ 100% Validated</strong>: 35 automated tests ensure data integrity and compliance</li>
+<li><strong>📊 Reproducibility Scoring</strong>: Automated assessment of your study's reproducibility</li>
+<li><strong>🎓 Research-Ready</strong>: Template used in published eye tracking studies</li>
+<li><strong>🔗 Link Verification</strong>: Automated link checking prevents broken documentation</li>
+</ul>
+<h2 id="quick-start">🚀 Quick Start</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Setup</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/your-org/ReplET.git
+<span class="nb">cd</span><span class="w"> </span>ReplET
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>config/requirements.txt
+
+<span class="c1"># 2. Explore Examples</span>
+<span class="nb">cd</span><span class="w"> </span>Demo/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>python<span class="w"> </span>repl_et_score.py<span class="w">      </span><span class="c1"># Basic example (0.0% baseline)</span>
+<span class="nb">cd</span><span class="w"> </span>../Demo02/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>python<span class="w"> </span>repl_et_score.py<span class="w"> </span><span class="c1"># Advanced example (70.0% good practice)</span>
+
+<span class="c1"># 3. Customize &amp; Validate</span>
+<span class="nb">cd</span><span class="w"> </span>..<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>Demo/<span class="w"> </span>MyStudy/<span class="w">           </span><span class="c1"># Start from template</span>
+<span class="c1"># Edit JSON files in MyStudy/</span>
+python<span class="w"> </span>tools/validate_jsons.py<span class="w">         </span><span class="c1"># Validate your data</span>
+python<span class="w"> </span>tools/repl_et_score.py<span class="w">          </span><span class="c1"># Generate your spider graph</span>
+
+<span class="c1"># 4. Quality Check</span>
+pytest<span class="w"> </span>tests/<span class="w"> </span>-v<span class="w">                       </span><span class="c1"># Run all 35 tests</span>
+./scripts/check-links.sh<span class="w">               </span><span class="c1"># Check documentation links</span>
+</code></pre></div>
+<p>📖 <strong><a href="docs/USER_GUIDE.md">→ Read the Complete User Guide</a></strong> for detailed instructions, troubleshooting, and best practices.</p>
+<h2 id="repository-structure">📁 Repository Structure</h2>
+<div class="highlight"><pre><span></span><code>ReplET/
+├── 📄 Core Data Files            # metadata.json + 12 data directories
+├── 📐 schemas/                   # 13 JSON validation schemas  
+├── 🧪 tests/                     # 35 automated tests
+├── 📚 Demo/                      # Basic example (0.0% baseline)
+├── 🏆 Demo02/                    # Advanced example (70.0% good practice)
+├── 📖 docs/                      # Documentation (user guide, checklist)
+└── 🕷️ repl_et_score.py           # Spider graph generator
+</code></pre></div>
+<p><strong>13 Data Components</strong>: metadata, participants, equipment (3 files), stimuli, aois, collection, preprocessing, analysis, validity, reproducibility - each with schemas and validation.</p>
+<h2 id="features">🏆 Features</h2>
+<h3 id="comprehensive-validation">✅ Comprehensive Validation</h3>
+<ul>
+<li><strong>13 JSON Schemas</strong> covering all study aspects</li>
+<li><strong>35 Automated Tests</strong> ensuring data integrity</li>
+<li><strong>Cross-file consistency</strong> checks (IDs, references)</li>
+<li><strong>Schema compliance</strong> verification</li>
+</ul>
+<h3 id="reproducibility-assessment">📊 Reproducibility Assessment</h3>
+<ul>
+<li><strong>10-axis scoring system</strong> (0.0 - 1.0)</li>
+<li><strong>FAIR principles</strong> compliance</li>
+<li><strong>Automated reporting</strong> (JSON, Markdown, PNG)</li>
+<li><strong>Publication-ready</strong> metrics</li>
+</ul>
+<h3 id="research-standards">🎓 Research Standards</h3>
+<ul>
+<li><strong>PRISMA-Eye</strong> compliant reporting</li>
+<li><strong>iGuidelines</strong> for eye tracking</li>
+<li><strong>TRRRACED</strong> transparency framework  </li>
+<li><strong>International best practices</strong></li>
+</ul>
+<h2 id="study-checklist">📋 Study Checklist</h2>
+<ul>
+<li>[ ] ✅ <strong>Metadata</strong>: Title, objectives, paradigm defined</li>
+<li>[ ] 👥 <strong>Participants</strong>: Demographics, inclusion criteria  </li>
+<li>[ ] 🖥️ <strong>Equipment</strong>: Eye tracker specs, calibration protocol</li>
+<li>[ ] 🎯 <strong>Stimuli</strong>: Code samples, ground truth annotations</li>
+<li>[ ] 📐 <strong>AOIs</strong>: Areas of interest with coordinates</li>
+<li>[ ] 📋 <strong>Protocol</strong>: Data collection procedures</li>
+<li>[ ] 🔧 <strong>Preprocessing</strong>: Cleaning pipeline documented</li>
+<li>[ ] 📊 <strong>Analysis</strong>: Statistical methods specified</li>
+<li>[ ] ⚠️ <strong>Validity</strong>: Threats and limitations discussed</li>
+<li>[ ] 🔄 <strong>Reproducibility</strong>: Replication materials provided</li>
+</ul>
+<p><em>Complete checklist: <a href="docs/repl_et_checklist.md">repl_et_checklist.md</a></em></p>
+<h2 id="example-studies">🔬 Example Studies</h2>
+<h3 id="demo-code-review-eye-tracking">📖 Demo: Code Review Eye Tracking</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/demo/ReplET
+python<span class="w"> </span>tools/validate_jsons.py<span class="w">  </span><span class="c1"># ✅ All valid</span>
+python<span class="w"> </span>tools/repl_et_score.py<span class="w">   </span><span class="c1"># 📊 Score: 0.95/1.0</span>
+pytest<span class="w"> </span>tests/<span class="w"> </span>-v<span class="w">          </span><span class="c1"># 🧪 35/35 tests passing</span>
+</code></pre></div>
+<p><strong>Study</strong>: Eye movements during Java code review (5 participants, 5 stimuli)<br />
+<strong>Equipment</strong>: Tobii Pro X3-120 (120Hz)<br />
+<strong>Metrics</strong>: Fixation duration, AOI transitions, bug detection accuracy</p>
+<h2 id="advanced-usage">🛠️ Advanced Usage</h2>
+<h3 id="custom-validation">Custom Validation</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">validate_jsons</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate_all_files</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">validate_all_files</span><span class="p">(</span><span class="s2">&quot;your_study_directory/&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="scoring-api">Scoring API</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">repl_et_score</span><span class="w"> </span><span class="kn">import</span> <span class="n">calculate_overall_score</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">calculate_overall_score</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reproducibility: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">/1.0&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="test-integration">Test Integration</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Run specific test categories</span>
+pytest<span class="w"> </span>-m<span class="w"> </span>schema<span class="w"> </span>tests/<span class="w">        </span><span class="c1"># Schema validation</span>
+pytest<span class="w"> </span>-m<span class="w"> </span>integration<span class="w"> </span>tests/<span class="w">  </span><span class="c1"># Cross-file consistency  </span>
+pytest<span class="w"> </span>-m<span class="w"> </span>scoring<span class="w"> </span>tests/<span class="w">       </span><span class="c1"># Reproducibility scoring</span>
+</code></pre></div>
+<h3 id="github-actions-integration">🤖 GitHub Actions Integration</h3>
+<p>ReplET includes comprehensive <strong>CI/CD automation</strong> that generates spider graphs automatically:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Automated spider graph generation on every push/PR</span>
+<span class="nt">🕷️ Reproducibility Spider Analysis</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generates individual spider graphs for main template + demos</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Creates comparative analysis with side-by-side visualization</span><span class="w">  </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Uploads spider analysis as downloadable artifacts</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Supports headless environments (Linux, macOS, Windows)</span>
+</code></pre></div>
+<p><strong>Features in GitHub Actions:</strong>
+- ✅ <strong>Automated Testing</strong>: 35 tests across Python 3.8-3.12
+- ✅ <strong>Spider Graph Generation</strong>: Individual + comparative analysis
+- ✅ <strong>Auto-Update README</strong>: Commits updated spider graph to repository
+- ✅ <strong>Cross-platform</strong>: Ubuntu, macOS, Windows compatibility
+- ✅ <strong>Artifact Storage</strong>: 30-day retention of spider graphs
+- ✅ <strong>Demo Validation</strong>: Ensures Demo02 maintains 80%+ score
+- ✅ <strong>Performance Benchmarking</strong>: Speed and memory profiling</p>
+<p><strong>Accessing Results:</strong>
+1. <strong>View in README</strong>: Spider graph automatically visible above (auto-updated)
+2. <strong>Download Artifacts</strong>: Go to <strong>Actions</strong> → workflow run → download <strong>reproducibility-spider-analysis</strong> 
+3. <strong>Individual Reports</strong>: Run <code>python3 repl_et_score.py</code> locally for detailed breakdown</p>
+<h2 id="reproducibility-analysis">📊 Reproducibility Analysis</h2>
+<p><img alt="Reproducibility Spider Analysis" src="outputs/reproducibility_spider_analysis.png" /></p>
+<blockquote>
+<p>🤖 <strong>Auto-Updated</strong>: This spider graph is automatically regenerated by GitHub Actions on every push, ensuring it always reflects the current state of all examples.</p>
+</blockquote>
+<h3 id="spider-graph-breakdown">🕷️ Spider Graph Breakdown</h3>
+<p>The spider graphs above show <strong>10 reproducibility criteria</strong> for each implementation:</p>
+<table>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Study Metadata</strong></td>
+<td>Title, objectives, paradigm definition</td>
+</tr>
+<tr>
+<td><strong>Participant Info</strong></td>
+<td>Demographics, recruitment, inclusion criteria</td>
+</tr>
+<tr>
+<td><strong>Equipment Specs</strong></td>
+<td>Eye tracker specifications, calibration</td>
+</tr>
+<tr>
+<td><strong>Stimuli &amp; Materials</strong></td>
+<td>Code samples, annotations, ground truth</td>
+</tr>
+<tr>
+<td><strong>Areas of Interest</strong></td>
+<td>AOI definitions and visualizations</td>
+</tr>
+<tr>
+<td><strong>Data Quality</strong></td>
+<td>Collection protocols, quality control</td>
+</tr>
+<tr>
+<td><strong>Data Preprocessing</strong></td>
+<td>Cleaning pipeline, filtering methods</td>
+</tr>
+<tr>
+<td><strong>Statistical Analysis</strong></td>
+<td>Methods, results, effect sizes</td>
+</tr>
+<tr>
+<td><strong>Validity Threats</strong></td>
+<td>Internal/external validity discussion</td>
+</tr>
+<tr>
+<td><strong>Reproducibility Materials</strong></td>
+<td>Sharing, documentation, replication</td>
+</tr>
+</tbody>
+</table>
+<h3 id="overall-scores">📈 Overall Scores</h3>
+<table>
+<thead>
+<tr>
+<th>Implementation</th>
+<th>Overall Score</th>
+<th>Status</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ReplET Template</strong></td>
+<td>0.0%</td>
+<td>📋 Template</td>
+<td>Base template for new studies</td>
+</tr>
+<tr>
+<td><strong>Demo (Learning)</strong></td>
+<td>0.0%</td>
+<td>🎓 Learning</td>
+<td>Minimal example for understanding</td>
+</tr>
+<tr>
+<td><strong>Demo02 (Publication)</strong></td>
+<td>82.5%</td>
+<td>✅ Publication Ready</td>
+<td>Gold standard implementation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="score-interpretation">🎯 Score Interpretation</h3>
+<ul>
+<li><strong>🟢 80%+ (Excellent)</strong>: Publication-ready, meets gold standards</li>
+<li><strong>🟡 60-79% (Good)</strong>: Solid reproducibility with minor gaps  </li>
+<li><strong>🟠 40-59% (Fair)</strong>: Basic reproducibility, needs improvement</li>
+<li><strong>⚪ &lt;40% (Template/Learning)</strong>: Educational baseline or template</li>
+</ul>
+<h3 id="detailed-criteria-scores">📋 Detailed Criteria Scores</h3>
+<h4 id="demo02-publication-ready-breakdown">🏆 Demo02 (Publication-Ready) Breakdown:</h4>
+<ul>
+<li>❌ <strong>Metadata</strong>: 0.25 - Study metadata with ORCID, funding, ethics</li>
+<li>🟡 <strong>Participants</strong>: 0.75 - Comprehensive demographics &amp; power analysis</li>
+<li>✅ <strong>Equipment</strong>: 1.00 - Professional eye tracker specifications</li>
+<li>✅ <strong>Stimuli</strong>: 1.00 - Annotated code samples with ground truth</li>
+<li>🟡 <strong>Aois</strong>: 0.75 - Detailed areas of interest definitions</li>
+<li>✅ <strong>Data Quality</strong>: 1.00 - Rigorous collection protocols</li>
+<li>🟡 <strong>Preprocessing</strong>: 0.75 - Documented data cleaning pipeline</li>
+<li>🟡 <strong>Analysis</strong>: 0.75 - Complete statistical analysis plan</li>
+<li>✅ <strong>Threats</strong>: 1.00 - Thorough validity threat assessment</li>
+<li>✅ <strong>Reproducibility</strong>: 1.00 - Full replication materials &amp; sharing</li>
+</ul>
+<h3 id="quick-start_1">🚀 Quick Start</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Run scoring on main template (generates spider graph)</span>
+python3<span class="w"> </span>repl_et_score.py
+<span class="c1"># ↳ Creates beautiful spider graph showing all 10 reproducibility criteria</span>
+<span class="c1"># ↳ Saves to temporary directory (path shown in output)</span>
+
+<span class="c1"># Compare with examples</span>
+<span class="nb">cd</span><span class="w"> </span>Demo<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>python3<span class="w"> </span>repl_et_score.py<span class="w">     </span><span class="c1"># Learning baseline (own spider graph)</span>
+<span class="nb">cd</span><span class="w"> </span>../Demo02<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>python3<span class="w"> </span>repl_et_score.py<span class="w">  </span><span class="c1"># Publication standard (own spider graph)</span>
+
+<span class="c1"># Generate comparative analysis (all 3 directories)</span>
+python3<span class="w"> </span>generate_enhanced_spider_report.py
+<span class="c1"># ↳ Creates side-by-side comparison with individual spider graphs</span>
+</code></pre></div>
+<h3 id="spider-graph-features">🕷️ Spider Graph Features</h3>
+<p>Each <code>repl_et_score.py</code> execution generates a <strong>beautiful spider graph</strong> with:</p>
+<ul>
+<li><strong>🎨 Color-coded visualization</strong>: Green (80%+), Orange (60-79%), Red (40-59%), Gray (&lt;40%)</li>
+<li><strong>📊 10 reproducibility criteria</strong>: Individual scores for each research aspect</li>
+<li><strong>🏷️ Value annotations</strong>: Exact scores displayed for significant values  </li>
+<li><strong>📐 Professional styling</strong>: Clear grid, readable labels, publication-ready quality</li>
+<li><strong>💾 Multiple formats</strong>: PNG image, JSON data, Markdown report</li>
+</ul>
+<p><strong>Example Spider Graph Breakdown:</strong>
+- <strong>Study Metadata</strong>: Title, objectives, paradigm definition
+- <strong>Participant Info</strong>: Demographics, recruitment, inclusion criteria<br />
+- <strong>Equipment Specs</strong>: Eye tracker specifications, calibration
+- <strong>Stimuli &amp; Materials</strong>: Code samples, annotations, ground truth
+- <strong>Areas of Interest</strong>: AOI definitions and visualizations
+- <strong>Data Quality</strong>: Collection protocols, quality control
+- <strong>Data Preprocessing</strong>: Cleaning pipeline, filtering methods
+- <strong>Statistical Analysis</strong>: Methods, results, effect sizes
+- <strong>Validity Threats</strong>: Internal/external validity discussion
+- <strong>Reproducibility Materials</strong>: Sharing, documentation, replication</p>
+<h2 id="documentation">📚 Documentation</h2>
+<ul>
+<li><strong><a href="docs/USER_GUIDE.md">📖 User Guide</a></strong> - Complete usage guide with examples</li>
+<li><strong><a href="schemas/">📐 Schema Reference</a></strong> - 13 JSON validation schemas  </li>
+<li><strong><a href="tests/">🧪 Test Documentation</a></strong> - 35 automated tests</li>
+<li><strong><a href="docs/repl_et_checklist.md">📋 Research Checklist</a></strong> - Quality checklist</li>
+</ul>
+<h2 id="contributing">🤝 Contributing</h2>
+<p>We welcome contributions! Please see <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> for:
+- 🐛 Bug reports and feature requests
+- 📝 Documentation improvements<br />
+- 🧪 Additional test cases
+- 🎯 New example studies</p>
+<h2 id="citation">📄 Citation</h2>
+<p>If you use Repl.ET in your research, please cite:</p>
+<div class="highlight"><pre><span></span><code><span class="nc">@software</span><span class="p">{</span><span class="nl">silva2024replet</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Repl.ET: Eye Tracking Replication Template}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Silva, Lucas}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2024}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://github.com/fratelus/Repl.ET}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{1.0.0}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="project-stats">📊 Project Stats</h2>
+<ul>
+<li><strong>🎯 Template Completeness</strong>: 13/13 components  </li>
+<li><strong>✅ Test Coverage</strong>: 35/35 tests passing (100%)</li>
+<li><strong>📋 Standards Compliance</strong>: FAIR, PRISMA-Eye, iGuidelines, TRRRACED</li>
+<li><strong>🔬 Validation</strong>: JSON Schema Draft 7 compliant</li>
+<li><strong>📖 Documentation</strong>: Comprehensive guides and examples</li>
+</ul>
+<h2 id="used-by">🌟 Used By</h2>
+<ul>
+<li>University research labs studying code comprehension</li>
+<li>HCI studies on developer tool usability  </li>
+<li>Software engineering eye tracking experiments</li>
+<li>Reproducibility initiatives in empirical SE</li>
+</ul>
+<h2 id="support">📞 Support</h2>
+<ul>
+<li><strong>🐛 Issues</strong>: <a href="https://github.com/fratelus/Repl.ET/issues">GitHub Issues</a></li>
+<li><strong>💬 Questions</strong>: Create an issue with the "question" label  </li>
+<li><strong>📧 Email</strong>: replET@research.dev</li>
+</ul>
+<hr />
+<p><strong>🎓 Research-grade • ✅ Validated • 🔬 Open Source</strong> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
