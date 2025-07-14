@@ -14,6 +14,7 @@ A **standardized, validated template** for eye tracking experiments in **Softwar
 - **✅ 100% Validated**: 35 automated tests ensure data integrity and compliance
 - **📊 Reproducibility Scoring**: Automated assessment of your study's reproducibility
 - **🎓 Research-Ready**: Template used in published eye tracking studies
+- **🔗 Link Verification**: Automated link checking prevents broken documentation
 
 ## 🚀 Quick Start
 
@@ -35,6 +36,7 @@ python repl_et_score.py                # Generate your spider graph
 
 # 4. Quality Check
 pytest tests/ -v                       # Run all 35 tests
+./scripts/check-links.sh               # Check documentation links
 ```
 
 📖 **[→ Read the Complete User Guide](docs/USER_GUIDE.md)** for detailed instructions, troubleshooting, and best practices.
