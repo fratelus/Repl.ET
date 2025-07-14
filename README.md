@@ -291,7 +291,7 @@ If you use Repl.ET in your research, please cite:
 ## 📞 Support
 
 - **🐛 Issues**: [GitHub Issues](https://github.com/fratelus/Repl.ET/issues)
-- **💬 Discussions**: [GitHub Discussions](https://github.com/fratelus/Repl.ET/discussions)  
+- **💬 Questions**: Create an issue with the "question" label  
 - **📧 Email**: replET@research.dev
 
 ---

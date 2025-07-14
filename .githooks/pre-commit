@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Pre-commit hook to check links
+# Install with: git config core.hooksPath .githooks
+
+echo "🔗 Running pre-commit link check..."
+
+# Run the link checker
+if ./scripts/check-links.sh; then
+    echo "✅ Link check passed"
+    exit 0
+else
+    echo "❌ Link check failed. Fix broken links before committing."
+    echo "💡 Run './scripts/check-links.sh' to see details"
+    exit 1
+fi 

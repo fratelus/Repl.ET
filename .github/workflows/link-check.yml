@@ -1,0 +1,72 @@
+name: 🔗 Link Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Check links weekly on Sundays at 2 AM UTC
+    - cron: '0 2 * * 0'
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+      
+    - name: 🔗 Check Markdown Links
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        use-quiet-mode: 'yes'
+        use-verbose-mode: 'yes'
+        config-file: '.github/link-check-config.json'
+        check-modified-files-only: 'no'
+        
+    - name: 📊 Check if Spider Analysis Exists
+      run: |
+        if [ ! -f "outputs/reproducibility_spider_analysis.png" ]; then
+          echo "❌ Spider analysis PNG is missing!"
+          echo "Run: python3 tools/generate_enhanced_spider_report.py"
+          exit 1
+        else
+          echo "✅ Spider analysis PNG exists"
+        fi
+        
+    - name: 🔍 Validate Internal File References
+      run: |
+        echo "Checking internal file references..."
+        
+        # Check if all referenced files exist
+        MISSING_FILES=()
+        
+        # Check docs references
+        if grep -r "docs/repl_et_checklist.md" . --include="*.md" >/dev/null; then
+          if [ ! -f "docs/repl_et_checklist.md" ]; then
+            MISSING_FILES+=("docs/repl_et_checklist.md")
+          fi
+        fi
+        
+        # Check outputs references  
+        if grep -r "outputs/reproducibility_spider_analysis.png" . --include="*.md" >/dev/null; then
+          if [ ! -f "outputs/reproducibility_spider_analysis.png" ]; then
+            MISSING_FILES+=("outputs/reproducibility_spider_analysis.png")
+          fi
+        fi
+        
+        # Check CONTRIBUTING.md references
+        if grep -r "CONTRIBUTING.md" . --include="*.md" >/dev/null; then
+          if [ ! -f "CONTRIBUTING.md" ]; then
+            MISSING_FILES+=("CONTRIBUTING.md")
+          fi
+        fi
+        
+        if [ ${#MISSING_FILES[@]} -gt 0 ]; then
+          echo "❌ Missing referenced files:"
+          printf '%s\n' "${MISSING_FILES[@]}"
+          exit 1
+        else
+          echo "✅ All internal file references are valid"
+        fi 

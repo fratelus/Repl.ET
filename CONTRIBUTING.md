@@ -10,7 +10,7 @@ Thank you for your interest in contributing to Repl.ET! 🎉
 
 ## 💡 Suggesting Features
 
-- Open a [GitHub Discussion](https://github.com/fratelus/Repl.ET/discussions) for feature requests
+- Open a [GitHub Issue](https://github.com/fratelus/Repl.ET/issues) with the "enhancement" label for feature requests
 - Explain the use case and how it would benefit the eye-tracking research community
 
 ## 🔧 Development
@@ -54,5 +54,5 @@ Be respectful, inclusive, and collaborative. This project serves the academic re
 
 ## 📞 Questions?
 
-- 💬 [GitHub Discussions](https://github.com/fratelus/Repl.ET/discussions)
+- 💬 [GitHub Issues](https://github.com/fratelus/Repl.ET/issues) (use "question" label)
 - 📧 Contact: replET@research.dev 
