@@ -326,7 +326,7 @@ jobs:
         
         # Check if spider graph changed
         if ! git diff --quiet outputs/reproducibility_spider_analysis.png; then
-          git add outputs/reproducibility_spider_analysis.png
+          git add -f outputs/reproducibility_spider_analysis.png
           git commit -m "🕷️ Auto-update spider graph analysis [skip ci]" || echo "No changes to commit"
           git push || echo "Push failed or no changes"
         else
