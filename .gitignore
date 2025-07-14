@@ -25,6 +25,7 @@ Thumbs.db
 results/
 reports/
 outputs/
+!outputs/reproducibility_spider_analysis.png
 
 # Test coverage
 htmlcov/
@@ -36,5 +37,4 @@ temp/
 tmp/
 *.tmp
 
-# Keep spider analysis for README display (moved to outputs/)
-!outputs/reproducibility_spider_analysis.png
+# Keep spider analysis for README display (moved to outputs/) - now handled above
