@@ -3,7 +3,7 @@
 [![Tests](https://img.shields.io/badge/tests-35%2F35%20passing-brightgreen)](https://github.com/fratelus/Repl.ET)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://github.com/fratelus/Repl.ET)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.placeholder-blue)](https://doi.org/10.5281/zenodo.placeholder)
+[![DOI](https://img.shields.io/badge/DOI-pending-blue)](#)
 
 A **standardized, validated template** for eye tracking experiments in **Software Engineering** and **Human-Computer Interaction** research. Designed to promote reproducibility and align with international guidelines.
 
