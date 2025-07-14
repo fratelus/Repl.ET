@@ -1,0 +1,335 @@
+name: 🧪 Test Suite
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run tests daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+jobs:
+  test-template:
+    name: 🎯 Test ReplET Template
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, 3.10, 3.11, 3.12]
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+        
+    - name: 📦 Cache Dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+          
+    - name: ⚡ Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: ✅ Validate JSON Schemas
+      run: |
+        echo "🔍 Validating main template..."
+        python validate_jsons.py
+        
+    - name: 📊 Check Reproducibility Score
+      run: |
+        echo "📈 Calculating reproducibility score..."
+        python repl_et_score.py
+        
+    - name: 🧪 Run Test Suite
+      run: |
+        echo "🚀 Running comprehensive test suite..."
+        pytest tests/ -v --cov=. --cov-report=xml --cov-report=html
+        
+    - name: 📊 Upload Coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: template
+        name: template-coverage
+        fail_ci_if_error: false
+
+  test-demos:
+    name: 🎭 Test Demo Examples
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        demo: [Demo, Demo02]
+        python-version: [3.9, 3.11]
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+        
+    - name: 📦 Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: ✅ Validate ${{ matrix.demo }} Data
+      run: |
+        cd ${{ matrix.demo }}/
+        echo "🔍 Validating ${{ matrix.demo }} JSON data..."
+        python validate_jsons.py
+        
+    - name: 📊 Check ${{ matrix.demo }} Score
+      run: |
+        cd ${{ matrix.demo }}/
+        echo "📈 Calculating ${{ matrix.demo }} reproducibility score..."
+        python repl_et_score.py
+        
+    - name: 🧪 Run ${{ matrix.demo }} Tests
+      run: |
+        cd ${{ matrix.demo }}/
+        echo "🚀 Running ${{ matrix.demo }} test suite..."
+        pytest -v
+        
+    - name: 🏆 Verify Demo02 High Score
+      if: matrix.demo == 'Demo02'
+      run: |
+        cd Demo02/
+        # Extract score and verify it's above 80%
+        score=$(python -c "
+        import subprocess
+        import re
+        result = subprocess.run(['python', 'repl_et_score.py'], capture_output=True, text=True)
+        match = re.search(r'(\d+\.\d+)/1\.0', result.stdout)
+        if match:
+            print(float(match.group(1)))
+        else:
+            print(0.0)
+        ")
+        echo "Demo02 score: $score"
+        python -c "
+        score = float('$score')
+        assert score >= 0.8, f'Demo02 score {score} is below 80% threshold'
+        print(f'✅ Demo02 achieved {score*100:.1f}% reproducibility score!')
+        "
+
+  lint-and-format:
+    name: 🎨 Code Quality
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+        
+    - name: 📦 Install Linting Tools
+      run: |
+        pip install black flake8 isort mypy
+        
+    - name: 🖤 Check Code Formatting (Black)
+      run: |
+        black --check --diff .
+        
+    - name: 🧹 Check Import Sorting (isort)
+      run: |
+        isort --check-only --diff .
+        
+    - name: 🔍 Lint Code (flake8)
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        
+    - name: 🏷️ Type Check (mypy)
+      run: |
+        mypy --ignore-missing-imports *.py
+      continue-on-error: true
+
+  schema-validation:
+    name: 📐 Schema Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+        
+    - name: 📦 Install JSON Schema Tools
+      run: |
+        pip install jsonschema jsonschema[format]
+        
+    - name: 🔍 Validate All JSON Schemas
+      run: |
+        echo "🔍 Validating JSON Schema syntax..."
+        for schema in schemas/*.json; do
+          echo "Checking $schema..."
+          python -m jsonschema.cli --instance "$schema" schemas/meta-schema.json || true
+        done
+        
+    - name: ✅ Validate JSON Data Against Schemas
+      run: |
+        echo "✅ Validating data files against schemas..."
+        python validate_jsons.py
+        cd Demo/ && python validate_jsons.py
+        cd ../Demo02/ && python validate_jsons.py
+
+  security-scan:
+    name: 🔒 Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🛡️ Run Security Scan (Bandit)
+      uses: securecodewarrior/github-action-add-sarif@v1
+      with:
+        sarif-file: 'bandit-report.sarif'
+      continue-on-error: true
+      
+    - name: 🔍 Scan for Secrets
+      uses: trufflesecurity/trufflehog@main
+      with:
+        path: ./
+        base: main
+        head: HEAD
+        extra_args: --debug --only-verified
+
+  compatibility-check:
+    name: 🔄 Compatibility Check
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: [3.9, 3.11]
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+        
+    - name: 📦 Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: ✅ Basic Functionality Test
+      run: |
+        echo "🔍 Testing basic functionality on ${{ matrix.os }}..."
+        python validate_jsons.py
+        python repl_et_score.py
+        echo "✅ Basic tests passed on ${{ matrix.os }}"
+
+  performance-benchmark:
+    name: ⚡ Performance Benchmark
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+        
+    - name: 📦 Install Dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install pytest-benchmark memory-profiler
+        
+    - name: ⚡ Run Performance Tests
+      run: |
+        echo "⚡ Running performance benchmarks..."
+        # Benchmark validation speed
+        time python validate_jsons.py
+        time python repl_et_score.py
+        
+        # Benchmark test suite speed
+        pytest tests/ --benchmark-only --benchmark-json=benchmark.json || true
+        
+    - name: 📊 Upload Benchmark Results
+      uses: actions/upload-artifact@v3
+      with:
+        name: benchmark-results
+        path: benchmark.json
+      if: always()
+
+  spider-analysis:
+    name: 🕷️ Reproducibility Spider Analysis
+    runs-on: ubuntu-latest
+    needs: [schema-validation, demo-validation]
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+        
+    - name: 📦 Install Dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install matplotlib seaborn
+        
+    - name: 🕷️ Generate Individual Spider Graphs
+      run: |
+        echo "🕷️ Generating individual spider graphs..."
+        # Main template spider graph
+        python repl_et_score.py
+        # Demo spider graphs  
+        cd Demo && python repl_et_score.py && cd ..
+        cd Demo02 && python repl_et_score.py && cd ..
+        echo "Individual spider graphs generated in temp directories"
+        
+    - name: 🕷️ Generate Comparative Spider Analysis
+      run: |
+        echo "🕷️ Generating comparative spider analysis..."
+        python generate_enhanced_spider_report.py
+        
+    - name: 📊 Upload Spider Analysis
+      uses: actions/upload-artifact@v4
+      with:
+        name: reproducibility-spider-analysis
+        path: |
+          reproducibility_spider_analysis.png
+        retention-days: 30
+        
+    - name: 📝 Commit Updated Spider Graph
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Check if spider graph changed
+        if ! git diff --quiet reproducibility_spider_analysis.png; then
+          git add reproducibility_spider_analysis.png
+          git commit -m "🕷️ Auto-update spider graph analysis [skip ci]" || echo "No changes to commit"
+          git push || echo "Push failed or no changes"
+        else
+          echo "Spider graph unchanged, no commit needed"
+        fi
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push' 

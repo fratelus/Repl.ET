@@ -1,0 +1,12 @@
+{
+  "$schema": "../schemas/screen_setup.schema.json",
+  "screen_size_inch": 27,
+  "resolution_px": [2560, 1440],
+  "refresh_rate_hz": 144,
+  "distance_cm": 65,
+  "background_color": "#FFFFFF",
+  "pixel_pitch_mm": 0.233,
+  "brightness_cd_m2": 350,
+  "contrast_ratio": "1000:1",
+  "viewing_angle_deg": [178, 178]
+} 

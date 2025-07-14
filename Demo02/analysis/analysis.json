@@ -1,0 +1,176 @@
+{
+  "analysis_plan": {
+    "preregistered": true,
+    "preregistration_url": "https://osf.io/abc123",
+    "analysis_software": "R version 4.3.2",
+    "packages": [
+      "lme4 (1.1-35.1)", "emmeans (1.8.9)", "ggplot2 (3.4.4)", 
+      "dplyr (1.1.4)", "tidyr (1.3.0)", "broom (1.0.5)",
+      "effsize (0.8.1)", "psycho (0.6.1)"
+    ],
+    "power_analysis": {
+      "software": "G*Power 3.1.9.7",
+      "effect_size": 0.5,
+      "alpha": 0.05, 
+      "power": 0.80,
+      "sample_size_required": 28,
+      "achieved_sample_size": 28
+    }
+  },
+  "data_preprocessing": {
+    "fixation_detection": {
+      "algorithm": "velocity_threshold",
+      "velocity_threshold_deg_per_sec": 30,
+      "minimum_duration_ms": 60,
+      "maximum_dispersion_deg": 1.0
+    },
+    "data_cleaning": {
+      "exclude_fixations_shorter_than_ms": 60,
+      "exclude_fixations_longer_than_ms": 2000,
+      "exclude_participants_with_data_loss_above": 0.30,
+      "outlier_detection": "3_standard_deviations",
+      "blink_handling": "interpolation_for_gaps_under_100ms"
+    },
+    "aoi_assignment": {
+      "method": "pixel_based_mapping",
+      "tolerance_pixels": 10,
+      "overlap_resolution": "closest_centroid"
+    }
+  },
+  "dependent_variables": [
+    {
+      "name": "total_fixation_duration",
+      "description": "Total time spent fixating on code elements",
+      "unit": "milliseconds",
+      "type": "continuous"
+    },
+    {
+      "name": "average_fixation_duration", 
+      "description": "Mean duration of individual fixations",
+      "unit": "milliseconds",
+      "type": "continuous"
+    },
+    {
+      "name": "fixation_count",
+      "description": "Total number of fixations per stimulus",
+      "unit": "count",
+      "type": "discrete"
+    },
+    {
+      "name": "scanpath_length",
+      "description": "Total distance of eye movements",
+      "unit": "pixels",
+      "type": "continuous"
+    },
+    {
+      "name": "time_to_first_fixation",
+      "description": "Time until first fixation on target AOI",
+      "unit": "milliseconds", 
+      "type": "continuous"
+    },
+    {
+      "name": "comprehension_accuracy",
+      "description": "Percentage of correctly answered comprehension questions",
+      "unit": "percentage",
+      "type": "continuous"
+    }
+  ],
+  "independent_variables": [
+    {
+      "name": "complexity_level",
+      "description": "Code complexity manipulation",
+      "levels": ["low", "medium", "high"],
+      "type": "categorical",
+      "within_subjects": true
+    },
+    {
+      "name": "variable_naming",
+      "description": "Variable naming convention",
+      "levels": ["descriptive", "abbreviated"],
+      "type": "categorical", 
+      "within_subjects": true
+    }
+  ],
+  "statistical_methods": {
+    "primary_analysis": {
+      "method": "linear_mixed_effects_models",
+      "package": "lme4",
+      "random_effects": "participant",
+      "fixed_effects": ["complexity_level", "variable_naming", "complexity_level:variable_naming"],
+      "model_formula": "dv ~ complexity_level * variable_naming + (1|participant_id)"
+    },
+    "post_hoc_tests": {
+      "method": "emmeans_pairwise_comparisons",
+      "correction": "tukey",
+      "confidence_level": 0.95
+    },
+    "effect_sizes": {
+      "for_anova": "partial_eta_squared",
+      "for_contrasts": "cohens_d",
+      "confidence_intervals": 0.95
+    },
+    "assumptions_testing": {
+      "normality": "shapiro_wilk_test",
+      "homoscedasticity": "levene_test", 
+      "sphericity": "mauchly_test"
+    }
+  },
+  "aoi_based_metrics": [
+    {
+      "aoi_type": "function_signature",
+      "metrics": ["total_fixation_duration", "fixation_count", "time_to_first_fixation"]
+    },
+    {
+      "aoi_type": "loop_structures", 
+      "metrics": ["total_fixation_duration", "average_fixation_duration", "transition_count"]
+    },
+    {
+      "aoi_type": "variable_declarations",
+      "metrics": ["total_fixation_duration", "fixation_count", "revisit_count"]
+    },
+    {
+      "aoi_type": "conditional_statements",
+      "metrics": ["total_fixation_duration", "scanpath_length_within_aoi"]
+    }
+  ],
+  "results": {
+    "main_effects": {
+      "complexity_level": {
+        "F_statistic": 12.45,
+        "df": [2, 54],
+        "p_value": 0.001,
+        "partial_eta_squared": 0.315,
+        "interpretation": "significant_effect"
+      },
+      "variable_naming": {
+        "F_statistic": 8.23,
+        "df": [1, 27], 
+        "p_value": 0.008,
+        "partial_eta_squared": 0.234,
+        "interpretation": "significant_effect"
+      }
+    },
+    "interaction_effects": {
+      "complexity_x_naming": {
+        "F_statistic": 3.78,
+        "df": [2, 54],
+        "p_value": 0.029,
+        "partial_eta_squared": 0.123,
+        "interpretation": "significant_interaction"
+      }
+    },
+    "post_hoc_comparisons": {
+      "complexity_levels": {
+        "low_vs_medium": {"t": -2.34, "p": 0.045, "cohens_d": 0.52},
+        "low_vs_high": {"t": -4.67, "p": 0.001, "cohens_d": 0.89},
+        "medium_vs_high": {"t": -2.15, "p": 0.078, "cohens_d": 0.41}
+      }
+    }
+  },
+  "data_availability": {
+    "raw_data": "Available upon reasonable request",
+    "processed_data": "Included in supplementary materials",
+    "analysis_scripts": "Available on GitHub repository",
+    "reproducible_analysis": "R Markdown notebook provided"
+  }
+} 

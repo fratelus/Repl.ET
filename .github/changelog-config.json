@@ -1,0 +1,114 @@
+{
+  "categories": [
+    {
+      "title": "🚀 Features",
+      "labels": ["enhancement", "feature"]
+    },
+    {
+      "title": "🐛 Bug Fixes", 
+      "labels": ["bug", "fix"]
+    },
+    {
+      "title": "📚 Documentation",
+      "labels": ["documentation", "docs"]
+    },
+    {
+      "title": "🧪 Tests",
+      "labels": ["tests", "testing"]
+    },
+    {
+      "title": "🔧 Maintenance",
+      "labels": ["maintenance", "chore", "refactor"]
+    },
+    {
+      "title": "📦 Dependencies",
+      "labels": ["dependencies", "deps"]
+    },
+    {
+      "title": "🔒 Security",
+      "labels": ["security", "vulnerability"]
+    },
+    {
+      "title": "🎭 Examples",
+      "labels": ["demo", "examples", "template"]
+    },
+    {
+      "title": "📐 Schemas",
+      "labels": ["schema", "validation"]
+    },
+    {
+      "title": "⚡ Performance",
+      "labels": ["performance", "optimization"]
+    }
+  ],
+  "ignore_labels": [
+    "duplicate",
+    "invalid",
+    "wontfix",
+    "question"
+  ],
+  "sort": "ASC",
+  "template": "#{{CHANGELOG}}\n\n<details>\n<summary>🔍 View All Changes</summary>\n\n#{{UNCATEGORIZED}}\n\n</details>",
+  "pr_template": "- #{{TITLE}} by @#{{AUTHOR}} in ##{{NUMBER}}",
+  "empty_template": "- No changes",
+  "label_extractor": [
+    {
+      "pattern": "^(feat|feature)(\\(.+\\))?!?:",
+      "target": "enhancement"
+    },
+    {
+      "pattern": "^(fix|bugfix)(\\(.+\\))?!?:",
+      "target": "bug"
+    },
+    {
+      "pattern": "^(docs?)(\\(.+\\))?!?:",
+      "target": "documentation"
+    },
+    {
+      "pattern": "^(test|tests)(\\(.+\\))?!?:",
+      "target": "tests"
+    },
+    {
+      "pattern": "^(chore|maint|maintenance)(\\(.+\\))?!?:",
+      "target": "maintenance"
+    },
+    {
+      "pattern": "^(deps?|dependencies)(\\(.+\\))?!?:",
+      "target": "dependencies"
+    },
+    {
+      "pattern": "^(sec|security)(\\(.+\\))?!?:",
+      "target": "security"
+    },
+    {
+      "pattern": "^(demo|example)(\\(.+\\))?!?:",
+      "target": "demo"
+    },
+    {
+      "pattern": "^(schema|schemas)(\\(.+\\))?!?:",
+      "target": "schema"
+    },
+    {
+      "pattern": "^(perf|performance)(\\(.+\\))?!?:",
+      "target": "performance"
+    }
+  ],
+  "transformers": [
+    {
+      "pattern": "[\\-\\*] (\\[(...|ALL)\\])( )?(.+)",
+      "target": "- $4"
+    }
+  ],
+  "max_tags_to_fetch": 200,
+  "max_pull_requests": 200,
+  "max_back_track_time_days": 365,
+  "exclude_merge_branches": [
+    "owner/repo/main"
+  ],
+  "tag_resolver": {
+    "method": "sort",
+    "filter": {
+      "pattern": "^v\\d+\\.\\d+\\.\\d+$"
+    }
+  }
+} 

@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/software_env.schema.json",
+  "os": "Windows 11 Pro (Build 22621)",
+  "experiment_software": "PsychoPy 2024.1.4",
+  "tracker_driver_version": "1.7.1",
+  "python_version": "3.11.5",
+  "additional_packages": [
+    "numpy 1.24.3",
+    "pandas 2.0.3", 
+    "psychopy 2024.1.4",
+    "tobii-research 1.10.2",
+    "pygaze 0.7.0"
+  ],
+  "ide_used": "IntelliJ IDEA 2024.1",
+  "code_font": "JetBrains Mono",
+  "font_size_pt": 14
+} 

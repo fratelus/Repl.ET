@@ -1,0 +1,55 @@
+{
+  "$schema": "../schemas/stimuli_metadata.schema.json",
+  "stimuli": [
+    {
+      "stimulus_id": "S01",
+      "type": "code",
+      "description": "Java method for binary search with intentional off-by-one error",
+      "file_name": "binary_search_buggy.java",
+      "lines_of_code": 15,
+      "complexity": "medium",
+      "bug_type": "logic_error",
+      "task_type": "bug_detection"
+    },
+    {
+      "stimulus_id": "S02", 
+      "type": "code",
+      "description": "Java method for sorting array using bubble sort (no bugs)",
+      "file_name": "bubble_sort_clean.java",
+      "lines_of_code": 12,
+      "complexity": "low",
+      "bug_type": "none",
+      "task_type": "comprehension"
+    },
+    {
+      "stimulus_id": "S03",
+      "type": "code", 
+      "description": "Java method for calculating factorial with recursive call bug",
+      "file_name": "factorial_buggy.java",
+      "lines_of_code": 8,
+      "complexity": "low",
+      "bug_type": "infinite_recursion",
+      "task_type": "bug_detection"
+    },
+    {
+      "stimulus_id": "S04",
+      "type": "code",
+      "description": "Java method for finding maximum element in array (no bugs)",
+      "file_name": "find_max_clean.java", 
+      "lines_of_code": 10,
+      "complexity": "low",
+      "bug_type": "none",
+      "task_type": "comprehension"
+    },
+    {
+      "stimulus_id": "S05",
+      "type": "code",
+      "description": "Java method for LinkedList insertion with null pointer bug",
+      "file_name": "linkedlist_buggy.java",
+      "lines_of_code": 18,
+      "complexity": "high", 
+      "bug_type": "null_pointer",
+      "task_type": "bug_detection"
+    }
+  ]
+} 

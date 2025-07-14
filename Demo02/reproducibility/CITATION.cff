@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: "Code Comprehension with Eye Tracking: A Replication Study"
+authors:
+  - family-names: Smith
+    given-names: Alice
+    orcid: "https://orcid.org/0000-0001-2345-6789"
+  - family-names: Lee
+    given-names: Bob
+    orcid: "https://orcid.org/0000-0002-3456-7890"
+date-released: 2024-06-01
+doi: 10.1234/osf.io/abcd1
+license: CC-BY-4.0
+repository-code: "https://github.com/example/replet" 

@@ -1,0 +1,54 @@
+{
+  "$schema": "../schemas/stimuli_annotations.schema.json",
+  "annotations": [
+    {
+      "stimulus_id": "S01",
+      "ground_truth": [
+        {"line": 1, "label": "method_signature"},
+        {"line": 3, "label": "while_loop_condition"},
+        {"line": 5, "label": "middle_calculation"}, 
+        {"line": 7, "label": "bug_location", "severity": "high", "description": "off-by-one error in boundary condition"},
+        {"line": 11, "label": "return_statement"}
+      ]
+    },
+    {
+      "stimulus_id": "S02", 
+      "ground_truth": [
+        {"line": 1, "label": "method_signature"},
+        {"line": 2, "label": "outer_loop"},
+        {"line": 3, "label": "inner_loop"},
+        {"line": 4, "label": "comparison_condition"},
+        {"line": 5, "label": "swap_operation"}
+      ]
+    },
+    {
+      "stimulus_id": "S03",
+      "ground_truth": [
+        {"line": 1, "label": "method_signature"},
+        {"line": 2, "label": "base_case_missing", "severity": "high", "description": "missing base case causes infinite recursion"},
+        {"line": 3, "label": "recursive_call"},
+        {"line": 4, "label": "return_statement"}
+      ]
+    },
+    {
+      "stimulus_id": "S04",
+      "ground_truth": [
+        {"line": 1, "label": "method_signature"},
+        {"line": 2, "label": "variable_initialization"},
+        {"line": 3, "label": "for_loop"},
+        {"line": 4, "label": "comparison_condition"},
+        {"line": 5, "label": "assignment_operation"}
+      ]
+    },
+    {
+      "stimulus_id": "S05", 
+      "ground_truth": [
+        {"line": 1, "label": "method_signature"},
+        {"line": 3, "label": "node_creation"},
+        {"line": 6, "label": "null_check_missing", "severity": "high", "description": "missing null check before accessing head.next"},
+        {"line": 8, "label": "pointer_assignment"},
+        {"line": 12, "label": "return_statement"}
+      ]
+    }
+  ]
+} 

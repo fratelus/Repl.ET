@@ -1,0 +1,68 @@
+{
+  "eye_tracker": {
+    "manufacturer": "Tobii Pro",
+    "model": "Tobii Pro Spectrum",
+    "type": "remote_eye_tracker",
+    "sampling_rate_hz": 1200,
+    "accuracy_degrees": 0.3,
+    "precision_rms_degrees": 0.04,
+    "calibration_method": "9-point",
+    "validation_method": "9-point",
+    "binocular_tracking": true,
+    "head_movement_compensation": true,
+    "gaze_recovery_time_ms": 10,
+    "data_transmission": "ethernet",
+    "tracking_area": {
+      "width_cm": 60,
+      "height_cm": 36,
+      "depth_cm": 85
+    },
+    "tracking_distance_cm": {
+      "min": 45,
+      "max": 85,
+      "optimal": 65
+    }
+  },
+  "calibration": {
+    "procedure": "standard_9_point",
+    "acceptance_criteria": {
+      "max_deviation_degrees": 1.0,
+      "max_precision_rms": 0.15
+    },
+    "validation_procedure": "9_point_validation_after_calibration",
+    "recalibration_triggers": [
+      "accuracy_degradation_above_1_degree",
+      "participant_head_movement", 
+      "data_quality_flags"
+    ],
+    "quality_checks": [
+      "gaze_deviation_monitoring",
+      "blink_detection",
+      "saccade_velocity_validation"
+    ]
+  },
+  "data_quality": {
+    "sampling_completeness_threshold": 85,
+    "acceptable_tracking_ratio": 0.85,
+    "maximum_data_loss_consecutive_ms": 100,
+    "outlier_detection": "3_standard_deviations",
+    "filtering": {
+      "noise_reduction": "tobii_iv_t_filter", 
+      "velocity_threshold": "30_degrees_per_second",
+      "minimum_fixation_duration_ms": 60
+    }
+  },
+  "software": {
+    "recording_software": "Tobii Pro Lab",
+    "version": "1.194.39768",
+    "analysis_software": "Custom Python scripts + Tobii Pro Lab", 
+    "export_format": ["tsv", "json", "csv"],
+    "real_time_monitoring": true
+  },
+  "technical_validation": {
+    "artificial_eye_validation": "Passed with 0.2° accuracy",
+    "system_validation_date": "2024-01-10",
+    "last_maintenance": "2024-01-08",
+    "calibration_stability_test": "Passed - max drift 0.1° over 60 minutes"
+  }
+} 

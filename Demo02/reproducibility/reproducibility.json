@@ -1,0 +1,163 @@
+{
+  "original_study": {
+    "reference": "Chen, S., & Rodriguez, M. (2024). Visual attention patterns in code comprehension. Journal of Software Engineering Research, 15(3), 245-267.",
+    "doi": "10.1000/182",
+    "replication_type": "conceptual_replication_with_extension"
+  },
+  "preregistration": {
+    "platform": "Open Science Framework",
+    "url": "https://osf.io/abc123",
+    "registration_date": "2024-01-10",
+    "protocol_version": "2.1",
+    "deviations_from_protocol": "None - study executed exactly as preregistered"
+  },
+  "power_analysis": {
+    "conducted": true,
+    "software": "G*Power 3.1.9.7",
+    "analysis_type": "F tests - ANOVA: Repeated measures, within factors",
+    "effect_size": 0.5,
+    "alpha_level": 0.05,
+    "desired_power": 0.80,
+    "required_sample_size": 28,
+    "achieved_sample_size": 28,
+    "achieved_power": 0.81
+  },
+  "materials": {
+    "stimuli": {
+      "availability": "Publicly available",
+      "repository": "https://github.com/tech-uni/code-complexity-stimuli",
+      "doi": "10.5281/zenodo.123456",
+      "license": "CC-BY-4.0",
+      "description": "Complete set of Java code snippets with varying complexity levels"
+    },
+    "experimental_protocol": {
+      "availability": "Publicly available", 
+      "repository": "https://github.com/tech-uni/eye-tracking-protocol",
+      "format": "Detailed PDF protocol + video demonstrations",
+      "version": "2.1.0"
+    },
+    "questionnaires": {
+      "availability": "Publicly available",
+      "repository": "https://osf.io/def789",
+      "format": "Qualtrics QSF files + PDF versions",
+      "languages": ["English", "Spanish"]
+    }
+  },
+  "data": {
+    "raw_data": {
+      "availability": "Available upon reasonable request",
+      "contact": "s.chen@techuni.edu",
+      "restrictions": "Requires ethics approval due to participant privacy",
+      "format": "Tobii Pro Lab TSV exports + metadata JSON",
+      "anonymization": "All personally identifiable information removed"
+    },
+    "processed_data": {
+      "availability": "Publicly available",
+      "repository": "https://osf.io/ghi012",
+      "doi": "10.17605/OSF.IO/GHI012", 
+      "format": "CSV files with calculated metrics",
+      "description": "Fixation-level and trial-level aggregated data"
+    },
+    "metadata": {
+      "data_dictionary": "Complete variable descriptions provided",
+      "missing_data_handling": "Documented in analysis script",
+      "quality_control": "Data validation scripts included"
+    }
+  },
+  "analysis": {
+    "code": {
+      "availability": "Publicly available",
+      "repository": "https://github.com/tech-uni/complexity-analysis",
+      "language": "R",
+      "version_control": "Git with tagged releases",
+      "reproducible_environment": "renv lockfile provided",
+      "continuous_integration": "GitHub Actions for automated testing"
+    },
+    "software_versions": {
+      "r_version": "4.3.2",
+      "rstudio_version": "2023.12.1",
+      "key_packages": {
+        "lme4": "1.1-35.1",
+        "emmeans": "1.8.9", 
+        "ggplot2": "3.4.4",
+        "dplyr": "1.1.4"
+      }
+    },
+    "computational_environment": {
+      "operating_system": "Ubuntu 22.04 LTS",
+      "hardware": "Intel Xeon E5-2680 v4, 32GB RAM",
+      "containerization": "Docker image available on Docker Hub",
+      "docker_image": "techuni/complexity-analysis:v2.1.0"
+    }
+  },
+  "documentation": {
+    "readme": {
+      "comprehensive": true,
+      "includes": ["setup instructions", "usage examples", "troubleshooting"],
+      "format": "Markdown with embedded images"
+    },
+    "codebook": {
+      "available": true,
+      "format": "Interactive HTML + PDF",
+      "contents": ["variable definitions", "measurement procedures", "data collection timeline"]
+    },
+    "supplementary_materials": {
+      "pilot_study_report": "Available on OSF",
+      "equipment_validation_report": "Included in supplementary materials",
+      "inter_rater_reliability": "Cohen's kappa = 0.89 for AOI annotations"
+    }
+  },
+  "sharing": {
+    "preprint": {
+      "platform": "PsyArXiv",
+      "url": "https://psyarxiv.com/abc123",
+      "version": "3",
+      "date": "2024-03-25"
+    },
+    "published_paper": {
+      "journal": "Journal of Software Engineering Research",
+      "doi": "10.1000/182",
+      "open_access": true,
+      "publication_date": "2024-04-15"
+    },
+    "conference_presentations": [
+      {
+        "venue": "International Conference on Software Engineering 2024",
+        "date": "2024-04-20",
+        "materials": "Slides and poster available on OSF"
+      }
+    ]
+  },
+  "compliance": {
+    "fair_principles": {
+      "findable": "DOIs assigned to all materials",
+      "accessible": "Open repositories with clear access procedures", 
+      "interoperable": "Standard file formats used throughout",
+      "reusable": "Comprehensive documentation and licensing"
+    },
+    "ethical_approval": {
+      "institution": "Tech University IRB",
+      "approval_number": "IRB-2024-SE-001",
+      "approval_date": "2024-01-05",
+      "consent_procedure": "Written informed consent obtained from all participants"
+    },
+    "funding_transparency": {
+      "source": "National Science Foundation",
+      "grant_number": "NSF-2024-SE-456",
+      "conflicts_of_interest": "None declared"
+    }
+  },
+  "replication_support": {
+    "contact_information": {
+      "lead_author": "s.chen@techuni.edu",
+      "lab_website": "https://se-lab.techuni.edu",
+      "response_commitment": "Within 2 weeks for reasonable requests"
+    },
+    "replication_package": {
+      "complete": true,
+      "testing": "Verified on independent system",
+      "documentation_quality": "Comprehensive step-by-step instructions",
+      "estimated_reproduction_time": "2-3 hours for analysis replication"
+    }
+  }
+} 

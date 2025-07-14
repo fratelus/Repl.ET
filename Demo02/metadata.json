@@ -1,0 +1,44 @@
+{
+  "study_id": "SE_CodeComplexity_2024_001",
+  "title": "Impact of Code Complexity on Developer Visual Attention Patterns: An Eye Tracking Study",
+  "description": "A comprehensive eye tracking experiment investigating how different levels of code complexity (cyclomatic complexity, nesting depth, and variable naming) affect developers' visual attention patterns, fixation durations, and comprehension performance during code review tasks.",
+  "authors": [
+    {
+      "name": "Dr. Sarah Chen",
+      "affiliation": "Software Engineering Research Lab, Tech University",
+      "email": "s.chen@techuni.edu",
+      "orcid": "0000-0002-1234-5678"
+    },
+    {
+      "name": "Prof. Michael Rodriguez", 
+      "affiliation": "Human-Computer Interaction Lab, Tech University",
+      "email": "m.rodriguez@techuni.edu",
+      "orcid": "0000-0003-8765-4321"
+    }
+  ],
+  "institution": "Tech University Software Engineering Research Lab",
+  "date_created": "2024-01-15",
+  "date_completed": "2024-03-20",
+  "version": "2.1.0",
+  "doi": "10.1000/182",
+  "preregistration_url": "https://osf.io/abc123",
+  "ethics_approval": "IRB-2024-SE-001",
+  "funding": [
+    {
+      "agency": "National Science Foundation",
+      "grant_number": "NSF-2024-SE-456",
+      "amount": "$85,000"
+    }
+  ],
+  "keywords": ["eye tracking", "code comprehension", "software engineering", "visual attention", "cyclomatic complexity"],
+  "research_questions": [
+    "How does cyclomatic complexity affect visual attention patterns in code review?",
+    "What is the relationship between code nesting depth and fixation duration?", 
+    "How do variable naming conventions influence scan path efficiency?"
+  ],
+  "hypotheses": [
+    "H1: Higher cyclomatic complexity will result in longer fixation durations",
+    "H2: Deeper code nesting will increase the number of transitions between code blocks",
+    "H3: Descriptive variable names will reduce overall scan path length"
+  ]
+} 

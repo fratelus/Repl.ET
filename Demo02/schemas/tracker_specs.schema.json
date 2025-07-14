@@ -1,0 +1,54 @@
+{
+  "title": "Repl.ET Tracker Specs Schema",
+  "type": "object",
+  "required": [
+    "manufacturer",
+    "model",
+    "sampling_rate_hz",
+    "accuracy_deg",
+    "firmware_version"
+  ],
+  "properties": {
+    "manufacturer": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "sampling_rate_hz": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "accuracy_deg": {
+      "type": "number",
+      "minimum": 0
+    },
+    "precision_rms_deg": {
+      "type": "number",
+      "minimum": 0
+    },
+    "firmware_version": {
+      "type": "string"
+    },
+    "calibration_points": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "tracking_area_cm": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "freedom_of_movement_cm": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

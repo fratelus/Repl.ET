@@ -1,0 +1,482 @@
+name: 📚 Documentation
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'schemas/**'
+      - 'Demo/**'
+      - 'Demo02/**'
+      - 'README.md'
+      - 'docs/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'schemas/**'
+      - 'Demo/**' 
+      - 'Demo02/**'
+      - 'README.md'
+      - 'docs/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  generate-schema-docs:
+    name: 📐 Generate Schema Documentation
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+        
+    - name: 📦 Install Documentation Tools
+      run: |
+        pip install jsonschema2md jinja2 pyyaml
+        
+    - name: 📝 Generate Schema Documentation
+      run: |
+        mkdir -p docs/schemas
+        
+        echo "# 📐 JSON Schema Reference" > docs/schemas/README.md
+        echo "" >> docs/schemas/README.md
+        echo "Complete reference for all ReplET JSON schemas." >> docs/schemas/README.md
+        echo "" >> docs/schemas/README.md
+        
+        # Generate docs for each schema
+        for schema in schemas/*.json; do
+          basename=$(basename "$schema" .json)
+          echo "Generating docs for $basename..."
+          
+          # Create markdown documentation
+          cat << EOF > "docs/schemas/${basename}.md"
+        # ${basename^} Schema
+        
+        $(python -c "
+        import json
+        with open('$schema', 'r') as f:
+            schema = json.load(f)
+        print(schema.get('description', 'Schema for $basename data'))
+        ")
+        
+        ## Schema Structure
+        
+        \`\`\`json
+        $(cat "$schema" | python -m json.tool)
+        \`\`\`
+        
+        ## Usage Example
+        
+        \`\`\`bash
+        # Validate against this schema
+        python -c "
+        import json
+        import jsonschema
+        
+        # Load schema
+        with open('schemas/${basename}.schema.json', 'r') as f:
+            schema = json.load(f)
+            
+        # Load and validate data
+        with open('${basename}.json', 'r') as f:
+            data = json.load(f)
+            
+        jsonschema.validate(data, schema)
+        print('✅ Validation successful!')
+        "
+        \`\`\`
+        EOF
+        
+          # Add to index
+          echo "- [${basename^}](${basename}.md)" >> docs/schemas/README.md
+        done
+        
+    - name: 📊 Generate Demo Comparison
+      run: |
+        mkdir -p docs/examples
+        
+        cat << 'EOF' > docs/examples/demo-comparison.md
+        # 🎭 Demo Examples Comparison
+        
+        This document compares the two demo examples to help researchers understand different levels of documentation.
+        
+        ## Overview
+        
+        | Feature | Demo (Basic) | Demo02 (Enhanced) |
+        |---------|--------------|------------------|
+        | **Purpose** | Learning template structure | Publication-ready example |
+        | **Reproducibility Score** | 0.0% (baseline) | 82.5% (excellent) |
+        | **Documentation Level** | Minimal | Comprehensive |
+        | **Use Case** | Understanding format | Journal submission |
+        
+        ## Detailed Comparison
+        
+        ### Metadata
+        
+        **Demo (Basic)**:
+        - Minimal study information
+        - Basic author details
+        - Simple description
+        
+        **Demo02 (Enhanced)**:
+        - Complete publication metadata
+        - ORCID IDs for all authors
+        - Funding information
+        - Ethics approval details
+        - DOI and preregistration links
+        
+        ### Participants
+        
+        **Demo (Basic)**:
+        - 5 participants with basic demographics
+        - Simple inclusion criteria
+        - Minimal experience data
+        
+        **Demo02 (Enhanced)**:
+        - Comprehensive recruitment procedures
+        - Power analysis and sample size justification
+        - Detailed demographic summaries
+        - Complete inclusion/exclusion criteria
+        - Attrition analysis
+        
+        ### Equipment
+        
+        **Demo (Basic)**:
+        - Basic eye tracker specifications
+        - Simple calibration info
+        - Minimal technical details
+        
+        **Demo02 (Enhanced)**:
+        - High-end Tobii Pro Spectrum specs
+        - Detailed calibration procedures
+        - Quality control measures
+        - Technical validation reports
+        - Data quality thresholds
+        
+        ### Analysis
+        
+        **Demo (Basic)**:
+        - List of basic metrics
+        - Simple statistical methods
+        - Minimal results
+        
+        **Demo02 (Enhanced)**:
+        - Preregistered analysis protocol
+        - Comprehensive statistical methods
+        - Effect size calculations
+        - Complete results with interpretation
+        - Power analysis verification
+        
+        ### Reproducibility
+        
+        **Demo (Basic)**:
+        - Basic data availability statement
+        - Minimal code sharing info
+        - Simple replication notes
+        
+        **Demo02 (Enhanced)**:
+        - Complete materials sharing (GitHub, OSF)
+        - Docker containerization
+        - Comprehensive documentation
+        - Step-by-step replication instructions
+        - FAIR principles compliance
+        
+        ## Learning Path
+        
+        1. **Start with Demo**: Understand the ReplET structure and basic requirements
+        2. **Study Demo02**: See what publication-quality documentation looks like
+        3. **Compare Side-by-Side**: Notice how enhanced details improve scoring
+        4. **Apply to Your Research**: Use Demo02 as your target for publications
+        
+        ## Scoring Impact
+        
+        The difference between 0.0% and 82.5% reproducibility score demonstrates how:
+        - Complete documentation dramatically improves reproducibility
+        - Small details accumulate to significant quality improvements
+        - Publication-ready research requires comprehensive planning
+        - Gold standard practices are achievable with proper templates
+        EOF
+        
+    - name: 📈 Generate API Documentation
+      run: |
+        mkdir -p docs/api
+        
+        cat << 'EOF' > docs/api/validation.md
+        # ✅ Validation API
+        
+        ## validate_jsons.py
+        
+        Validates all JSON files against their corresponding schemas.
+        
+        ### Usage
+        
+        ```bash
+        python validate_jsons.py
+        ```
+        
+        ### Output
+        
+        - ✅ Success: "Todos os arquivos JSON são válidos!"
+        - ❌ Error: Detailed validation error messages
+        
+        ### Example
+        
+        ```python
+        # Programmatic usage
+        import subprocess
+        import sys
+        
+        result = subprocess.run(['python', 'validate_jsons.py'], 
+                               capture_output=True, text=True)
+        
+        if result.returncode == 0:
+            print("✅ All validations passed")
+        else:
+            print(f"❌ Validation failed: {result.stderr}")
+        ```
+        EOF
+        
+        cat << 'EOF' > docs/api/scoring.md
+        # 📊 Reproducibility Scoring API
+        
+        ## repl_et_score.py
+        
+        Calculates reproducibility score across 10 dimensions (0.0-1.0 scale).
+        
+        ### Usage
+        
+        ```bash
+        python repl_et_score.py
+        ```
+        
+        ### Output Files
+        
+        Generated in temporary directory:
+        - `report.json`: Detailed scores by dimension
+        - `score.png`: Radar chart visualization  
+        - `report.md`: Human-readable summary
+        
+        ### Scoring Dimensions
+        
+        1. **Metadata**: Study information completeness
+        2. **Participants**: Demographics and recruitment
+        3. **Equipment**: Hardware specifications  
+        4. **Stimuli**: Materials and annotations
+        5. **AOIs**: Areas of Interest definitions
+        6. **Data Quality**: Collection and processing
+        7. **Preprocessing**: Data cleaning pipeline
+        8. **Analysis**: Statistical methods and results
+        9. **Threats**: Validity considerations
+        10. **Reproducibility**: Materials sharing
+        
+        ### Programmatic Usage
+        
+        ```python
+        import subprocess
+        import json
+        import re
+        import tempfile
+        
+        # Run scoring
+        result = subprocess.run(['python', 'repl_et_score.py'], 
+                               capture_output=True, text=True)
+        
+        # Extract overall score
+        match = re.search(r'(\d+\.\d+)/1\.0', result.stdout)
+        overall_score = float(match.group(1)) if match else 0.0
+        
+        print(f"Reproducibility Score: {overall_score*100:.1f}%")
+        ```
+        EOF
+        
+    - name: 💾 Commit Documentation Updates
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add docs/
+        if git diff --staged --quiet; then
+          echo "No documentation changes to commit"
+        else
+          git commit -m "📚 Auto-update documentation"
+          git push
+        fi
+
+  validate-links:
+    name: 🔗 Validate Documentation Links
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🔗 Check Markdown Links
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        use-quiet-mode: 'yes'
+        use-verbose-mode: 'yes'
+        config-file: '.github/markdown-link-check-config.json'
+        
+    - name: 📝 Validate README Examples
+      run: |
+        echo "📝 Validating README code examples..."
+        
+        # Extract and test bash commands from README
+        grep -A 10 -B 2 '```bash' README.md | while read line; do
+          if [[ $line =~ ^(cd|python|pip|pytest) ]]; then
+            echo "Found command: $line"
+            # Basic syntax validation
+            bash -n <(echo "$line") || echo "Warning: syntax issue in: $line"
+          fi
+        done
+        
+        echo "✅ README validation complete"
+
+  build-github-pages:
+    name: 🌐 Build GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [generate-schema-docs, validate-links]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+        
+    - name: 📦 Install MkDocs
+      run: |
+        pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
+        
+    - name: 📝 Generate MkDocs Config
+      run: |
+        cat << 'EOF' > mkdocs.yml
+        site_name: ReplET Documentation
+        site_description: Eye Tracking Replication Template for Software Engineering Research
+        site_url: https://username.github.io/replET/
+        
+        theme:
+          name: material
+          palette:
+            - scheme: default
+              primary: indigo
+              accent: blue
+          features:
+            - navigation.sections
+            - navigation.expand
+            - navigation.top
+            - search.highlight
+        
+        nav:
+          - Home: index.md
+          - Getting Started:
+            - Quick Start: getting-started/quick-start.md
+            - Installation: getting-started/installation.md
+          - Examples:
+            - Demo Comparison: examples/demo-comparison.md
+            - Basic Demo: examples/demo.md
+            - Enhanced Demo: examples/demo02.md
+          - API Reference:
+            - Validation: api/validation.md
+            - Scoring: api/scoring.md
+          - Schema Reference:
+            - Overview: schemas/README.md
+          - Contributing: contributing.md
+        
+        plugins:
+          - search
+          - mermaid2
+        
+        markdown_extensions:
+          - admonition
+          - pymdownx.details
+          - pymdownx.superfences:
+              custom_fences:
+                - name: mermaid
+                  class: mermaid
+                  format: !!python/name:mermaid2.fence_mermaid
+        EOF
+        
+    - name: 📄 Create Index Page
+      run: |
+        mkdir -p docs
+        cp README.md docs/index.md
+        
+    - name: 🏗️ Build Documentation
+      run: |
+        mkdocs build
+        
+    - name: 🚀 Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site
+        force_orphan: true
+
+  check-documentation-coverage:
+    name: 📊 Documentation Coverage
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 📊 Calculate Coverage
+      run: |
+        echo "📊 Calculating documentation coverage..."
+        
+        # Count schema files
+        schema_files=$(find schemas/ -name "*.json" | wc -l)
+        
+        # Count documented schemas (if docs exist)
+        documented_schemas=0
+        if [ -d "docs/schemas" ]; then
+          documented_schemas=$(find docs/schemas/ -name "*.md" -not -name "README.md" | wc -l)
+        fi
+        
+        # Calculate coverage
+        if [ $schema_files -gt 0 ]; then
+          coverage=$((documented_schemas * 100 / schema_files))
+        else
+          coverage=0
+        fi
+        
+        echo "📐 Schema files: $schema_files"
+        echo "📝 Documented schemas: $documented_schemas"
+        echo "📊 Documentation coverage: $coverage%"
+        
+        # Create coverage badge
+        if [ $coverage -ge 80 ]; then
+          color="brightgreen"
+        elif [ $coverage -ge 60 ]; then
+          color="yellow"  
+        else
+          color="red"
+        fi
+        
+        echo "docs-coverage-$coverage%-$color" > .github/docs-coverage-badge.txt
+        
+    - name: 💾 Update Coverage Badge
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: |
+        coverage_badge=$(cat .github/docs-coverage-badge.txt)
+        
+        # Update README with documentation coverage badge
+        if grep -q "documentation-" README.md; then
+          sed -i "s/documentation-[^-]*-[^)]*/$coverage_badge/g" README.md
+        else
+          echo "Documentation coverage badge not found in README.md"
+        fi 

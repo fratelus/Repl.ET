@@ -7,7 +7,7 @@ import numpy as np
 
 def check_metadata():
     try:
-        with open("ReplET/metadata.json") as f:
+        with open("metadata.json") as f:
             data = json.load(f)
         required = ["study_title", "paradigm", "task_description"]
         if all(k in data and data[k] for k in required):
@@ -20,7 +20,7 @@ def check_metadata():
         return 0
 
 def check_participants():
-    path = "ReplET/participants/participants.json"
+    path = "participants/participants.json"
     if not os.path.exists(path):
         return 0
     try:
@@ -39,7 +39,7 @@ def check_participants():
         return 0
 
 def check_equipment():
-    files = ["ReplET/equipment/tracker_specs.json", "ReplET/equipment/screen_setup.json", "ReplET/equipment/software_env.json"]
+    files = ["equipment/tracker_specs.json", "ReplET/equipment/screen_setup.json", "ReplET/equipment/software_env.json"]
     found = sum(os.path.exists(f) for f in files)
     if found == 3:
         return 1.0
@@ -51,9 +51,9 @@ def check_equipment():
         return 0
 
 def check_stimuli():
-    meta = "ReplET/stimuli/stimuli_metadata.json"
-    ann = "ReplET/stimuli/stimuli_annotations.json"
-    raw = "ReplET/stimuli/stimuli_raw"
+    meta = "stimuli/stimuli_metadata.json"
+    ann = "stimuli/stimuli_annotations.json"
+    raw = "stimuli/stimuli_raw"
     score = 0
     if os.path.exists(meta):
         score += 0.4
@@ -64,8 +64,8 @@ def check_stimuli():
     return min(score, 1.0)
 
 def check_aois():
-    aois = "ReplET/aois/aois_definition.json"
-    vis = "ReplET/aois/aois_visualizations"
+    aois = "aois/aois_definition.json"
+    vis = "aois/aois_visualizations"
     if os.path.exists(aois):
         if os.path.isdir(vis) and len(os.listdir(vis)) > 0:
             return 1.0
@@ -75,8 +75,8 @@ def check_aois():
         return 0
 
 def check_data_quality():
-    proto = "ReplET/collection/protocol.json"
-    logs = "ReplET/collection/logs"
+    proto = "collection/protocol.json"
+    logs = "collection/logs"
     if os.path.exists(proto):
         if os.path.isdir(logs) and len(os.listdir(logs)) > 0:
             return 1.0
@@ -86,8 +86,8 @@ def check_data_quality():
         return 0
 
 def check_preprocessing():
-    pre = "ReplET/preprocessing/preprocessing.json"
-    scripts = "ReplET/preprocessing/scripts"
+    pre = "preprocessing/preprocessing.json"
+    scripts = "preprocessing/scripts"
     if os.path.exists(pre):
         if os.path.isdir(scripts) and len(os.listdir(scripts)) > 0:
             return 1.0
@@ -97,9 +97,9 @@ def check_preprocessing():
         return 0
 
 def check_analysis():
-    ana = "ReplET/analysis/analysis.json"
-    tables = "ReplET/analysis/results_tables"
-    vis = "ReplET/analysis/visualizations"
+    ana = "analysis/analysis.json"
+    tables = "analysis/results_tables"
+    vis = "analysis/visualizations"
     score = 0
     if os.path.exists(ana):
         score += 0.5
@@ -110,7 +110,7 @@ def check_analysis():
     return min(score, 1.0)
 
 def check_threats():
-    val = "ReplET/validity/validity.json"
+    val = "validity/validity.json"
     if os.path.exists(val):
         with open(val) as f:
             data = json.load(f)
@@ -122,7 +122,7 @@ def check_threats():
         return 0
 
 def check_reproducibility():
-    files = ["ReplET/README.md", "ReplET/LICENSE", "ReplET/reproducibility/environment.yml", "ReplET/reproducibility/CITATION.cff", "ReplET/repl_et_checklist.md"]
+    files = ["README.md", "ReplET/LICENSE", "ReplET/reproducibility/environment.yml", "ReplET/reproducibility/CITATION.cff", "ReplET/repl_et_checklist.md"]
     found = sum(os.path.exists(f) for f in files)
     if found == len(files):
         return 1.0

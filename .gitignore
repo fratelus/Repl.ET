@@ -24,3 +24,16 @@ Thumbs.db
 # Results
 results/
 reports/
+
+# Test coverage
+htmlcov/
+.coverage
+.pytest_cache/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Keep spider analysis for README display
+!reproducibility_spider_analysis.png

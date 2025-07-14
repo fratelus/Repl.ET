@@ -1,0 +1,125 @@
+{
+  "recruitment": {
+    "method": "University recruitment portal and professional developer networks",
+    "inclusion_criteria": [
+      "Minimum 2 years professional programming experience",
+      "Fluent in Java programming language", 
+      "Normal or corrected-to-normal vision",
+      "Age 18-65 years"
+    ],
+    "exclusion_criteria": [
+      "History of eye movement disorders",
+      "Use of medications affecting vision",
+      "Dyslexia or reading disabilities",
+      "Previous participation in eye tracking studies"
+    ],
+    "compensation": "$50 USD per participant",
+    "ethics_approval": "IRB-2024-SE-001"
+  },
+  "sample_size": {
+    "target": 30,
+    "achieved": 28,
+    "power_analysis": "G*Power 3.1.9.7, effect size d=0.5, alpha=0.05, power=0.80",
+    "attrition": {
+      "total_recruited": 30,
+      "data_quality_exclusions": 2,
+      "reasons": ["Poor calibration accuracy", "Excessive head movement"]
+    }
+  },
+  "demographics": {
+    "age": {
+      "mean": 28.4,
+      "std": 5.2,
+      "range": [22, 45],
+      "median": 27
+    },
+    "gender": {
+      "male": 18,
+      "female": 9,
+      "non_binary": 1,
+      "prefer_not_to_say": 0
+    },
+    "education": {
+      "bachelors": 12,
+      "masters": 14,
+      "phd": 2
+    },
+    "programming_experience": {
+      "mean_years": 6.8,
+      "std_years": 3.1,
+      "range_years": [2, 15]
+    }
+  },
+  "participants": [
+    {
+      "id": "P001",
+      "age": 25,
+      "gender": "male",
+      "education": "bachelors",
+      "programming_experience_years": 3,
+      "primary_languages": ["Java", "Python", "JavaScript"],
+      "current_role": "software_developer",
+      "vision_correction": "none",
+      "handedness": "right",
+      "native_language": "English",
+      "consent_given": true,
+      "completion_date": "2024-02-15"
+    },
+    {
+      "id": "P002", 
+      "age": 29,
+      "gender": "female",
+      "education": "masters",
+      "programming_experience_years": 7,
+      "primary_languages": ["Java", "C++", "Python"],
+      "current_role": "senior_developer",
+      "vision_correction": "glasses",
+      "handedness": "right",
+      "native_language": "English",
+      "consent_given": true,
+      "completion_date": "2024-02-16"
+    },
+    {
+      "id": "P003",
+      "age": 32,
+      "gender": "male", 
+      "education": "masters",
+      "programming_experience_years": 8,
+      "primary_languages": ["Java", "Scala", "Kotlin"],
+      "current_role": "tech_lead",
+      "vision_correction": "contacts",
+      "handedness": "left",
+      "native_language": "Spanish",
+      "consent_given": true,
+      "completion_date": "2024-02-18"
+    },
+    {
+      "id": "P004",
+      "age": 27,
+      "gender": "female",
+      "education": "bachelors",
+      "programming_experience_years": 5,
+      "primary_languages": ["Java", "Python"],
+      "current_role": "software_developer", 
+      "vision_correction": "none",
+      "handedness": "right",
+      "native_language": "English",
+      "consent_given": true,
+      "completion_date": "2024-02-20"
+    },
+    {
+      "id": "P005",
+      "age": 35,
+      "gender": "male",
+      "education": "phd",
+      "programming_experience_years": 12,
+      "primary_languages": ["Java", "C#", "Python", "Go"],
+      "current_role": "principal_engineer",
+      "vision_correction": "glasses",
+      "handedness": "right", 
+      "native_language": "English",
+      "consent_given": true,
+      "completion_date": "2024-02-22"
+    }
+  ]
+} 

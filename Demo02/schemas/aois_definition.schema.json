@@ -1,0 +1,69 @@
+{
+  "title": "Repl.ET AOIs Definition Schema",
+  "type": "object",
+  "required": [
+    "aois",
+    "aoi_strategy"
+  ],
+  "properties": {
+    "aois": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "aoi_id",
+          "stimulus_id",
+          "label",
+          "shape",
+          "coordinates"
+        ],
+        "properties": {
+          "aoi_id": {
+            "type": "string"
+          },
+          "stimulus_id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "shape": {
+            "type": "string"
+          },
+          "coordinates": {
+            "type": "object",
+            "required": [
+              "x",
+              "y",
+              "width",
+              "height"
+            ],
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "width": {
+                "type": "number",
+                "minimum": 0
+              },
+              "height": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "aoi_strategy": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "../schemas/protocol.schema.json",
+  "calibration": {
+    "type": "9-point",
+    "criteria": "max error < 0.8 deg and precision < 0.3 deg",
+    "recalibration_threshold": "drift > 1.0 deg",
+    "validation_points": 5
+  },
+  "drift_check": {
+    "interval_minutes": 8,
+    "criteria": "max drift < 0.5 deg",
+    "correction_procedure": "automatic recalibration if drift > 1.0 deg"
+  },
+  "exclusion_criteria": [
+    "Calibration error > 0.8 deg after 3 attempts",
+    "More than 25% data loss per trial",
+    "Track ratio < 75% overall",
+    "Head movement > 2cm during trial"
+  ],
+  "session_structure": {
+    "practice_trials": 2,
+    "main_trials": 10,
+    "break_intervals": "every 5 trials (2 minutes)"
+  },
+  "instructions_to_participants": "You will see Java code snippets on screen. For COMPREHENSION tasks, read the code and answer what it does. For BUG DETECTION tasks, identify if there are any bugs and their location. Take your time to examine the code carefully."
+} 
