@@ -269,7 +269,6 @@ If you use Repl.ET in your research, please cite:
   author = {Silva, Lucas},
   year = {2024},
   url = {https://github.com/fratelus/Repl.ET},
-  doi = {10.5281/zenodo.placeholder},
   version = {1.0.0}
 }
 ```
