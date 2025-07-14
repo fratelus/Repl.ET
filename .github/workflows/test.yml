@@ -280,7 +280,7 @@ jobs:
   spider-analysis:
     name: 🕷️ Reproducibility Spider Analysis
     runs-on: ubuntu-latest
-    needs: [schema-validation, demo-validation]
+    needs: [schema-validation, test-demos]
     
     steps:
     - name: 📥 Checkout Repository
