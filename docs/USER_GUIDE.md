@@ -21,7 +21,7 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r config/requirements.txt
 ```
 
 ## 📁 Understanding the Structure
@@ -55,14 +55,14 @@ ReplET/
 ```bash
 # Explore the basic example
 cd Demo/
-python validate_jsons.py    # See validation
-python repl_et_score.py     # Generate spider graph (0.0%)
+python tools/validate_jsons.py    # See validation
+python tools/repl_et_score.py     # Generate spider graph (0.0%)
 pytest                      # Run tests
 
 # Study the advanced example
 cd ../Demo02/
-python validate_jsons.py    # Validate comprehensive data
-python repl_et_score.py     # Generate spider graph (70.0%)
+python tools/validate_jsons.py    # Validate comprehensive data
+python tools/repl_et_score.py     # Generate spider graph (70.0%)
 pytest                      # Run tests
 ```
 
@@ -121,17 +121,17 @@ nano aois/aois_definition.json
 
 ```bash
 # Validate all JSON files against schemas
-python validate_jsons.py
+python tools/validate_jsons.py
 
 # Check for specific issues
-python validate_jsons.py --verbose
+python tools/validate_jsons.py --verbose
 ```
 
 ### 4. Generate Reproducibility Score
 
 ```bash
 # Generate spider graph analysis
-python repl_et_score.py
+python tools/repl_et_score.py
 
 # Output includes:
 # - Beautiful spider graph (PNG)
@@ -255,8 +255,8 @@ print(f"Reproducibility: {score:.3f}/1.0 ({score*100:.1f}%)")
 for dir in study1/ study2/ study3/; do
     cd $dir
     echo "Processing $dir..."
-    python validate_jsons.py
-    python repl_et_score.py
+    python tools/validate_jsons.py
+    python tools/repl_et_score.py
     cd ..
 done
 ```

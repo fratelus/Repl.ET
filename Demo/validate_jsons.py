@@ -1,1 +1,0 @@
-../tools/validate_jsons.py

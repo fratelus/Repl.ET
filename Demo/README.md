@@ -40,8 +40,8 @@ This demo includes **all components** of a complete ReplET study:
 ## How to Use This Demo
 
 1. **Explore the Structure**: Browse through each directory to understand the ReplET format
-2. **Validate the Data**: Run `python validate_jsons.py` to see validation in action
-3. **Check Reproducibility**: Run `python repl_et_score.py` to see the scoring system (outputs to temporary directory)
+2. **Validate the Data**: Run `python ../tools/validate_jsons.py` to see validation in action
+3. **Check Reproducibility**: Run `python ../tools/repl_et_score.py` to see the scoring system (outputs to temporary directory)
 4. **Run Tests**: Execute `pytest` to verify data integrity
 5. **Adapt for Your Study**: Use this as a template for your own research
 

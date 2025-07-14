@@ -48,7 +48,7 @@ jobs:
         
     - name: 📦 Install Dependencies
       run: |
-        pip install -r requirements.txt
+        pip install -r config/requirements.txt
         
     - name: 🧪 Run Full Test Suite
       run: |
@@ -58,13 +58,13 @@ jobs:
     - name: ✅ Validate All Components
       run: |
         echo "✅ Validating main template..."
-        python validate_jsons.py
+        python tools/validate_jsons.py
         
         echo "✅ Validating Demo..."
-        cd Demo/ && python validate_jsons.py && cd ..
+        cd Demo/ && python tools/validate_jsons.py && cd ..
         
         echo "✅ Validating Demo02..."
-        cd Demo02/ && python validate_jsons.py && cd ..
+        cd Demo02/ && python tools/validate_jsons.py && cd ..
         
     - name: 📊 Check Demo02 Score Threshold
       run: |
@@ -179,17 +179,17 @@ jobs:
           cd replET
           
           # Install dependencies
-          pip install -r requirements.txt
+          pip install -r config/requirements.txt
           
           # Explore basic example
           cd Demo/
-          python validate_jsons.py
-          python repl_et_score.py  # Score: 0.0%
+          python tools/validate_jsons.py
+          python tools/repl_et_score.py  # Score: 0.0%
           
           # Study enhanced example  
           cd ../Demo02/
-          python validate_jsons.py
-          python repl_et_score.py  # Score: 82.5%
+          python tools/validate_jsons.py
+          python tools/repl_et_score.py  # Score: 82.5%
           ```
           
           ## 📚 Documentation

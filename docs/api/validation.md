@@ -7,7 +7,7 @@ Validates all JSON files against their corresponding schemas.
 ### Usage
 
 ```bash
-python validate_jsons.py
+python tools/validate_jsons.py
 ```
 
 ### Output

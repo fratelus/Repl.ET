@@ -59,8 +59,8 @@ Unlike the basic Demo (0.0 score), Demo02 includes **comprehensive documentation
 
 1. **Explore Enhanced Structure**: See how each component is comprehensively documented
 2. **Compare with Basic Demo**: Notice the level of detail difference
-3. **Validate Enhanced Data**: Run `python validate_jsons.py` (should pass all validations)
-4. **Check High Score**: Run `python repl_et_score.py` (expect 85-95% reproducibility)
+3. **Validate Enhanced Data**: Run `python ../tools/validate_jsons.py` (should pass all validations)
+4. **Check High Score**: Run `python ../tools/repl_et_score.py` (expect 85-95% reproducibility)
 5. **Use as Gold Standard**: Adapt this level of detail for your own research
 
 ## 📈 Learning Objectives
@@ -88,7 +88,7 @@ Demo02 teaches you:
 
 ## 🚀 Expected Output
 
-When you run `python repl_et_score.py` on Demo02, expect:
+When you run `python ../tools/repl_et_score.py` on Demo02, expect:
 ```
 🏆 Overall Reproducibility Score: 0.875/1.0 (87.5%)
 ```

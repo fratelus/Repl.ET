@@ -22,7 +22,7 @@ A **standardized, validated template** for eye tracking experiments in **Softwar
 # 1. Setup
 git clone https://github.com/your-org/ReplET.git
 cd ReplET
-pip install -r requirements.txt
+pip install -r config/requirements.txt
 
 # 2. Explore Examples
 cd Demo/ && python repl_et_score.py      # Basic example (0.0% baseline)
@@ -31,8 +31,8 @@ cd ../Demo02/ && python repl_et_score.py # Advanced example (70.0% good practice
 # 3. Customize & Validate
 cd .. && cp -r Demo/ MyStudy/           # Start from template
 # Edit JSON files in MyStudy/
-python validate_jsons.py               # Validate your data
-python repl_et_score.py                # Generate your spider graph
+python tools/validate_jsons.py         # Validate your data
+python tools/repl_et_score.py          # Generate your spider graph
 
 # 4. Quality Check
 pytest tests/ -v                       # Run all 35 tests
@@ -96,8 +96,8 @@ ReplET/
 ### 📖 Demo: Code Review Eye Tracking
 ```bash
 cd examples/demo/ReplET
-python validate_jsons.py  # ✅ All valid
-python repl_et_score.py   # 📊 Score: 0.95/1.0
+python tools/validate_jsons.py  # ✅ All valid
+python tools/repl_et_score.py   # 📊 Score: 0.95/1.0
 pytest tests/ -v          # 🧪 35/35 tests passing
 ```
 

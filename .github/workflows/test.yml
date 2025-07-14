@@ -37,17 +37,17 @@ jobs:
     - name: ⚡ Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r config/requirements.txt
         
     - name: ✅ Validate JSON Schemas
       run: |
         echo "🔍 Validating main template..."
-        python validate_jsons.py
+        python tools/validate_jsons.py
         
     - name: 📊 Check Reproducibility Score
       run: |
         echo "📈 Calculating reproducibility score..."
-        python repl_et_score.py
+        python tools/repl_et_score.py
         
     - name: 🧪 Run Test Suite
       run: |
@@ -82,19 +82,19 @@ jobs:
     - name: 📦 Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r config/requirements.txt
         
     - name: ✅ Validate ${{ matrix.demo }} Data
       run: |
         cd ${{ matrix.demo }}/
         echo "🔍 Validating ${{ matrix.demo }} JSON data..."
-        python validate_jsons.py
+        python tools/validate_jsons.py
         
     - name: 📊 Check ${{ matrix.demo }} Score
       run: |
         cd ${{ matrix.demo }}/
         echo "📈 Calculating ${{ matrix.demo }} reproducibility score..."
-        python repl_et_score.py
+        python tools/repl_et_score.py
         
     - name: 🧪 Run ${{ matrix.demo }} Tests
       run: |
@@ -187,9 +187,9 @@ jobs:
     - name: ✅ Validate JSON Data Against Schemas
       run: |
         echo "✅ Validating data files against schemas..."
-        python validate_jsons.py
-        cd Demo/ && python validate_jsons.py
-        cd ../Demo02/ && python validate_jsons.py
+        python tools/validate_jsons.py
+        cd Demo/ && python tools/validate_jsons.py
+        cd ../Demo02/ && python tools/validate_jsons.py
 
   security-scan:
     name: 🔒 Security Scan
@@ -233,13 +233,13 @@ jobs:
     - name: 📦 Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r config/requirements.txt
         
     - name: ✅ Basic Functionality Test
       run: |
         echo "🔍 Testing basic functionality on ${{ matrix.os }}..."
-        python validate_jsons.py
-        python repl_et_score.py
+        python tools/validate_jsons.py
+        python tools/repl_et_score.py
         echo "✅ Basic tests passed on ${{ matrix.os }}"
 
   performance-benchmark:
@@ -257,15 +257,15 @@ jobs:
         
     - name: 📦 Install Dependencies
       run: |
-        pip install -r requirements.txt
+        pip install -r config/requirements.txt
         pip install pytest-benchmark memory-profiler
         
     - name: ⚡ Run Performance Tests
       run: |
         echo "⚡ Running performance benchmarks..."
         # Benchmark validation speed
-        time python validate_jsons.py
-        time python repl_et_score.py
+        time python tools/validate_jsons.py
+        time python tools/repl_et_score.py
         
         # Benchmark test suite speed
         pytest tests/ --benchmark-only --benchmark-json=benchmark.json || true
@@ -293,23 +293,23 @@ jobs:
         
     - name: 📦 Install Dependencies
       run: |
-        pip install -r requirements.txt
+        pip install -r config/requirements.txt
         pip install matplotlib seaborn
         
     - name: 🕷️ Generate Individual Spider Graphs
       run: |
         echo "🕷️ Generating individual spider graphs..."
         # Main template spider graph
-        python repl_et_score.py
+        python tools/repl_et_score.py
         # Demo spider graphs  
-        cd Demo && python repl_et_score.py && cd ..
-        cd Demo02 && python repl_et_score.py && cd ..
+        cd Demo && python tools/repl_et_score.py && cd ..
+        cd Demo02 && python tools/repl_et_score.py && cd ..
         echo "Individual spider graphs generated in temp directories"
         
     - name: 🕷️ Generate Comparative Spider Analysis
       run: |
         echo "🕷️ Generating comparative spider analysis..."
-        python generate_enhanced_spider_report.py
+        python tools/generate_enhanced_spider_report.py
         
     - name: 📊 Upload Spider Analysis
       uses: actions/upload-artifact@v4

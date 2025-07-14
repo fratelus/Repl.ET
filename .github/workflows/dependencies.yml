@@ -161,21 +161,21 @@ jobs:
         echo "🧪 Testing updated dependencies..."
         
         # Install updated dependencies
-        pip install -r requirements.txt
+        pip install -r config/requirements.txt
         
         # Run validation tests
-        python validate_jsons.py
+        python tools/validate_jsons.py
         
         # Test Demo
         cd Demo/
-        python validate_jsons.py
-        python repl_et_score.py
+        python tools/validate_jsons.py
+        python tools/repl_et_score.py
         cd ..
         
         # Test Demo02
         cd Demo02/
-        python validate_jsons.py
-        python repl_et_score.py
+        python tools/validate_jsons.py
+        python tools/repl_et_score.py
         cd ..
         
         # Run test suite
@@ -346,7 +346,7 @@ jobs:
         echo "⚖️ Checking dependency licenses..."
         
         # Install dependencies
-        pip install -r requirements.txt
+        pip install -r config/requirements.txt
         
         # Generate license report
         pip-licenses --format=json --output=licenses.json

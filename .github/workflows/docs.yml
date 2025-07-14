@@ -219,7 +219,7 @@ jobs:
         ### Usage
         
         ```bash
-        python validate_jsons.py
+        python tools/validate_jsons.py
         ```
         
         ### Output
@@ -254,7 +254,7 @@ jobs:
         ### Usage
         
         ```bash
-        python repl_et_score.py
+        python tools/repl_et_score.py
         ```
         
         ### Output Files

@@ -7,7 +7,7 @@ Calculates reproducibility score across 10 dimensions (0.0-1.0 scale).
 ### Usage
 
 ```bash
-python repl_et_score.py
+python tools/repl_et_score.py
 ```
 
 ### Output Files
