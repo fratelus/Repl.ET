@@ -316,7 +316,7 @@ jobs:
       with:
         name: reproducibility-spider-analysis
         path: |
-          reproducibility_spider_analysis.png
+          outputs/reproducibility_spider_analysis.png
         retention-days: 30
         
     - name: 📝 Commit Updated Spider Graph
@@ -325,8 +325,8 @@ jobs:
         git config --local user.name "GitHub Action"
         
         # Check if spider graph changed
-        if ! git diff --quiet reproducibility_spider_analysis.png; then
-          git add reproducibility_spider_analysis.png
+        if ! git diff --quiet outputs/reproducibility_spider_analysis.png; then
+          git add outputs/reproducibility_spider_analysis.png
           git commit -m "🕷️ Auto-update spider graph analysis [skip ci]" || echo "No changes to commit"
           git push || echo "Push failed or no changes"
         else

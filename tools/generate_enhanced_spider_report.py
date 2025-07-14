@@ -171,7 +171,7 @@ def create_beautiful_spider_chart():
     plt.tight_layout()
     
     # Save the chart
-    output_path = 'reproducibility_spider_analysis.png'
+    output_path = 'outputs/reproducibility_spider_analysis.png'
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
     plt.close()  # Clean up memory instead of showing
     
@@ -188,7 +188,7 @@ def generate_markdown_report(all_scores):
     markdown = f"""
 ## 📊 Reproducibility Analysis
 
-![Reproducibility Spider Analysis](reproducibility_spider_analysis.png)
+![Reproducibility Spider Analysis](outputs/reproducibility_spider_analysis.png)
 
 ### 🕷️ Spider Graph Breakdown
 
