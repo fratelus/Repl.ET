@@ -1,0 +1,19 @@
+{
+  "$schema": "../schemas/protocol.schema.json",
+  "session_overview": {
+    "duration": "45 minutes",
+    "location": "Lab Room 101",
+    "experimenter": "Research Assistant"
+  },
+  "calibration_procedure": {
+    "eye_tracker": {
+      "type": "5-point calibration",
+      "acceptance_criteria": "accuracy < 1.0°"
+    }
+  },
+  "experimental_procedure": {
+    "blocks": 2,
+    "trials_per_block": 8,
+    "break_duration": "2 minutes between blocks"
+  }
+} 

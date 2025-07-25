@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this template, please cite it as below."
+type: software
+title: "Repl.ET: Eye Tracking Replication Template"
+version: 1.0.0
+date-released: 2024-12-15
+url: "https://github.com/fratelus/Repl.ET"
+authors:
+  - family-names: "Silva"
+    given-names: "Lucas"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+license: MIT
+keywords:
+  - eye-tracking
+  - reproducibility
+  - software-engineering
+  - hci
+  - template

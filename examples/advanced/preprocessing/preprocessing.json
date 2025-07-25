@@ -1,0 +1,232 @@
+{
+  "$schema": "../schemas/preprocessing.schema.json",
+  "preprocessing_steps": [
+    {
+      "step_name": "raw_data_validation_and_import",
+      "order": 1,
+      "description": "Validate raw eye tracking and EEG data integrity and import with proper timestamps",
+      "parameters": {
+        "eye_tracking_validity_threshold": 0.85,
+        "eeg_sampling_rate_check": "1000 Hz ± 0.1%",
+        "synchronization_marker_validation": "LSL timestamp continuity",
+        "data_completeness_threshold": 0.90,
+        "file_integrity_check": "MD5 hash verification"
+      },
+      "software": "Custom Python pipeline with MNE-Python 1.4.0",
+      "expected_data_loss": "< 3%",
+      "quality_metrics": ["import_success_rate", "timestamp_continuity", "marker_alignment"]
+    },
+    {
+      "step_name": "eye_tracking_quality_assessment",
+      "order": 2,
+      "description": "Comprehensive quality assessment of eye tracking data including calibration drift analysis",
+      "parameters": {
+        "velocity_threshold": "1000 degrees/second",
+        "acceleration_threshold": "100000 degrees/second²",
+        "pupil_diameter_range": [2.0, 9.0],
+        "calibration_drift_detection": "accuracy degradation > 0.5°",
+        "head_movement_threshold": "< 1cm displacement",
+        "data_validity_window": "500ms sliding window"
+      },
+      "software": "PyGaze 0.7.0 + custom validation algorithms",
+      "expected_data_loss": "5-8%",
+      "validation": "automated quality scoring + manual inspection of 15% random sample"
+    },
+    {
+      "step_name": "advanced_fixation_detection",
+      "order": 3,
+      "description": "Multi-algorithm fixation detection with adaptive thresholds and validation",
+      "parameters": {
+        "primary_algorithm": "I-VT (velocity-threshold)",
+        "velocity_threshold": "35 degrees/second",
+        "minimum_duration": "80ms",
+        "maximum_duration": "2500ms",
+        "dispersion_threshold": "1.2 degrees",
+        "adaptive_thresholds": "per-participant calibration",
+        "validation_algorithm": "I-DT dispersion-threshold for comparison"
+      },
+      "software": "Custom implementation based on Salvucci & Goldberg (2000)",
+      "validation": "expert manual annotation of 20% of fixations (kappa > 0.85)",
+      "output_metrics": ["fixation_onset", "offset", "duration", "centroid", "dispersion"]
+    },
+    {
+      "step_name": "saccade_microsaccade_detection",
+      "order": 4,
+      "description": "Comprehensive saccade and microsaccade detection with amplitude classification",
+      "parameters": {
+        "saccade_velocity_threshold": "35 degrees/second",
+        "microsaccade_threshold": "1 degree amplitude",
+        "minimum_amplitude": "0.2 degrees",
+        "peak_velocity_calculation": "3-point differentiation",
+        "overshoot_detection": "post-saccadic drift analysis",
+        "classification": ["microsaccade", "small_saccade", "large_saccade", "pursuit"]
+      },
+      "software": "Custom implementation + Engbert & Kliegl (2003) microsaccade algorithm",
+      "validation": "comparison with published velocity profiles",
+      "output_metrics": ["onset", "offset", "amplitude", "peak_velocity", "direction", "classification"]
+    },
+    {
+      "step_name": "blink_artifact_handling",
+      "order": 5,
+      "description": "Sophisticated blink detection and interpolation with pre/post-blink analysis",
+      "parameters": {
+        "pupil_threshold": "1.5mm below baseline",
+        "velocity_threshold": "500 degrees/second",
+        "duration_range": [30, 800],
+        "pre_blink_buffer": "100ms",
+        "post_blink_buffer": "150ms",
+        "interpolation_method": "cubic_spline",
+        "partial_blink_detection": "pupil_occlusion_percentage > 50%"
+      },
+      "software": "Custom blink detection with SciPy interpolation",
+      "validation": "visual inspection of 100 random blinks per participant",
+      "recovery_analysis": "post-blink gaze stability assessment"
+    },
+    {
+      "step_name": "eeg_preprocessing_pipeline",
+      "order": 6,
+      "description": "Comprehensive EEG preprocessing including advanced artifact rejection and source separation",
+      "parameters": {
+        "filtering": {
+          "highpass": "0.1 Hz (Butterworth 4th order)",
+          "lowpass": "100 Hz (Butterworth 4th order)", 
+          "notch": "50 Hz ± 2 Hz (FIR notch)",
+          "line_noise_removal": "CleanLine algorithm"
+        },
+        "bad_channel_detection": {
+          "methods": ["RANSAC", "correlation", "deviation"],
+          "correlation_threshold": 0.4,
+          "deviation_threshold": "5 SD"
+        },
+        "ica_decomposition": {
+          "algorithm": "Infomax ICA",
+          "components": "min(64, n_channels)",
+          "artifact_classification": "ICLabel + manual inspection"
+        },
+        "epoch_rejection": {
+          "amplitude_threshold": "100 μV",
+          "gradient_threshold": "75 μV",
+          "muscle_artifact_detection": "30-100 Hz power"
+        }
+      },
+      "software": "MNE-Python 1.4.0 + EEGLAB compatibility",
+      "expected_component_removal": "3-6 ICA components",
+      "validation": "signal-to-noise ratio improvement > 20%"
+    },
+    {
+      "step_name": "multimodal_synchronization",
+      "order": 7,
+      "description": "High-precision synchronization of eye tracking and EEG with drift correction and validation",
+      "parameters": {
+        "sync_method": "LSL timestamps with hardware triggers",
+        "drift_correction": {
+          "method": "linear_interpolation",
+          "reference_markers": "stimulus_onset_triggers",
+          "correction_frequency": "per_block"
+        },
+        "alignment_tolerance": "< 2ms",
+        "validation_markers": ["experiment_start", "block_transitions", "experiment_end"],
+        "cross_correlation_validation": "marker_timing_consistency"
+      },
+      "software": "Custom synchronization pipeline with LSL integration",
+      "quality_check": "cross-correlation analysis of shared events",
+      "temporal_precision": "sub-millisecond accuracy verified"
+    },
+    {
+      "step_name": "advanced_aoi_mapping",
+      "order": 8,
+      "description": "Intelligent AOI mapping with dynamic boundaries and gaze-contingent adjustments",
+      "parameters": {
+        "coordinate_system": "screen_pixels_with_head_pose_correction",
+        "mapping_method": "probabilistic_hit_testing",
+        "boundary_tolerance": "adaptive_based_on_calibration_accuracy",
+        "temporal_resolution": "full_sampling_rate",
+        "hit_test_algorithm": "weighted_gaussian_probability",
+        "dynamic_boundaries": "syntax_aware_expansion",
+        "confidence_scoring": "per_fixation_aoi_probability"
+      },
+      "software": "Custom AOI engine with Shapely geometric operations",
+      "output": "probabilistic AOI assignments with confidence intervals",
+      "validation": "comparison with manual expert coding (agreement > 90%)"
+    },
+    {
+      "step_name": "derived_measures_calculation",
+      "order": 9,
+      "description": "Computation of advanced cognitive and attention measures from processed data",
+      "parameters": {
+        "fixation_measures": [
+          "total_fixation_duration_per_aoi",
+          "mean_fixation_duration",
+          "fixation_count",
+          "first_fixation_duration",
+          "progressive_regression_ratio"
+        ],
+        "saccade_measures": [
+          "saccadic_amplitude_distribution",
+          "saccadic_velocity_profiles",
+          "intersaccadic_intervals",
+          "saccadic_efficiency_ratio"
+        ],
+        "cognitive_load_indicators": [
+          "pupil_dilation_response",
+          "blink_rate_modulation",
+          "gaze_entropy",
+          "attention_switching_frequency"
+        ],
+        "eeg_measures": [
+          "alpha_suppression_index",
+          "theta_power_modulation",
+          "frontal_theta_coherence",
+          "attention_network_activation"
+        ]
+      },
+      "software": "Custom analysis package + SciPy statistical functions",
+      "validation": "test-retest reliability > 0.80 for stable measures"
+    }
+  ],
+  "quality_control": {
+    "automated_checks": [
+      "sample_rate_consistency_verification",
+      "timestamp_continuity_validation",
+      "coordinate_range_boundary_checking",
+      "missing_data_pattern_analysis",
+      "statistical_outlier_detection",
+      "between_participant_consistency_check"
+    ],
+    "manual_validation": {
+      "percentage_inspected": "15% random sampling",
+      "inter_rater_reliability": "Cohen's kappa > 0.85",
+      "expert_reviewers": 2,
+      "validation_criteria": "standardized_checklist"
+    },
+    "data_completeness_threshold": 0.88,
+    "overall_quality_score": "weighted_composite_of_all_metrics"
+  },
+  "output_format": {
+    "eye_tracking": {
+      "format": "HDF5 with hierarchical metadata",
+      "structure": "participant/session/block/trial",
+      "compression": "gzip level 6"
+    },
+    "eeg": {
+      "format": "BIDS-compliant structure",
+      "file_type": "BrainVision (.vhdr, .vmrk, .eeg)",
+      "derivatives": "preprocessed data in BIDS derivatives"
+    },
+    "synchronized_data": {
+      "format": "Pandas DataFrame with multi-index",
+      "temporal_resolution": "original_sampling_rate",
+      "export_options": ["CSV", "Parquet", "HDF5"]
+    },
+    "aoi_sequences": {
+      "format": "JSON with temporal annotations",
+      "includes": ["transitions", "dwell_times", "confidence_scores"]
+    }
+  },
+  "computational_requirements": {
+    "estimated_processing_time": "45-60 minutes per participant",
+    "memory_requirements": "16 GB RAM recommended",
+    "storage_requirements": "2-3 GB per participant processed data",
+    "parallelization": "participant-level parallel processing supported"
+  }
+} 

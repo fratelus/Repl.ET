@@ -1,0 +1,38 @@
+{
+  "$schema": "../schemas/validity.schema.json",
+  "threats": [
+    {
+      "type": "internal",
+      "description": "Learning effects due to repeated exposure to similar Java code patterns and bug types across trials.",
+      "mitigation": "Counterbalanced presentation order and inclusion of practice trials."
+    },
+    {
+      "type": "external", 
+      "description": "Sample limited to developers with Java experience from university and local tech companies.",
+      "mitigation": "Recruitment from diverse sources and experience levels (2-8 years)."
+    },
+    {
+      "type": "construct",
+      "description": "Eye tracking measures visual attention but may not fully capture deeper cognitive processes like working memory load.",
+      "mitigation": "Combination with behavioral measures (accuracy, response time) and post-task interviews."
+    },
+    {
+      "type": "conclusion",
+      "description": "Generalizability limited to Java code and specific bug types tested.",
+      "mitigation": "Comparison with original Kip et al. study and discussion of boundary conditions."
+    }
+  ],
+  "limitations": [
+    "Sample size (N=5) limited statistical power for complex interactions.",
+    "Limited to Java programming language and specific bug categories.",
+    "Laboratory setting may not reflect natural code review environments.",
+    "AOI definitions based on syntactic rather than semantic code analysis.",
+    "No control for individual differences in code reading strategies."
+  ],
+  "confounding_factors": [
+    "Individual differences in Java expertise levels",
+    "Familiarity with specific algorithms used in stimuli", 
+    "Time of day effects on attention and fatigue",
+    "Screen resolution and font size preferences"
+  ]
+} 

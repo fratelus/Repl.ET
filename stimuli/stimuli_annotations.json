@@ -1,0 +1,41 @@
+{
+  "$schema": "../schemas/stimuli_annotations.schema.json",
+  "annotation_methodology": "Describe how stimuli were annotated",
+  "annotator_info": {
+    "number_of_annotators": 1,
+    "annotator_expertise": "your_expertise_level",
+    "inter_annotator_agreement": "not_applicable"
+  },
+  "annotations": [
+    {
+      "stimulus_id": "example_001",
+      "filename": "example_code.ext",
+      "syntactic_elements": {
+        "functions": [],
+        "variables": [],
+        "control_structures": [],
+        "comments": []
+      },
+      "semantic_elements": {
+        "business_logic": [],
+        "algorithms": [],
+        "data_structures": []
+      },
+      "bugs_defects": {
+        "bug_locations": [],
+        "bug_types": [],
+        "severity_levels": []
+      },
+      "complexity_metrics": {
+        "cyclomatic_complexity": 0,
+        "cognitive_complexity": 0,
+        "nesting_depth": 0
+      }
+    }
+  ],
+  "validation": {
+    "expert_review": false,
+    "automated_checks": false,
+    "consistency_verification": false
+  }
+} 

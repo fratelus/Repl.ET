@@ -1,0 +1,46 @@
+{
+  "$schema": "../schemas/aois_definition.schema.json",
+  "aoi_methodology": "Describe how Areas of Interest were defined",
+  "coordinate_system": "screen_pixels",
+  "screen_resolution": {
+    "width": 1920,
+    "height": 1080
+  },
+  "aoi_categories": [
+    {
+      "category_name": "code_regions",
+      "description": "Areas containing source code",
+      "color": "#FF0000"
+    },
+    {
+      "category_name": "ui_elements", 
+      "description": "User interface elements",
+      "color": "#00FF00"
+    }
+  ],
+  "aois": [
+    {
+      "aoi_id": "example_aoi_001",
+      "stimulus_id": "example_001", 
+      "aoi_name": "main_function",
+      "category": "code_regions",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "width": 100,
+        "height": 50
+      },
+      "description": "Area containing the main function",
+      "semantic_meaning": "Entry point of the program"
+    }
+  ],
+  "validation": {
+    "expert_review": false,
+    "boundary_precision": "pixel_level",
+    "coverage_completeness": 0.0
+  },
+  "tools_used": {
+    "aoi_definition_tool": "manual_definition",
+    "coordinates_extraction": "your_tool_here"
+  }
+} 

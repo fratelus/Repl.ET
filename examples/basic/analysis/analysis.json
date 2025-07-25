@@ -1,0 +1,40 @@
+{
+  "$schema": "../schemas/analysis.schema.json",
+  "metrics": [
+    "total_fixation_duration_ms",
+    "average_fixation_duration_ms", 
+    "fixation_count",
+    "first_pass_reading_time_ms",
+    "second_pass_reading_time_ms",
+    "regression_count",
+    "regression_rate",
+    "saccade_amplitude_deg",
+    "scanpath_length",
+    "time_to_first_fixation_ms",
+    "dwell_time_per_aoi_ms",
+    "revisit_count_per_aoi",
+    "pupil_diameter_mean_mm"
+  ],
+  "aoi_based_metrics": [
+    "time_spent_in_method_signature",
+    "time_spent_in_bug_location", 
+    "transitions_between_aois",
+    "attention_distribution_entropy"
+  ],
+  "statistical_methods": [
+    "repeated_measures_ANOVA",
+    "paired_t_test",
+    "linear_mixed_effects_models",
+    "permutation_tests",
+    "effect_size_calculations"
+  ],
+  "dependent_variables": ["task_type", "bug_presence", "code_complexity"],
+  "software_used": ["R 4.3.1", "Python 3.11.5", "JASP 0.17.3", "lme4 package"],
+  "scripts": [
+    "preprocessing_pipeline.py",
+    "aoi_analysis.py", 
+    "statistical_analysis.R",
+    "visualization_generator.py",
+    "scanpath_comparison.py"
+  ]
+} 

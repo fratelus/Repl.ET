@@ -1,0 +1,93 @@
+{
+  "$schema": "../schemas/validity.schema.json",
+  "validity_overview": {
+    "assessment_date": "YYYY-MM-DD",
+    "assessment_method": "systematic_review",
+    "reviewer": "your_name"
+  },
+  "internal_validity": {
+    "threats_identified": [
+      {
+        "threat_type": "selection_bias",
+        "description": "Describe potential selection bias",
+        "severity": "low|medium|high",
+        "mitigation": "Describe mitigation strategies"
+      },
+      {
+        "threat_type": "instrumentation",
+        "description": "Describe instrumentation threats",
+        "severity": "low|medium|high", 
+        "mitigation": "Describe mitigation strategies"
+      }
+    ],
+    "controls_implemented": [
+      {
+        "control_type": "randomization",
+        "description": "Describe randomization procedures",
+        "effectiveness": "effective|partial|ineffective"
+      }
+    ],
+    "overall_assessment": "strong|moderate|weak"
+  },
+  "external_validity": {
+    "population_validity": {
+      "target_population": "Describe your target population",
+      "sample_representativeness": "representative|limited|unclear",
+      "generalizability_limitations": "Describe limitations"
+    },
+    "ecological_validity": {
+      "task_realism": "high|medium|low",
+      "environment_realism": "high|medium|low",
+      "stimulus_authenticity": "high|medium|low"
+    },
+    "temporal_validity": {
+      "timeframe_relevance": "current|recent|dated",
+      "technology_currency": "current|recent|outdated"
+    }
+  },
+  "construct_validity": {
+    "measurement_validity": {
+      "eye_tracking_measures": [
+        {
+          "measure": "fixation_duration",
+          "theoretical_basis": "Describe theoretical justification",
+          "validation_evidence": "Describe validation evidence"
+        }
+      ],
+      "behavioral_measures": [
+        {
+          "measure": "task_performance",
+          "theoretical_basis": "Describe theoretical justification", 
+          "validation_evidence": "Describe validation evidence"
+        }
+      ]
+    },
+    "confounding_variables": [
+      {
+        "variable": "programming_experience",
+        "potential_impact": "high|medium|low",
+        "control_method": "Describe how controlled"
+      }
+    ]
+  },
+  "statistical_validity": {
+    "power_analysis": {
+      "conducted": false,
+      "effect_size_expected": 0.0,
+      "power_achieved": 0.0,
+      "sample_size_justified": false
+    },
+    "assumption_violations": [],
+    "multiple_testing": {
+      "correction_applied": false,
+      "correction_method": "none"
+    }
+  },
+  "limitations": {
+    "acknowledged_limitations": [
+      "List your study limitations here"
+    ],
+    "impact_assessment": "Assess impact of each limitation",
+    "future_research": "Suggest improvements for future research"
+  }
+} 

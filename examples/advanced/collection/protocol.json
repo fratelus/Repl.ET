@@ -1,0 +1,88 @@
+{
+  "$schema": "../schemas/protocol.schema.json",
+  "session_overview": {
+    "duration": "120 minutes",
+    "location": "MIT HCI Lab Room 32-G882",
+    "experimenter": "Dr. Elena Rodriguez",
+    "assistant": "Research Assistant Sarah Chen",
+    "session_structure": [
+      "Informed consent and demographics (10 min)",
+      "Cognitive assessment battery (15 min)",
+      "EEG electrode placement and impedance check (20 min)", 
+      "Eye tracker calibration and validation (10 min)",
+      "Practice session with feedback (15 min)",
+      "Main experiment - Block 1 (20 min)",
+      "Break with snack (10 min)",
+      "Main experiment - Block 2 (20 min)",
+      "Post-task interviews and debriefing (20 min)"
+    ]
+  },
+  "calibration_procedure": {
+    "eye_tracker": {
+      "type": "9-point calibration",
+      "acceptance_criteria": "accuracy < 0.5°, precision < 0.1°",
+      "validation_points": 16,
+      "recalibration_threshold": "accuracy > 1.0°",
+      "drift_check_frequency": "every 10 trials",
+      "quality_metrics": ["gaze_deviation", "pupil_detection_rate", "blink_frequency"]
+    },
+    "eeg_setup": {
+      "impedance_check": "all electrodes < 10 kΩ",
+      "reference_electrode": "FCz",
+      "ground_electrode": "AFz",
+      "synchronization_test": "LSL marker verification with < 1ms latency",
+      "baseline_recording": "3 minutes eyes open, 3 minutes eyes closed"
+    }
+  },
+  "experimental_procedure": {
+    "design": "within_subjects_repeated_measures",
+    "blocks": 4,
+    "trials_per_block": 15,
+    "break_duration": "3 minutes between blocks",
+    "trial_structure": {
+      "pre_stimulus_fixation": "1000ms",
+      "stimulus_presentation": "self_paced (max 10 minutes)", 
+      "response_collection": "verbal think-aloud + button press",
+      "confidence_rating": "1-7 scale",
+      "inter_trial_interval": "2000ms"
+    },
+    "randomization": {
+      "stimulus_order": "Latin square counterbalancing",
+      "block_order": "randomized within participant",
+      "difficulty_progression": "mixed within blocks"
+    }
+  },
+  "quality_control": {
+    "real_time_monitoring": {
+      "eye_tracking_validity": "> 85% valid samples",
+      "head_movement_threshold": "< 1cm displacement",
+      "blink_rate_monitoring": "< 25 blinks/minute during critical periods",
+      "eeg_artifact_detection": "automated amplitude > 100μV flagging",
+      "synchronization_drift": "< 2ms cumulative"
+    },
+    "session_termination_criteria": [
+      "Participant discomfort or fatigue",
+      "Eye tracking accuracy > 2°",
+      "Technical failure > 10 minutes",
+      "Participant request to withdraw"
+    ],
+    "data_validation": {
+      "completeness_threshold": "80% valid trials minimum",
+      "quality_score_calculation": "weighted average of all metrics",
+      "post_session_review": "immediate data quality assessment"
+    }
+  },
+  "environmental_controls": {
+    "lighting": "controlled 300 lux uniform illumination",
+    "room_temperature": "22°C ± 2°C",
+    "humidity": "45-55% relative humidity",
+    "noise_level": "< 40 dB background",
+    "external_distractions": "minimal, controlled access"
+  },
+  "data_backup": {
+    "real_time_backup": "automatic every 2 minutes",
+    "redundant_storage": ["local SSD", "network drive", "cloud backup"],
+    "file_naming_convention": "ADVSE_{participant_id}_{date}_{time}_{block}",
+    "integrity_checks": "MD5 hash verification after each session"
+  }
+} 

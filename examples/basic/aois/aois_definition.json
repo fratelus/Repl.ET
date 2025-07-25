@@ -1,0 +1,90 @@
+{
+  "$schema": "../schemas/aois_definition.schema.json",
+  "aois": [
+    {
+      "aoi_id": "A01",
+      "stimulus_id": "S01", 
+      "label": "method_signature",
+      "shape": "rectangle",
+      "coordinates": {"x": 50, "y": 100, "width": 450, "height": 25}
+    },
+    {
+      "aoi_id": "A02",
+      "stimulus_id": "S01",
+      "label": "variable_declarations", 
+      "shape": "rectangle",
+      "coordinates": {"x": 70, "y": 130, "width": 300, "height": 50}
+    },
+    {
+      "aoi_id": "A03",
+      "stimulus_id": "S01",
+      "label": "while_loop_condition",
+      "shape": "rectangle", 
+      "coordinates": {"x": 70, "y": 190, "width": 200, "height": 25}
+    },
+    {
+      "aoi_id": "A04",
+      "stimulus_id": "S01",
+      "label": "bug_location_line",
+      "shape": "rectangle",
+      "coordinates": {"x": 90, "y": 240, "width": 350, "height": 25}
+    },
+    {
+      "aoi_id": "A05",
+      "stimulus_id": "S02",
+      "label": "method_signature", 
+      "shape": "rectangle",
+      "coordinates": {"x": 50, "y": 100, "width": 400, "height": 25}
+    },
+    {
+      "aoi_id": "A06",
+      "stimulus_id": "S02",
+      "label": "nested_loops",
+      "shape": "rectangle",
+      "coordinates": {"x": 70, "y": 130, "width": 300, "height": 100}
+    },
+    {
+      "aoi_id": "A07",
+      "stimulus_id": "S03",
+      "label": "method_signature",
+      "shape": "rectangle", 
+      "coordinates": {"x": 50, "y": 100, "width": 300, "height": 25}
+    },
+    {
+      "aoi_id": "A08",
+      "stimulus_id": "S03",
+      "label": "missing_base_case",
+      "shape": "rectangle",
+      "coordinates": {"x": 70, "y": 130, "width": 250, "height": 25}
+    },
+    {
+      "aoi_id": "A09",
+      "stimulus_id": "S04",
+      "label": "method_signature",
+      "shape": "rectangle",
+      "coordinates": {"x": 50, "y": 100, "width": 350, "height": 25}
+    },
+    {
+      "aoi_id": "A10",
+      "stimulus_id": "S04", 
+      "label": "for_loop_structure",
+      "shape": "rectangle",
+      "coordinates": {"x": 70, "y": 130, "width": 280, "height": 75}
+    },
+    {
+      "aoi_id": "A11",
+      "stimulus_id": "S05",
+      "label": "method_signature",
+      "shape": "rectangle",
+      "coordinates": {"x": 50, "y": 100, "width": 400, "height": 25}
+    },
+    {
+      "aoi_id": "A12",
+      "stimulus_id": "S05",
+      "label": "null_pointer_bug",
+      "shape": "rectangle", 
+      "coordinates": {"x": 90, "y": 180, "width": 320, "height": 25}
+    }
+  ],
+  "aoi_strategy": "AOIs defined based on syntactic code elements (method signatures, control structures, bug locations) following Sharif et al. (2012) methodology. Each AOI covers complete logical code units with 2-pixel margins."
+} 

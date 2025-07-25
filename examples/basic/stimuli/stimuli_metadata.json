@@ -1,0 +1,29 @@
+{
+  "$schema": "../schemas/stimuli_metadata.schema.json",
+  "stimuli": [
+    {
+      "stimulus_id": "BASIC_001",
+      "filename": "simple_loop.java",
+      "type": "source_code",
+      "programming_language": "Java",
+      "lines_of_code": 12,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 3
+      },
+      "task_type": "comprehension",
+      "difficulty_level": "beginner"
+    },
+    {
+      "stimulus_id": "BASIC_002",
+      "filename": "array_search.java",
+      "type": "source_code",
+      "programming_language": "Java", 
+      "lines_of_code": 18,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 4
+      },
+      "task_type": "debugging",
+      "difficulty_level": "intermediate"
+    }
+  ]
+} 

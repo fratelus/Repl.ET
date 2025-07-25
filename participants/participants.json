@@ -1,0 +1,29 @@
+{
+  "$schema": "../schemas/participants.schema.json",
+  "total_participants": 0,
+  "recruitment": {
+    "method": "Describe your recruitment method",
+    "criteria": {
+      "inclusion": ["Include your inclusion criteria here"],
+      "exclusion": ["Include your exclusion criteria here"]
+    }
+  },
+  "demographics": {
+    "age": {
+      "mean": 0,
+      "std": 0,
+      "range": [0, 0]
+    },
+    "gender": {
+      "male": 0,
+      "female": 0,
+      "other": 0
+    },
+    "programming_experience": {
+      "beginner": 0,
+      "intermediate": 0,
+      "advanced": 0
+    }
+  },
+  "participants": []
+} 

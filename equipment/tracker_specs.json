@@ -1,0 +1,19 @@
+{
+  "$schema": "../schemas/tracker_specs.schema.json",
+  "manufacturer": "Your eye tracker manufacturer",
+  "model": "Your eye tracker model",
+  "sampling_rate": 0,
+  "accuracy": "Accuracy in degrees",
+  "precision": "Precision in degrees",
+  "tracking_method": "Describe tracking method (e.g., corneal reflection)",
+  "calibration": {
+    "method": "Describe calibration method",
+    "points": 0,
+    "validation_threshold": "Acceptable validation threshold"
+  },
+  "software": {
+    "recording_software": "Software used for recording",
+    "version": "Software version",
+    "export_format": "Data export format"
+  }
+} 

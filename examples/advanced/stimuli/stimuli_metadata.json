@@ -1,0 +1,225 @@
+{
+  "$schema": "schemas/stimuli_metadata.schema.json",
+  "stimuli": [
+    {
+      "stimulus_id": "ALGO_OPT_001",
+      "stimulus_name": "Real-time Graph Algorithm Optimization",
+      "programming_language": "C++",
+      "lines_of_code": 245,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 18,
+        "cognitive_complexity": 24,
+        "halstead_difficulty": 32.5,
+        "maintainability_index": 45
+      },
+      "task_type": "performance_optimization",
+      "domain": "graph_algorithms",
+      "description": "Optimize a Dijkstra's algorithm implementation for real-time pathfinding in a navigation system. The code contains performance bottlenecks in memory allocation and priority queue operations.",
+      "cognitive_load_factors": ["memory_management", "algorithmic_complexity", "performance_constraints"],
+      "time_limit": 25,
+      "expected_errors": ["memory_leaks", "inefficient_data_structures", "unnecessary_computations"],
+      "learning_objectives": ["algorithm_optimization", "memory_efficiency", "real_time_constraints"]
+    },
+    {
+      "stimulus_id": "API_INT_002", 
+      "stimulus_name": "Microservice Authentication Integration",
+      "programming_language": "Java",
+      "lines_of_code": 189,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 15,
+        "cognitive_complexity": 21,
+        "halstead_difficulty": 28.7,
+        "maintainability_index": 52
+      },
+      "task_type": "integration_debugging",
+      "domain": "microservices_security",
+      "description": "Debug and fix JWT token validation issues in a Spring Boot microservice. The service intermittently fails to authenticate valid requests from upstream services.",
+      "cognitive_load_factors": ["distributed_systems", "security_protocols", "async_processing"],
+      "time_limit": 30,
+      "expected_errors": ["token_expiry_handling", "clock_skew_issues", "header_parsing"],
+      "learning_objectives": ["jwt_authentication", "microservice_communication", "security_best_practices"]
+    },
+    {
+      "stimulus_id": "DEBUG_003",
+      "stimulus_name": "Concurrent Data Race Detection",
+      "programming_language": "Go",
+      "lines_of_code": 167,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 12,
+        "cognitive_complexity": 19,
+        "halstead_difficulty": 26.3,
+        "maintainability_index": 58
+      },
+      "task_type": "concurrency_debugging",
+      "domain": "parallel_processing",
+      "description": "Identify and fix data race conditions in a concurrent web scraper. The program occasionally produces inconsistent results and rare crashes under high load.",
+      "cognitive_load_factors": ["concurrency_models", "race_conditions", "synchronization_primitives"],
+      "time_limit": 35,
+      "expected_errors": ["unsynchronized_access", "channel_deadlocks", "goroutine_leaks"],
+      "learning_objectives": ["go_concurrency", "race_detection", "synchronization_patterns"]
+    },
+    {
+      "stimulus_id": "ARCH_DEC_004",
+      "stimulus_name": "Database Schema Evolution Design",
+      "programming_language": "SQL",
+      "lines_of_code": 298,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 8,
+        "cognitive_complexity": 16,
+        "halstead_difficulty": 22.1,
+        "maintainability_index": 61
+      },
+      "task_type": "architectural_design",
+      "domain": "database_design",
+      "description": "Design a schema migration strategy for a legacy e-commerce database to support new features while maintaining backward compatibility and zero-downtime deployment.",
+      "cognitive_load_factors": ["data_modeling", "backwards_compatibility", "migration_strategies"],
+      "time_limit": 40,
+      "expected_errors": ["foreign_key_constraints", "data_type_mismatches", "index_performance"],
+      "learning_objectives": ["schema_evolution", "migration_patterns", "database_optimization"]
+    },
+    {
+      "stimulus_id": "ML_MODEL_005",
+      "stimulus_name": "Neural Network Hyperparameter Tuning",
+      "programming_language": "Python",
+      "lines_of_code": 324,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 22,
+        "cognitive_complexity": 31,
+        "halstead_difficulty": 38.9,
+        "maintainability_index": 42
+      },
+      "task_type": "model_optimization",
+      "domain": "machine_learning",
+      "description": "Optimize hyperparameters for a transformer model experiencing overfitting and slow convergence. The model needs to achieve 95% accuracy on a text classification task.",
+      "cognitive_load_factors": ["deep_learning", "hyperparameter_optimization", "regularization_techniques"],
+      "time_limit": 45,
+      "expected_errors": ["overfitting", "learning_rate_issues", "batch_size_problems"],
+      "learning_objectives": ["model_tuning", "regularization", "training_optimization"]
+    },
+    {
+      "stimulus_id": "MOBILE_UI_006",
+      "stimulus_name": "Cross-Platform UI Component Library",
+      "programming_language": "TypeScript",
+      "lines_of_code": 456,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 28,
+        "cognitive_complexity": 35,
+        "halstead_difficulty": 42.3,
+        "maintainability_index": 38
+      },
+      "task_type": "ui_component_development",
+      "domain": "mobile_development",
+      "description": "Refactor a React Native component library to support both iOS and Android with consistent styling and behavior. Address performance issues with large lists.",
+      "cognitive_load_factors": ["cross_platform_development", "ui_performance", "component_architecture"],
+      "time_limit": 35,
+      "expected_errors": ["platform_specific_bugs", "memory_leaks", "rendering_performance"],
+      "learning_objectives": ["cross_platform_ui", "performance_optimization", "component_design"]
+    },
+    {
+      "stimulus_id": "DEVOPS_007",
+      "stimulus_name": "Kubernetes Deployment Pipeline",
+      "programming_language": "YAML",
+      "lines_of_code": 387,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 6,
+        "cognitive_complexity": 14,
+        "halstead_difficulty": 19.8,
+        "maintainability_index": 64
+      },
+      "task_type": "infrastructure_configuration",
+      "domain": "devops_automation",
+      "description": "Configure a CI/CD pipeline for microservices deployment on Kubernetes with proper health checks, resource limits, and rollback capabilities.",
+      "cognitive_load_factors": ["infrastructure_as_code", "deployment_strategies", "monitoring_configuration"],
+      "time_limit": 30,
+      "expected_errors": ["resource_constraints", "health_check_failures", "networking_issues"],
+      "learning_objectives": ["kubernetes_deployment", "ci_cd_pipelines", "infrastructure_automation"]
+    },
+    {
+      "stimulus_id": "SECURITY_008",
+      "stimulus_name": "Cryptographic Protocol Implementation",
+      "programming_language": "Rust",
+      "lines_of_code": 278,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 16,
+        "cognitive_complexity": 25,
+        "halstead_difficulty": 34.6,
+        "maintainability_index": 48
+      },
+      "task_type": "security_implementation",
+      "domain": "cryptography",
+      "description": "Implement a secure key exchange protocol with proper error handling and timing attack mitigation. The implementation must be constant-time and memory-safe.",
+      "cognitive_load_factors": ["cryptographic_protocols", "timing_attacks", "memory_safety"],
+      "time_limit": 40,
+      "expected_errors": ["timing_vulnerabilities", "memory_safety_issues", "protocol_violations"],
+      "learning_objectives": ["secure_coding", "cryptographic_implementation", "side_channel_mitigation"]
+    },
+    {
+      "stimulus_id": "DATA_PIPELINE_009",
+      "stimulus_name": "Streaming Data Processing Pipeline",
+      "programming_language": "Scala",
+      "lines_of_code": 412,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 24,
+        "cognitive_complexity": 32,
+        "halstead_difficulty": 39.7,
+        "maintainability_index": 41
+      },
+      "task_type": "data_engineering",
+      "domain": "big_data_processing",
+      "description": "Optimize an Apache Spark streaming job processing financial transactions with strict latency requirements and exactly-once semantics.",
+      "cognitive_load_factors": ["stream_processing", "fault_tolerance", "performance_tuning"],
+      "time_limit": 45,
+      "expected_errors": ["backpressure_handling", "checkpoint_corruption", "memory_management"],
+      "learning_objectives": ["stream_processing", "fault_tolerance", "big_data_optimization"]
+    },
+    {
+      "stimulus_id": "GAME_ENGINE_010",
+      "stimulus_name": "3D Graphics Engine Optimization",
+      "programming_language": "C++",
+      "lines_of_code": 523,
+      "complexity_metrics": {
+        "cyclomatic_complexity": 31,
+        "cognitive_complexity": 42,
+        "halstead_difficulty": 48.2,
+        "maintainability_index": 35
+      },
+      "task_type": "graphics_optimization",
+      "domain": "game_development",
+      "description": "Optimize rendering pipeline for a 3D game engine to achieve 60 FPS with complex lighting and shadows. Focus on GPU memory management and draw call reduction.",
+      "cognitive_load_factors": ["graphics_programming", "performance_optimization", "gpu_programming"],
+      "time_limit": 50,
+      "expected_errors": ["gpu_memory_issues", "shader_compilation", "draw_call_overhead"],
+      "learning_objectives": ["graphics_optimization", "gpu_programming", "performance_profiling"]
+    }
+  ],
+  "stimulus_validation": {
+    "code_compilation": "all stimuli compile without errors",
+    "syntactic_correctness": "verified by automated parsers",
+    "semantic_validation": "reviewed by domain experts",
+    "difficulty_calibration": "pilot tested with 12 expert programmers",
+    "cognitive_load_validation": "validated using retrospective think-aloud protocols"
+  },
+  "presentation_parameters": {
+    "font_family": "JetBrains Mono",
+    "font_size": 14,
+    "line_height": 1.4,
+    "syntax_highlighting": true,
+    "theme": "dark_professional",
+    "code_folding": "enabled",
+    "line_numbers": true,
+    "error_highlighting": "real_time",
+    "autocomplete": "disabled_during_tasks"
+  },
+  "randomization": {
+    "stimulus_order": "latin_square_counterbalanced",
+    "task_type_distribution": "balanced_across_sessions",
+    "difficulty_progression": "adaptive_based_on_performance",
+    "domain_coverage": "comprehensive_across_specializations"
+  },
+  "quality_metrics": {
+    "inter_rater_reliability": 0.89,
+    "expert_validation_agreement": 0.93,
+    "pilot_completion_rates": 0.91,
+    "cognitive_load_correlation": 0.78
+  }
+} 

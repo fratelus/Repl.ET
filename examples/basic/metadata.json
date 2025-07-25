@@ -1,0 +1,17 @@
+{
+  "$schema": "schemas/metadata.schema.json",
+  "study_title": "Basic Eye Tracking Study",
+  "authors": [
+    {
+      "name": "Dr. Sarah Johnson",
+      "affiliation": "University Psychology Lab",
+      "email": "sarah.johnson@university.edu"
+    }
+  ],
+  "institution": "University Psychology Department",
+  "study_date": "2024-03-01",
+  "study_type": "behavioral_experiment",
+  "description": "A basic eye tracking study examining visual attention patterns during simple programming tasks",
+  "keywords": ["eye tracking", "programming", "visual attention", "cognitive load"],
+  "ethics_approval": "IRB-2024-PSY-001"
+} 

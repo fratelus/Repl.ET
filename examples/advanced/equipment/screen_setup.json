@@ -1,0 +1,62 @@
+{
+  "$schema": "../schemas/screen_setup.schema.json",
+  "monitor": {
+    "manufacturer": "Dell",
+    "model": "UltraSharp U2720Q",
+    "screen_size_inches": 27,
+    "resolution": {
+      "width": 3840,
+      "height": 2160,
+      "pixel_density": "163 PPI"
+    },
+    "refresh_rate_hz": 60,
+    "color_depth": "10-bit",
+    "color_gamut": "99% sRGB, 95% DCI-P3",
+    "brightness_max": "400 cd/m²",
+    "contrast_ratio": "1300:1",
+    "calibration": {
+      "method": "Hardware calibration with X-Rite i1Display Pro",
+      "date": "2024-01-15",
+      "gamma": 2.2,
+      "white_point": "6500K",
+      "uniformity": "> 95%",
+      "color_accuracy": "Delta E < 2"
+    }
+  },
+  "viewing_setup": {
+    "viewing_distance_cm": 65,
+    "eye_to_screen_angle": "perpendicular ± 2°",
+    "screen_tilt": "15° backward",
+    "room_lighting": "controlled 300 lux ambient with bias lighting",
+    "background_luminance": "uniform 18% gray",
+    "glare_control": "anti-glare screen coating + ambient lighting"
+  },
+  "presentation_software": {
+    "name": "PsychoPy",
+    "version": "2023.1.0",
+    "display_settings": {
+      "fullscreen": true,
+      "color_space": "rgb255",
+      "units": "pix",
+      "vsync": true,
+      "frame_rate_monitoring": true
+    },
+    "stimulus_rendering": {
+      "antialiasing": "4x MSAA",
+      "text_rendering": "high_quality",
+      "font": "Consolas 14pt"
+    }
+  },
+  "quality_assurance": {
+    "display_validation": {
+      "geometric_accuracy": "measured with rulers",
+      "timing_precision": "photodiode validation < 1ms",
+      "color_consistency": "verified across sessions"
+    },
+    "environmental_monitoring": {
+      "ambient_light_sensor": "continuous monitoring",
+      "temperature_stability": "22°C ± 1°C",
+      "humidity_control": "45-50% RH"
+    }
+  }
+} 

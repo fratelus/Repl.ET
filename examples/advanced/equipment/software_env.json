@@ -1,0 +1,123 @@
+{
+  "$schema": "../schemas/software_env.schema.json",
+  "operating_system": {
+    "name": "Windows",
+    "version": "11 Pro",
+    "build": "22621.3007",
+    "kernel_version": "10.0.22621",
+    "updates": "fully_updated_as_of_2024_01_15"
+  },
+  "eye_tracking_software": {
+    "primary": {
+      "name": "Tobii Pro Lab",
+      "version": "1.194.39768",
+      "license": "Academic Research License",
+      "configuration": {
+        "sampling_rate": "600 Hz",
+        "binocular_mode": true,
+        "data_streams": ["gaze", "pupil", "eye_openness", "head_pose"],
+        "coordinate_system": "screen_pixels",
+        "filtering": "Tobii I-VT filter"
+      },
+      "calibration_settings": {
+        "type": "9_point",
+        "auto_accept_quality": false,
+        "manual_validation": true,
+        "acceptance_criteria": "accuracy < 0.5°"
+      }
+    },
+    "analysis_tools": [
+      {
+        "name": "Tobii Pro Lab Analytics",
+        "version": "1.194",
+        "purpose": "real_time_quality_monitoring"
+      }
+    ]
+  },
+  "eeg_software": {
+    "acquisition": {
+      "name": "BrainVision Recorder",
+      "version": "1.24.0.2004",
+      "manufacturer": "Brain Products GmbH",
+      "sampling_rate": "1000 Hz",
+      "resolution": "24-bit",
+      "filter_settings": {
+        "low_cutoff": "0.1 Hz",
+        "high_cutoff": "100 Hz",
+        "notch": "50 Hz",
+        "slope": "12 dB/octave"
+      },
+      "amplifier_settings": {
+        "gain": "auto",
+        "impedance_monitoring": "continuous",
+        "dc_offset": "auto_correction"
+      }
+    },
+    "preprocessing": {
+      "name": "BrainVision Analyzer 2",
+      "version": "2.2.2",
+      "modules": ["artifact_rejection", "ica", "filtering", "epoching"]
+    }
+  },
+  "stimulus_presentation": {
+    "name": "PsychoPy",
+    "version": "2023.1.0",
+    "python_version": "3.9.16",
+    "key_libraries": {
+      "numpy": "1.24.3",
+      "pygame": "2.3.0",
+      "psychtoolbox": "3.0.19",
+      "pyglet": "2.0.5",
+      "pillow": "9.5.0"
+    },
+    "hardware_acceleration": {
+      "opengl": "4.6",
+      "gpu_rendering": true,
+      "vsync": "enabled"
+    }
+  },
+  "synchronization": {
+    "primary_method": {
+      "name": "Lab Streaming Layer (LSL)",
+      "version": "1.16.0",
+      "clock_sync": "NTP synchronized",
+      "latency_compensation": "< 1ms",
+      "marker_streams": ["stimulus_onset", "response_events", "calibration_markers"]
+    },
+    "backup_method": {
+      "name": "Parallel_port_triggers",
+      "address": "0x378",
+      "timing_accuracy": "microsecond_precision"
+    }
+  },
+  "development_environment": {
+    "ide": {
+      "name": "PyCharm Professional",
+      "version": "2023.1",
+      "configuration": "research_template"
+    },
+    "version_control": {
+      "git": "2.40.1",
+      "repository": "https://github.com/mit-hci-lab/cognitive-load-study"
+    },
+    "dependencies": {
+      "package_manager": "conda",
+      "environment_file": "environment.yml",
+      "python_packages": 47,
+      "last_updated": "2024-01-10"
+    }
+  },
+  "system_monitoring": {
+    "performance_monitoring": {
+      "cpu_usage": "continuous",
+      "memory_usage": "continuous", 
+      "disk_io": "monitored",
+      "network_latency": "measured"
+    },
+    "logging": {
+      "system_events": "windows_event_log",
+      "application_logs": "custom_logging_framework",
+      "error_reporting": "automated_crash_reports"
+    }
+  }
+} 

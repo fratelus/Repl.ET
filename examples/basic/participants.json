@@ -1,0 +1,25 @@
+{
+  "$schema": "schemas/participants.schema.json",
+  "participants": [
+    {
+      "participant_id": "P001",
+      "age": 22,
+      "gender": "female",
+      "programming_experience_years": 2,
+      "education_level": "undergraduate",
+      "vision_corrected": true
+    },
+    {
+      "participant_id": "P002", 
+      "age": 24,
+      "gender": "male",
+      "programming_experience_years": 3,
+      "education_level": "undergraduate",
+      "vision_corrected": false
+    }
+  ],
+  "total_participants": 2,
+  "recruitment_method": "university_volunteers",
+  "inclusion_criteria": ["age 18-30", "programming experience > 1 year"],
+  "exclusion_criteria": ["uncorrected vision problems", "motion sickness history"]
+} 

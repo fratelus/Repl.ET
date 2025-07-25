@@ -1,0 +1,58 @@
+{
+  "$schema": "schemas/metadata.schema.json",
+  "study_title": "Multimodal Cognitive Load Assessment in Expert Programming: A Cross-Cultural Analysis of Software Development Patterns",
+  "study_objective": "Investigate cognitive load patterns, visual attention distribution, and neural correlates during complex software development tasks across different programming paradigms, IDE configurations, and cultural contexts using synchronized eye tracking, EEG, and physiological monitoring",
+  "paradigm": "multimodal cognitive load assessment in software engineering with cross-cultural validation and real-time adaptive interfaces",
+  "task_description": "Expert programmers from diverse cultural backgrounds perform authentic software development tasks including: (1) debugging legacy code in unfamiliar architectures, (2) implementing real-time algorithms under performance constraints, (3) conducting code reviews with collaborative decision-making, (4) refactoring complex enterprise systems, and (5) designing API interfaces with security considerations. All tasks performed under controlled cognitive load manipulation with simultaneous eye tracking (600Hz), high-density EEG (64 channels), heart rate variability, and pupillometry.",
+  "keywords": [
+    "eye tracking", "software engineering", "cognitive load", "EEG", "pupillometry", 
+    "code comprehension", "debugging", "multimodal analysis", "expert programmers", 
+    "IDE usability", "cross-cultural validation", "real-time adaptation", "heart rate variability",
+    "collaborative programming", "code review", "API design", "performance optimization",
+    "enterprise software", "legacy systems", "neural correlates", "attention networks"
+  ],
+  "authors": [
+    {"name": "Prof. Elena Rodriguez", "orcid": "0000-0002-8765-4321", "affiliation": "MIT", "role": "Principal Investigator"},
+    {"name": "Dr. Michael Chen", "orcid": "0000-0003-1234-5678", "affiliation": "Stanford", "role": "Co-Investigator"},
+    {"name": "Dr. Fatima Al-Zahra", "orcid": "0000-0004-9876-5432", "affiliation": "Technical University Munich", "role": "International Collaborator"},
+    {"name": "Prof. Hiroshi Tanaka", "orcid": "0000-0005-1111-2222", "affiliation": "University of Tokyo", "role": "Cultural Validation Lead"},
+    {"name": "Dr. Sarah Johnson", "orcid": "0000-0006-3333-4444", "affiliation": "MIT", "role": "Data Analysis Lead"},
+    {"name": "Dr. Carlos Mendez", "orcid": "0000-0007-5555-6666", "affiliation": "Universidad de Chile", "role": "Statistics Consultant"}
+  ],
+  "institution": "Advanced Human-Computer Interaction Lab, Massachusetts Institute of Technology",
+  "collaborating_institutions": [
+    "Stanford Human-Computer Interaction Group",
+    "Technical University Munich - Chair of Ergonomics",
+    "University of Tokyo - Digital Fabrication Lab",
+    "Universidad de Chile - Department of Computer Science"
+  ],
+  "funding": [
+    {"agency": "National Science Foundation", "grant_id": "NSF-2024-HCI-001", "amount": "$2,850,000"},
+    {"agency": "Office of Naval Research", "grant_id": "ONR-N00014-24-1-0234", "amount": "$1,200,000"},
+    {"agency": "German Research Foundation (DFG)", "grant_id": "DFG-AL-2024-456", "amount": "€450,000"},
+    {"agency": "Japan Society for Promotion of Science", "grant_id": "JSPS-KAKENHI-24H01234", "amount": "¥8,500,000"}
+  ],
+  "ethics_approval": {
+    "mit_irb": "Protocol #2024-001-COUHES",
+    "stanford_irb": "Protocol #60234",
+    "tum_ethics": "Approval #2024-15-TUM",
+    "tokyo_ethics": "Approval #24-A-001"
+  },
+  "study_design": {
+    "type": "mixed_methods_experimental",
+    "sample_size": 120,
+    "groups": ["expert_programmers", "intermediate_programmers", "novice_programmers"],
+    "cultural_groups": ["north_american", "european", "east_asian", "latin_american"],
+    "sessions_per_participant": 3,
+    "total_duration": "18 months",
+    "pilot_study_completed": true
+  },
+  "date": "2024-01-15",
+  "expected_completion": "2025-07-31",
+  "license": "CC-BY-4.0",
+  "data_availability": "Data will be made available via OSF repository upon publication, with anonymized datasets and full analysis pipelines",
+  "preregistration": {
+    "osf_preprint": "https://osf.io/abc123",
+    "protocol_registration": "https://www.protocols.io/view/multimodal-cognitive-load-xyz789"
+  }
+} 

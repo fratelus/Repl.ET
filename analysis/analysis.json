@@ -1,0 +1,20 @@
+{
+  "$schema": "../schemas/analysis.schema.json",
+  "metrics": [
+    {
+      "name": "Your metric name",
+      "description": "Describe what this metric measures",
+      "unit": "Unit of measurement"
+    }
+  ],
+  "statistical_methods": {
+    "primary_analysis": "Describe your primary statistical analysis",
+    "secondary_analyses": ["List any secondary analyses"],
+    "software": "Statistical software used"
+  },
+  "results": {
+    "summary": "Summarize your key findings",
+    "effect_sizes": [],
+    "confidence_intervals": []
+  }
+} 

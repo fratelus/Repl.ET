@@ -1,0 +1,74 @@
+{
+  "$schema": "../schemas/preprocessing.schema.json",
+  "preprocessing_overview": {
+    "pipeline_version": "1.0",
+    "total_participants": 0,
+    "raw_data_format": "your_tracker_format",
+    "output_format": "csv",
+    "processing_date": "YYYY-MM-DD"
+  },
+  "quality_control": {
+    "calibration_criteria": {
+      "min_accuracy": 0.5,
+      "max_precision": 2.0,
+      "validation_method": "your_method"
+    },
+    "data_loss_thresholds": {
+      "max_missing_data": 0.3,
+      "min_valid_fixations": 10
+    },
+    "outlier_detection": {
+      "method": "statistical_threshold",
+      "parameters": {
+        "fixation_duration_min": 80,
+        "fixation_duration_max": 1200,
+        "saccade_velocity_max": 1000
+      }
+    }
+  },
+  "filtering_steps": [
+    {
+      "step_name": "calibration_validation",
+      "description": "Validate eye tracker calibration quality",
+      "parameters": {},
+      "participants_excluded": 0
+    },
+    {
+      "step_name": "fixation_filtering", 
+      "description": "Filter fixations by duration and validity",
+      "parameters": {
+        "min_duration": 80,
+        "max_duration": 1200
+      },
+      "data_points_removed": 0
+    }
+  ],
+  "derivated_measures": {
+    "spatial_measures": [
+      "fixation_coordinates",
+      "aoi_hit_detection", 
+      "gaze_transitions"
+    ],
+    "temporal_measures": [
+      "fixation_duration",
+      "dwell_time",
+      "time_to_first_fixation"
+    ],
+    "aggregate_measures": [
+      "total_fixations",
+      "scan_path_length",
+      "reading_efficiency"
+    ]
+  },
+  "software_tools": {
+    "primary_tool": "your_analysis_software",
+    "version": "x.x.x",
+    "custom_scripts": false,
+    "scripts_location": "preprocessing/scripts/"
+  },
+  "validation": {
+    "preprocessing_verified": false,
+    "inter_rater_reliability": "not_applicable",
+    "automated_quality_checks": false
+  }
+} 

@@ -1,0 +1,126 @@
+{
+  "$schema": "../schemas/tracker_specs.schema.json",
+  "eye_tracker": {
+    "manufacturer": "Tobii Technology",
+    "model": "Tobii Pro Spectrum",
+    "sampling_rate": "600 Hz",
+    "accuracy": "0.3°",
+    "precision": "0.03° RMS",
+    "gaze_recovery_time": "< 5ms",
+    "head_movement_compensation": "±30cm x ±22cm x ±30cm",
+    "calibration_procedure": "9-point calibration with validation and drift correction",
+    "data_streams": ["gaze_position", "pupil_diameter", "eye_openness", "head_pose", "user_presence"],
+    "binocular_tracking": true,
+    "dark_pupil_tracking": true,
+    "infrared_illumination": "Near-infrared LED arrays at 850nm and 940nm",
+    "camera_resolution": "2048x1536 per eye",
+    "field_of_view": "±35° horizontal, ±25° vertical",
+    "working_range": "45-85cm from screen"
+  },
+  "eeg_system": {
+    "manufacturer": "Brain Products",
+    "model": "actiCHamp Plus",
+    "channels": 64,
+    "sampling_rate": "1000 Hz",
+    "resolution": "24-bit",
+    "input_range": "±187 mV",
+    "impedance_threshold": "< 10 kΩ",
+    "electrode_system": "10-20 international system extended with 10-10 positions",
+    "electrode_type": "Ag/AgCl active electrodes",
+    "reference": "FCz",
+    "ground": "AFz",
+    "amplifier_bandwidth": "DC to 1000 Hz",
+    "common_mode_rejection": "> 120 dB",
+    "channel_isolation": "> 120 dB"
+  },
+  "physiological_monitoring": {
+    "heart_rate": {
+      "device": "Polar H10",
+      "sampling_rate": "1000 Hz",
+      "accuracy": "±1 bpm",
+      "wireless_protocol": "Bluetooth Low Energy"
+    },
+    "skin_conductance": {
+      "device": "Empatica E4",
+      "sampling_rate": "4 Hz",
+      "electrodes": "2 dry Ag/AgCl",
+      "measurement_range": "0.01-100 μS"
+    },
+    "respiration": {
+      "device": "RespiBAN Professional",
+      "sensor_type": "piezoelectric",
+      "sampling_rate": "700 Hz",
+      "placement": "thoracic"
+    }
+  },
+  "monitor": {
+    "manufacturer": "Dell",
+    "model": "UltraSharp U2720Q",
+    "size": "27 inches",
+    "resolution": "3840 x 2160",
+    "refresh_rate": "60 Hz",
+    "color_gamut": "99% sRGB",
+    "brightness": "350 cd/m²",
+    "contrast_ratio": "1300:1",
+    "viewing_distance": "65 cm",
+    "height_adjustable": true,
+    "blue_light_filter": "enabled"
+  },
+  "secondary_monitor": {
+    "manufacturer": "ASUS",
+    "model": "ProArt PA248QV",
+    "size": "24.1 inches",
+    "resolution": "1920 x 1200",
+    "purpose": "reference documentation and communication",
+    "position": "portrait orientation, left side"
+  },
+  "computer": {
+    "processor": "Intel Core i9-11900K @ 3.5GHz",
+    "ram": "32 GB DDR4-3200",
+    "storage": "2TB NVMe SSD",
+    "graphics": "NVIDIA RTX 3080 12GB",
+    "operating_system": "Windows 11 Pro (Build 22621)",
+    "network": "Gigabit Ethernet",
+    "audio": "Realtek ALC4080 with noise cancellation"
+  },
+  "input_devices": {
+    "keyboard": {
+      "model": "Logitech MX Keys",
+      "type": "wireless mechanical",
+      "layout": "QWERTY US International"
+    },
+    "mouse": {
+      "model": "Logitech MX Master 3",
+      "type": "wireless optical",
+      "dpi": "4000",
+      "polling_rate": "1000 Hz"
+    }
+  },
+  "software": {
+    "presentation": "PsychoPy 2023.1.0",
+    "eye_tracking": "Tobii Pro Lab 1.194",
+    "eeg_recording": "BrainVision Recorder 1.24",
+    "synchronization": "Lab Streaming Layer (LSL) 1.16.1",
+    "data_analysis": ["MATLAB R2023a", "Python 3.11", "R 4.3.0"],
+    "ides_tested": [
+      {"name": "IntelliJ IDEA", "version": "2023.1.2"},
+      {"name": "Visual Studio Code", "version": "1.78.2"},
+      {"name": "Eclipse IDE", "version": "2023-03"}
+    ]
+  },
+  "environmental_controls": {
+    "room_temperature": "22°C ± 1°C",
+    "humidity": "45-55%",
+    "lighting": "controlled LED panels at 500 lux",
+    "noise_level": "< 40 dB",
+    "electromagnetic_shielding": "Faraday cage room",
+    "air_circulation": "HEPA filtered, low velocity"
+  },
+  "calibration_procedures": {
+    "daily_equipment_check": "30 minutes before each session",
+    "eye_tracker_validation": "9-point calibration + 4-point validation",
+    "eeg_impedance_check": "all channels < 10kΩ before recording",
+    "synchronization_test": "LSL marker accuracy ±1ms verified",
+    "monitor_calibration": "weekly colorimeter verification"
+  }
+} 

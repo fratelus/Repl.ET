@@ -1,0 +1,92 @@
+{
+  "$schema": "../schemas/reproducibility.schema.json",
+  "reproducibility_overview": {
+    "replication_type": "exact|conceptual|extended",
+    "sharing_commitment": "full|partial|limited",
+    "availability_date": "YYYY-MM-DD",
+    "contact_person": "your_email@institution.edu"
+  },
+  "data_sharing": {
+    "raw_data": {
+      "available": false,
+      "location": "describe_where_available",
+      "format": "describe_data_format",
+      "access_conditions": "open|restricted|upon_request",
+      "preprocessing_scripts": false
+    },
+    "processed_data": {
+      "available": false,
+      "location": "describe_where_available", 
+      "format": "describe_data_format",
+      "documentation": false
+    },
+    "privacy_considerations": {
+      "anonymization_method": "describe_method",
+      "sensitive_data_removed": false,
+      "ethical_approval_number": "your_approval_number"
+    }
+  },
+  "materials_sharing": {
+    "stimuli": {
+      "available": false,
+      "location": "describe_where_available",
+      "licensing": "describe_license",
+      "modifications_allowed": false
+    },
+    "experimental_protocol": {
+      "detailed_procedures": false,
+      "timing_information": false,
+      "instruction_scripts": false,
+      "experimenter_guidelines": false
+    },
+    "software_tools": {
+      "analysis_scripts": false,
+      "custom_software": false,
+      "configuration_files": false,
+      "dependencies_documented": false
+    }
+  },
+  "documentation": {
+    "methodology_details": {
+      "participant_recruitment": false,
+      "experimental_setup": false,
+      "data_collection_procedures": false,
+      "quality_control_measures": false
+    },
+    "analysis_documentation": {
+      "statistical_analysis_plan": false,
+      "preprocessing_pipeline": false,
+      "variable_definitions": false,
+      "exclusion_criteria": false
+    }
+  },
+  "replication_support": {
+    "contact_information": {
+      "primary_contact": "your_email@institution.edu",
+      "alternative_contact": "backup_email@institution.edu",
+      "expected_response_time": "1_week"
+    },
+    "collaboration_openness": {
+      "open_to_collaborations": true,
+      "mentoring_available": false,
+      "resource_sharing": false
+    }
+  },
+  "compliance": {
+    "journal_requirements": {
+      "meets_transparency_standards": false,
+      "follows_reporting_guidelines": false,
+      "preregistration_available": false
+    },
+    "funding_requirements": {
+      "meets_funder_mandates": false,
+      "data_management_plan": false
+    }
+  },
+  "barriers_limitations": {
+    "technical_barriers": [],
+    "legal_barriers": [],
+    "resource_constraints": [],
+    "mitigation_strategies": []
+  }
+} 

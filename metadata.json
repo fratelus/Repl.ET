@@ -1,0 +1,13 @@
+{
+  "$schema": "schemas/metadata.schema.json",
+  "study_title": "Your Study Title Here",
+  "study_objective": "Describe your study objective here",
+  "paradigm": "Your experimental paradigm (e.g., code comprehension, debugging, etc.)",
+  "task_description": "Describe the task participants will perform",
+  "keywords": ["eye tracking", "software engineering", "your keywords here"],
+  "authors": [
+    {"name": "Your Name", "orcid": "0000-0000-0000-0000"}
+  ],
+  "date": "YYYY-MM-DD",
+  "license": "CC-BY-4.0"
+} 

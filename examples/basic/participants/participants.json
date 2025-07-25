@@ -1,0 +1,30 @@
+{
+  "$schema": "../schemas/participants.schema.json",
+  "participants": [
+    {
+      "participant_id": "BASIC_P01",
+      "age": 22,
+      "gender": "female",
+      "education": "undergraduate",
+      "reading_level": "advanced",
+      "dominant_eye": "right"
+    },
+    {
+      "participant_id": "BASIC_P02", 
+      "age": 25,
+      "gender": "male",
+      "education": "graduate",
+      "reading_level": "advanced",
+      "dominant_eye": "right"
+    }
+  ],
+  "inclusion_criteria": [
+    "Native English speakers",
+    "Normal or corrected vision",
+    "Age 18-30"
+  ],
+  "exclusion_criteria": [
+    "Dyslexia",
+    "Eye movement disorders"
+  ]
+} 

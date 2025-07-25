@@ -1,0 +1,261 @@
+{
+  "$schema": "../schemas/analysis.schema.json",
+  "analysis_methods": [
+    {
+      "method_name": "multimodal_cognitive_load_assessment",
+      "description": "Integrated analysis of cognitive load using eye tracking, EEG, and behavioral measures",
+      "theoretical_framework": "Cognitive Load Theory (Sweller, 1988) + Dual-Task Paradigm",
+      "parameters": {
+        "pupil_dilation_analysis": {
+          "baseline_period": "1000ms pre-stimulus",
+          "response_window": "0-10000ms post-stimulus", 
+          "normalization": "baseline_corrected_percentage",
+          "artifacts_removal": "blink_interpolated_excluded"
+        },
+        "eeg_frequency_analysis": {
+          "frequency_bands": {
+            "theta": "4-8 Hz (frontal attention)",
+            "alpha": "8-13 Hz (cortical suppression)",
+            "beta": "13-30 Hz (active processing)",
+            "gamma": "30-100 Hz (binding processes)"
+          },
+          "time_frequency_method": "Morlet wavelet decomposition",
+          "baseline_correction": "pre-stimulus -500 to -100ms"
+        },
+        "synchrony_analysis": {
+          "method": "phase_locking_value",
+          "electrode_pairs": "frontal_parietal_attention_network",
+          "time_windows": ["0-2s", "2-5s", "5-10s"],
+          "statistical_threshold": "p < 0.01 FDR-corrected"
+        }
+      },
+      "software": "Custom Python pipeline + MNE-Python + SciPy",
+      "output_measures": ["cognitive_load_index", "attention_effort_score", "neural_efficiency"]
+    },
+    {
+      "method_name": "hierarchical_visual_attention_modeling",
+      "description": "Multi-level modeling of visual attention patterns with expertise and task difficulty factors",
+      "theoretical_framework": "Information Foraging Theory + Code Comprehension Models",
+      "parameters": {
+        "dependent_variables": [
+          "fixation_duration_log_transformed",
+          "saccade_amplitude_normalized", 
+          "pupil_diameter_baseline_corrected",
+          "aoi_transition_entropy",
+          "reading_pattern_linearity"
+        ],
+        "fixed_effects": [
+          "task_difficulty_level",
+          "code_complexity_metrics",
+          "participant_expertise_score",
+          "time_on_task_minutes",
+          "stimulus_characteristics"
+        ],
+        "random_effects": [
+          "participant_intercept_slope",
+          "stimulus_random_intercept",
+          "session_temporal_effects"
+        ],
+        "interaction_terms": [
+          "difficulty_x_expertise",
+          "complexity_x_time_on_task",
+          "expertise_x_stimulus_type"
+        ],
+        "model_specification": "lmer(DV ~ fixed_effects + (1+difficulty|participant) + (1|stimulus))"
+      },
+      "software": "R 4.3.2 with lme4, lmerTest, performance packages",
+      "model_validation": {
+        "assumptions_testing": "residual_analysis + qq_plots + levene_test",
+        "model_comparison": "AIC/BIC + likelihood_ratio_tests",
+        "cross_validation": "5-fold participant-stratified"
+      }
+    },
+    {
+      "method_name": "temporal_attention_sequence_analysis",
+      "description": "Advanced analysis of temporal attention patterns using sequence mining and Markov models",
+      "theoretical_framework": "Sequential Pattern Mining + Attention Transition Models",
+      "parameters": {
+        "sequence_extraction": {
+          "granularity": "aoi_level_transitions",
+          "temporal_binning": "500ms_time_windows",
+          "minimum_sequence_length": 3,
+          "maximum_sequence_length": 15
+        },
+        "pattern_discovery": {
+          "algorithm": "frequent_sequential_pattern_mining",
+          "support_threshold": 0.3,
+          "confidence_threshold": 0.7,
+          "lift_threshold": 1.2
+        },
+        "markov_modeling": {
+          "order": "first_and_second_order",
+          "transition_probability_estimation": "maximum_likelihood",
+          "state_space": "aoi_categories_plus_temporal_context",
+          "stationarity_testing": "chi_square_homogeneity"
+        },
+        "similarity_measures": [
+          "edit_distance_normalized",
+          "longest_common_subsequence",
+          "dynamic_time_warping",
+          "sequence_alignment_score"
+        ]
+      },
+      "software": "Python with scikit-learn, networkx, aeon time series package",
+      "clustering": "hierarchical_clustering_with_optimal_k_selection",
+      "validation": "silhouette_analysis + expert_pattern_validation"
+    },
+    {
+      "method_name": "machine_learning_expertise_classification",
+      "description": "Multi-modal feature engineering and classification for expertise level prediction",
+      "theoretical_framework": "Expert-Novice Differences + Multimodal Feature Fusion",
+      "parameters": {
+        "feature_engineering": {
+          "eye_tracking_features": [
+            "gaze_entropy_shannon",
+            "fixation_duration_variability",
+            "saccadic_velocity_profiles",
+            "aoi_coverage_efficiency",
+            "reading_pattern_regularity",
+            "attention_switching_frequency"
+          ],
+          "eeg_features": [
+            "alpha_desynchronization_strength",
+            "theta_frontal_power",
+            "gamma_binding_coherence",
+            "attention_network_connectivity",
+            "cognitive_control_markers"
+          ],
+          "behavioral_features": [
+            "task_completion_time",
+            "accuracy_measures",
+            "confidence_ratings",
+            "think_aloud_complexity"
+          ],
+          "derived_features": [
+            "multimodal_synchrony_indices",
+            "cognitive_load_stability",
+            "attention_control_efficiency"
+          ]
+        },
+        "feature_selection": {
+          "method": "recursive_feature_elimination_with_cross_validation",
+          "scoring": "f1_weighted",
+          "cv_folds": 5,
+          "feature_importance_ranking": "permutation_importance"
+        },
+        "classification_algorithms": [
+          {
+            "name": "Random_Forest",
+            "parameters": {"n_estimators": 200, "max_depth": 15, "min_samples_split": 5},
+            "hyperparameter_tuning": "grid_search_cv"
+          },
+          {
+            "name": "Support_Vector_Machine",
+            "parameters": {"kernel": "rbf", "C": [0.1, 1, 10], "gamma": "scale"},
+            "hyperparameter_tuning": "random_search_cv"
+          },
+          {
+            "name": "Gradient_Boosting",
+            "parameters": {"learning_rate": 0.1, "n_estimators": 150, "max_depth": 6},
+            "hyperparameter_tuning": "bayesian_optimization"
+          }
+        ],
+        "ensemble_method": "soft_voting_classifier_with_stacking"
+      },
+      "software": "Python with scikit-learn, xgboost, optuna",
+      "evaluation_metrics": ["accuracy", "precision", "recall", "f1_macro", "roc_auc", "confusion_matrix"],
+      "cross_validation": "stratified_group_k_fold_by_participant",
+      "interpretability": "SHAP_values + permutation_importance + partial_dependence_plots"
+    },
+    {
+      "method_name": "network_analysis_of_attention_patterns",
+      "description": "Graph-theoretic analysis of attention networks and information flow patterns",
+      "theoretical_framework": "Network Science + Attention Networks + Information Theory",
+      "parameters": {
+        "network_construction": {
+          "nodes": "aoi_regions_with_semantic_categories",
+          "edges": "temporal_transitions_weighted_by_duration",
+          "edge_weights": "transition_probability_x_duration",
+          "temporal_aggregation": "session_level_networks"
+        },
+        "network_metrics": [
+          "clustering_coefficient",
+          "path_length_average",
+          "betweenness_centrality",
+          "eigenvector_centrality",
+          "small_world_coefficient",
+          "network_efficiency_global_local"
+        ],
+        "community_detection": {
+          "algorithm": "leiden_algorithm",
+          "resolution_parameter": "optimal_via_modularity",
+          "stability_analysis": "bootstrap_resampling"
+        },
+        "information_flow": {
+          "transfer_entropy": "symbolic_transfer_entropy",
+          "effective_connectivity": "granger_causality",
+          "information_integration": "phi_measures"
+        }
+      },
+      "software": "Python with networkx, graph-tool, scipy",
+      "statistical_analysis": "permutation_testing_with_null_models",
+      "visualization": "interactive_networks_with_plotly + static_publication_figures"
+    }
+  ],
+  "statistical_framework": {
+    "alpha_level": 0.05,
+    "multiple_comparisons": {
+      "correction_method": "Benjamini_Hochberg_FDR",
+      "family_wise_error_rate": 0.05,
+      "sequential_bonferroni": "for_planned_comparisons"
+    },
+    "effect_size_measures": [
+      "Cohens_d_with_confidence_intervals",
+      "partial_eta_squared",
+      "Cramers_V_for_categorical",
+      "R_squared_marginal_conditional_mixed_models"
+    ],
+    "confidence_intervals": "95%_bootstrap_BCa_intervals",
+    "power_analysis": {
+      "post_hoc": "observed_power_with_effect_sizes",
+      "software": "G*Power 3.1.9.7 + simr package in R",
+      "minimum_detectable_effect": "calculated_for_main_analyses"
+    },
+    "assumptions_testing": {
+      "normality": "Shapiro_Wilk + Anderson_Darling + Q_Q_plots",
+      "homoscedasticity": "Levene_test + Bartlett_test",
+      "sphericity": "Mauchly_test_with_Greenhouse_Geisser_correction",
+      "independence": "Durbin_Watson + residual_autocorrelation"
+    },
+    "robust_methods": {
+      "outlier_handling": "Cook_distance + studentized_residuals",
+      "robust_regression": "M_estimators_when_assumptions_violated",
+      "non_parametric_alternatives": "prepared_for_assumption_violations"
+    }
+  },
+  "reproducibility_framework": {
+    "preregistration": {
+      "platform": "OSF_preregistration",
+      "registration_doi": "10.17605/OSF.IO/PREDOI",
+      "analysis_plan": "detailed_statistical_analysis_plan_preregistered"
+    },
+    "code_availability": {
+      "repository": "GitHub_with_comprehensive_documentation",
+      "license": "MIT_open_source",
+      "version_control": "semantic_versioning_with_tags",
+      "documentation": "sphinx_generated_with_examples"
+    },
+    "computational_reproducibility": {
+      "environment": "Docker_container_with_all_dependencies",
+      "package_versions": "requirements_txt_with_exact_versions",
+      "random_seeds": "fixed_seeds_for_all_stochastic_processes",
+      "testing": "automated_unit_tests_for_analysis_functions"
+    },
+    "data_sharing": {
+      "processed_data": "available_on_OSF_after_publication",
+      "analysis_datasets": "anonymized_data_for_reanalysis",
+      "metadata": "comprehensive_data_dictionary",
+      "embargo_period": "none_immediate_sharing"
+    }
+  }
+} 

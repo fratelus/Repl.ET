@@ -1,0 +1,33 @@
+# Eye Tracking Session Log - Participant P01
+# Date: 2024-11-15 14:30:00
+# Experiment: Kip Replication Study
+# Tobii Pro X3-120 Eye Tracker
+
+[14:30:00] Session started
+[14:30:15] Calibration initiated (9-point)
+[14:30:45] Calibration completed - Accuracy: 0.6° (PASS)
+[14:31:00] Practice trial 1 started (S_practice_01)
+[14:32:15] Practice trial 1 completed
+[14:32:30] Practice trial 2 started (S_practice_02)  
+[14:33:45] Practice trial 2 completed
+[14:34:00] Main experiment started
+[14:34:15] Trial 1 - Stimulus S01 (bug_detection) - Started
+[14:35:47] Trial 1 - Response recorded: Bug found at line 7
+[14:35:47] Trial 1 - Completed (Duration: 92s)
+[14:36:00] Drift check - Drift: 0.3° (PASS)
+[14:36:15] Trial 2 - Stimulus S02 (comprehension) - Started
+[14:37:23] Trial 2 - Response recorded: Bubble sort algorithm
+[14:37:23] Trial 2 - Completed (Duration: 68s)
+[14:37:40] Trial 3 - Stimulus S03 (bug_detection) - Started
+[14:38:56] Trial 3 - Response recorded: Missing base case
+[14:38:56] Trial 3 - Completed (Duration: 76s)
+[14:39:15] Break (2 minutes)
+[14:41:15] Trial 4 - Stimulus S04 (comprehension) - Started
+[14:42:18] Trial 4 - Response recorded: Find maximum value
+[14:42:18] Trial 4 - Completed (Duration: 63s)
+[14:42:35] Trial 5 - Stimulus S05 (bug_detection) - Started
+[14:44:12] Trial 5 - Response recorded: Null pointer access
+[14:44:12] Trial 5 - Completed (Duration: 97s)
+[14:44:30] Session completed
+[14:44:30] Total duration: 14m 30s
+[14:44:30] Data saved to: P01_20241115_143000.tsv 

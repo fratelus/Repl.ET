@@ -1,0 +1,74 @@
+# ===========================
+# Eye Tracking & EEG Data
+# ===========================
+
+# Audio/Video files
+*.wav
+*.mp4
+*.avi
+*.mov
+
+# Large processed data files
+*.h5
+*.hdf5
+data/processed/*/
+
+# Temporary processing files
+*.tmp
+*_temp.*
+*_backup.*
+
+# ===========================
+# Python & Analysis
+# ===========================
+
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Analysis outputs (large files)
+results/statistical_outputs/
+results/visualizations/exploratory/
+
+# ===========================
+# OS & Editor Files
+# ===========================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===========================
+# Keep These Sample Files
+# ===========================
+
+# Keep example/demo data
+!Demo*/
+!examples/
+!templates/
+
+# Keep documentation
+!README.md
+!*/README.md
+!data/README.md

@@ -1,0 +1,398 @@
+{
+  "$schema": "schemas/participants.schema.json",
+  "participants": [
+    {
+      "participant_id": "ADV001",
+      "age": 28,
+      "gender": "female",
+      "ethnicity": "asian_american",
+      "handedness": "right",
+      "programming_experience_years": 8,
+      "education_level": "masters",
+      "degree_field": "computer_science",
+      "current_role": "senior_software_engineer",
+      "company_type": "tech_startup",
+      "vision_corrected": true,
+      "vision_correction_type": "contact_lenses",
+      "vision_acuity": "20/20",
+      "color_blindness": "none",
+      "programming_languages": ["Java", "Python", "C++", "JavaScript", "TypeScript", "Go"],
+      "frameworks": ["Spring Boot", "React", "Django", "Node.js"],
+      "ide_familiarity": {
+        "IntelliJ": 9,
+        "VSCode": 8,
+        "Eclipse": 7,
+        "Vim": 6
+      },
+      "cognitive_assessment": {
+        "working_memory_span": 7,
+        "processing_speed_percentile": 85,
+        "attention_control_score": 92,
+        "fluid_intelligence_score": 125,
+        "spatial_reasoning_percentile": 88
+      },
+      "personality_traits": {
+        "openness": 85,
+        "conscientiousness": 92,
+        "extraversion": 65,
+        "agreeableness": 78,
+        "neuroticism": 25
+      },
+      "session_notes": "Excellent attention, minimal head movement, prefers keyboard shortcuts",
+      "session_performance": {
+        "session1": {"completion_rate": 95, "accuracy": 92, "avg_task_time": 240},
+        "session2": {"completion_rate": 98, "accuracy": 94, "avg_task_time": 220},
+        "session3": {"completion_rate": 97, "accuracy": 96, "avg_task_time": 210}
+      }
+    },
+    {
+      "participant_id": "ADV002",
+      "age": 32,
+      "gender": "male",
+      "ethnicity": "caucasian",
+      "handedness": "right",
+      "programming_experience_years": 12,
+      "education_level": "phd",
+      "degree_field": "software_engineering",
+      "current_role": "principal_engineer",
+      "company_type": "enterprise_corporation",
+      "vision_corrected": false,
+      "vision_acuity": "20/15",
+      "color_blindness": "none",
+      "programming_languages": ["C#", "Java", "Python", "Scala", "F#", "Haskell"],
+      "frameworks": [".NET Core", "ASP.NET", "Entity Framework", "Akka"],
+      "ide_familiarity": {
+        "Visual Studio": 10,
+        "IntelliJ": 8,
+        "VSCode": 9,
+        "Rider": 9
+      },
+      "cognitive_assessment": {
+        "working_memory_span": 8,
+        "processing_speed_percentile": 92,
+        "attention_control_score": 88,
+        "fluid_intelligence_score": 135,
+        "spatial_reasoning_percentile": 95
+      },
+      "personality_traits": {
+        "openness": 92,
+        "conscientiousness": 88,
+        "extraversion": 55,
+        "agreeableness": 82,
+        "neuroticism": 18
+      },
+      "session_notes": "Systematic approach, excellent debugging skills, prefers clean architecture",
+      "session_performance": {
+        "session1": {"completion_rate": 100, "accuracy": 96, "avg_task_time": 200},
+        "session2": {"completion_rate": 98, "accuracy": 98, "avg_task_time": 185},
+        "session3": {"completion_rate": 100, "accuracy": 99, "avg_task_time": 175}
+      }
+    },
+    {
+      "participant_id": "ADV003",
+      "age": 26,
+      "gender": "non_binary",
+      "ethnicity": "hispanic_latino",
+      "handedness": "left",
+      "programming_experience_years": 6,
+      "education_level": "bachelors",
+      "degree_field": "computer_engineering",
+      "current_role": "full_stack_developer",
+      "company_type": "tech_consultancy",
+      "vision_corrected": true,
+      "vision_correction_type": "glasses",
+      "vision_acuity": "20/25",
+      "color_blindness": "mild_deuteranopia",
+      "programming_languages": ["JavaScript", "TypeScript", "Python", "Rust", "WebAssembly"],
+      "frameworks": ["React", "Next.js", "FastAPI", "Tauri", "Web Components"],
+      "ide_familiarity": {
+        "VSCode": 10,
+        "WebStorm": 8,
+        "Sublime Text": 7,
+        "Neovim": 8
+      },
+      "cognitive_assessment": {
+        "working_memory_span": 6,
+        "processing_speed_percentile": 78,
+        "attention_control_score": 85,
+        "fluid_intelligence_score": 118,
+        "spatial_reasoning_percentile": 82
+      },
+      "personality_traits": {
+        "openness": 95,
+        "conscientiousness": 75,
+        "extraversion": 72,
+        "agreeableness": 88,
+        "neuroticism": 35
+      },
+      "session_notes": "Creative problem-solving, strong UI/UX focus, adapts quickly to new tools",
+      "session_performance": {
+        "session1": {"completion_rate": 88, "accuracy": 89, "avg_task_time": 275},
+        "session2": {"completion_rate": 92, "accuracy": 91, "avg_task_time": 255},
+        "session3": {"completion_rate": 94, "accuracy": 93, "avg_task_time": 240}
+      }
+    },
+    {
+      "participant_id": "ADV004",
+      "age": 35,
+      "gender": "female",
+      "ethnicity": "african_american",
+      "handedness": "right",
+      "programming_experience_years": 14,
+      "education_level": "masters",
+      "degree_field": "data_science",
+      "current_role": "machine_learning_engineer",
+      "company_type": "ai_research_lab",
+      "vision_corrected": true,
+      "vision_correction_type": "contact_lenses",
+      "vision_acuity": "20/20",
+      "color_blindness": "none",
+      "programming_languages": ["Python", "R", "Julia", "Scala", "CUDA", "SQL"],
+      "frameworks": ["TensorFlow", "PyTorch", "Scikit-learn", "Apache Spark", "MLflow"],
+      "ide_familiarity": {
+        "PyCharm": 9,
+        "Jupyter": 10,
+        "RStudio": 8,
+        "VSCode": 7
+      },
+      "cognitive_assessment": {
+        "working_memory_span": 8,
+        "processing_speed_percentile": 88,
+        "attention_control_score": 94,
+        "fluid_intelligence_score": 140,
+        "spatial_reasoning_percentile": 92
+      },
+      "personality_traits": {
+        "openness": 88,
+        "conscientiousness": 95,
+        "extraversion": 62,
+        "agreeableness": 85,
+        "neuroticism": 22
+      },
+      "session_notes": "Excellent analytical thinking, strong statistical background, methodical approach",
+      "session_performance": {
+        "session1": {"completion_rate": 96, "accuracy": 95, "avg_task_time": 210},
+        "session2": {"completion_rate": 99, "accuracy": 97, "avg_task_time": 195},
+        "session3": {"completion_rate": 98, "accuracy": 98, "avg_task_time": 180}
+      }
+    },
+    {
+      "participant_id": "ADV005",
+      "age": 29,
+      "gender": "male",
+      "ethnicity": "middle_eastern",
+      "handedness": "right",
+      "programming_experience_years": 9,
+      "education_level": "masters",
+      "degree_field": "cybersecurity",
+      "current_role": "security_engineer",
+      "company_type": "financial_services",
+      "vision_corrected": false,
+      "vision_acuity": "20/20",
+      "color_blindness": "none",
+      "programming_languages": ["C", "C++", "Assembly", "Python", "Go", "Rust"],
+      "frameworks": ["LLVM", "OpenSSL", "Boost", "gRPC", "Prometheus"],
+      "ide_familiarity": {
+        "CLion": 9,
+        "VSCode": 8,
+        "IDA Pro": 8,
+        "GDB": 9
+      },
+      "cognitive_assessment": {
+        "working_memory_span": 7,
+        "processing_speed_percentile": 90,
+        "attention_control_score": 96,
+        "fluid_intelligence_score": 128,
+        "spatial_reasoning_percentile": 89
+      },
+      "personality_traits": {
+        "openness": 78,
+        "conscientiousness": 98,
+        "extraversion": 45,
+        "agreeableness": 75,
+        "neuroticism": 15
+      },
+      "session_notes": "Extremely focused, security-minded, detail-oriented debugging approach",
+      "session_performance": {
+        "session1": {"completion_rate": 94, "accuracy": 97, "avg_task_time": 225},
+        "session2": {"completion_rate": 97, "accuracy": 98, "avg_task_time": 205},
+        "session3": {"completion_rate": 98, "accuracy": 99, "avg_task_time": 190}
+      }
+    },
+    {
+      "participant_id": "ADV006",
+      "age": 31,
+      "gender": "female",
+      "ethnicity": "east_asian",
+      "handedness": "right",
+      "programming_experience_years": 11,
+      "education_level": "phd",
+      "degree_field": "human_computer_interaction",
+      "current_role": "research_scientist",
+      "company_type": "tech_corporation",
+      "vision_corrected": true,
+      "vision_correction_type": "glasses",
+      "vision_acuity": "20/30",
+      "color_blindness": "none",
+      "programming_languages": ["JavaScript", "TypeScript", "Swift", "Kotlin", "Dart"],
+      "frameworks": ["React Native", "Flutter", "SwiftUI", "Jetpack Compose"],
+      "ide_familiarity": {
+        "Xcode": 9,
+        "Android Studio": 9,
+        "VSCode": 8,
+        "Flutter Dev Tools": 9
+      },
+      "cognitive_assessment": {
+        "working_memory_span": 7,
+        "processing_speed_percentile": 85,
+        "attention_control_score": 91,
+        "fluid_intelligence_score": 132,
+        "spatial_reasoning_percentile": 94
+      },
+      "personality_traits": {
+        "openness": 90,
+        "conscientiousness": 85,
+        "extraversion": 68,
+        "agreeableness": 92,
+        "neuroticism": 28
+      },
+      "session_notes": "User-centered thinking, excellent at identifying usability issues",
+      "session_performance": {
+        "session1": {"completion_rate": 92, "accuracy": 91, "avg_task_time": 250},
+        "session2": {"completion_rate": 95, "accuracy": 93, "avg_task_time": 235},
+        "session3": {"completion_rate": 97, "accuracy": 95, "avg_task_time": 220}
+      }
+    },
+    {
+      "participant_id": "ADV007",
+      "age": 27,
+      "gender": "male",
+      "ethnicity": "south_asian",
+      "handedness": "right",
+      "programming_experience_years": 7,
+      "education_level": "masters",
+      "degree_field": "distributed_systems",
+      "current_role": "backend_engineer",
+      "company_type": "cloud_provider",
+      "vision_corrected": true,
+      "vision_correction_type": "contact_lenses",
+      "vision_acuity": "20/25",
+      "color_blindness": "none",
+      "programming_languages": ["Go", "Java", "Python", "Kubernetes YAML", "Terraform"],
+      "frameworks": ["Gin", "Spring Cloud", "gRPC", "Apache Kafka", "Redis"],
+      "ide_familiarity": {
+        "GoLand": 9,
+        "IntelliJ": 8,
+        "VSCode": 8,
+        "Vim": 7
+      },
+      "cognitive_assessment": {
+        "working_memory_span": 6,
+        "processing_speed_percentile": 82,
+        "attention_control_score": 87,
+        "fluid_intelligence_score": 122,
+        "spatial_reasoning_percentile": 86
+      },
+      "personality_traits": {
+        "openness": 82,
+        "conscientiousness": 90,
+        "extraversion": 58,
+        "agreeableness": 80,
+        "neuroticism": 32
+      },
+      "session_notes": "Strong systems thinking, excellent at distributed architecture problems",
+      "session_performance": {
+        "session1": {"completion_rate": 90, "accuracy": 88, "avg_task_time": 265},
+        "session2": {"completion_rate": 93, "accuracy": 90, "avg_task_time": 245},
+        "session3": {"completion_rate": 95, "accuracy": 92, "avg_task_time": 230}
+      }
+    },
+    {
+      "participant_id": "ADV008",
+      "age": 33,
+      "gender": "female",
+      "ethnicity": "mixed_race",
+      "handedness": "ambidextrous",
+      "programming_experience_years": 13,
+      "education_level": "phd",
+      "degree_field": "computational_linguistics",
+      "current_role": "nlp_researcher",
+      "company_type": "ai_research_institute",
+      "vision_corrected": false,
+      "vision_acuity": "20/15",
+      "color_blindness": "none",
+      "programming_languages": ["Python", "C++", "CUDA", "Julia", "Prolog", "Haskell"],
+      "frameworks": ["Transformers", "SpaCy", "NLTK", "AllenNLP", "JAX"],
+      "ide_familiarity": {
+        "PyCharm": 10,
+        "VSCode": 9,
+        "Jupyter": 10,
+        "Emacs": 8
+      },
+      "cognitive_assessment": {
+        "working_memory_span": 9,
+        "processing_speed_percentile": 95,
+        "attention_control_score": 98,
+        "fluid_intelligence_score": 145,
+        "spatial_reasoning_percentile": 97
+      },
+      "personality_traits": {
+        "openness": 98,
+        "conscientiousness": 88,
+        "extraversion": 75,
+        "agreeableness": 85,
+        "neuroticism": 20
+      },
+      "session_notes": "Exceptional cognitive abilities, multilingual thinking patterns, innovative approaches",
+      "session_performance": {
+        "session1": {"completion_rate": 98, "accuracy": 97, "avg_task_time": 190},
+        "session2": {"completion_rate": 100, "accuracy": 99, "avg_task_time": 170},
+        "session3": {"completion_rate": 100, "accuracy": 100, "avg_task_time": 155}
+      }
+    }
+  ],
+  "study_demographics": {
+    "total_participants": 8,
+    "age_range": "26-35",
+    "age_mean": 30.1,
+    "age_std": 2.8,
+    "gender_distribution": {
+      "female": 4,
+      "male": 3,
+      "non_binary": 1
+    },
+    "ethnicity_distribution": {
+      "asian_american": 1,
+      "caucasian": 1,
+      "hispanic_latino": 1,
+      "african_american": 1,
+      "middle_eastern": 1,
+      "east_asian": 1,
+      "south_asian": 1,
+      "mixed_race": 1
+    },
+    "education_distribution": {
+      "bachelors": 1,
+      "masters": 4,
+      "phd": 3
+    },
+    "experience_mean": 10.0,
+    "experience_std": 2.9,
+    "vision_correction_rate": 0.625
+  },
+  "recruitment": {
+    "method": "professional networks and academic partnerships",
+    "criteria": "minimum 5 years programming experience, currently employed in software development",
+    "compensation": "$150 per session",
+    "recruitment_period": "2024-01-15 to 2024-03-30",
+    "screening_completion_rate": 0.85,
+    "diversity_targets_met": true
+  },
+  "data_quality": {
+    "completion_rate_overall": 0.96,
+    "eye_tracking_data_quality": "excellent",
+    "eeg_data_quality": "good to excellent",
+    "behavioral_data_completeness": 1.0,
+    "technical_issues": "minimal, < 2% data loss"
+  }
+} 

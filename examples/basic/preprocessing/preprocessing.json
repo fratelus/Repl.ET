@@ -1,0 +1,56 @@
+{
+  "$schema": "../schemas/preprocessing.schema.json",
+  "steps": [
+    {
+      "step": "raw_data_validation",
+      "method": "quality_check",
+      "parameters": {
+        "track_ratio_threshold": 0.75,
+        "calibration_accuracy_threshold": 0.8
+      }
+    },
+    {
+      "step": "blink_detection",
+      "method": "velocity_threshold",
+      "parameters": {
+        "threshold_deg_per_s": 30,
+        "min_duration_ms": 50,
+        "max_duration_ms": 500
+      }
+    },
+    {
+      "step": "saccade_detection", 
+      "method": "I-VT_algorithm",
+      "parameters": {
+        "velocity_threshold_deg_per_s": 30,
+        "min_duration_ms": 6,
+        "min_amplitude_deg": 0.5
+      }
+    },
+    {
+      "step": "fixation_detection",
+      "method": "dispersion_threshold",
+      "parameters": {
+        "dispersion_threshold_deg": 1.0,
+        "min_duration_ms": 100
+      }
+    },
+    {
+      "step": "gap_interpolation",
+      "method": "linear_interpolation",
+      "parameters": {
+        "max_gap_ms": 75,
+        "interpolation_method": "cubic_spline"
+      }
+    },
+    {
+      "step": "aoi_mapping",
+      "method": "point_in_polygon", 
+      "parameters": {
+        "aoi_definitions": "from aois_definition.json",
+        "margin_pixels": 2
+      }
+    }
+  ],
+  "software_used": "pandas 2.0.3, numpy 1.24.3, scipy 1.10.1, custom Python scripts based on Holmqvist et al. (2011)"
+} 

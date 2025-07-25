@@ -1,0 +1,26 @@
+{
+  "$schema": "../schemas/stimuli_metadata.schema.json",
+  "stimuli_overview": {
+    "total_stimuli": 0,
+    "stimulus_type": "code_samples",
+    "programming_language": "your_language_here",
+    "complexity_level": "beginner|intermediate|advanced",
+    "domain": "your_domain_here"
+  },
+  "stimuli_list": [
+    {
+      "stimulus_id": "example_001",
+      "filename": "example_code.ext",
+      "description": "Describe your stimulus here",
+      "complexity": "beginner",
+      "lines_of_code": 0,
+      "contains_bugs": false,
+      "bug_types": [],
+      "educational_purpose": "your_purpose_here"
+    }
+  ],
+  "design_rationale": "Explain why these stimuli were chosen for your study",
+  "preparation_process": "Describe how stimuli were prepared/validated",
+  "pilot_testing": "Describe any pilot testing performed",
+  "ground_truth": "How correct answers/solutions were established"
+} 

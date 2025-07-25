@@ -1,0 +1,26 @@
+{
+  "$schema": "../schemas/protocol.schema.json",
+  "session_duration": "Expected duration in minutes",
+  "environment": {
+    "location": "Describe the lab/environment",
+    "lighting": "Describe lighting conditions",
+    "noise_level": "Describe noise conditions"
+  },
+  "procedure": {
+    "steps": [
+      "Step 1: Describe first step",
+      "Step 2: Describe second step",
+      "Add more steps as needed"
+    ],
+    "instructions_to_participants": "Describe what you tell participants",
+    "practice_trials": 0
+  },
+  "data_collection": {
+    "recording_method": "Describe how you record data",
+    "sampling_rate": "Eye tracker sampling rate (Hz)",
+    "calibration": {
+      "method": "Describe calibration procedure",
+      "validation": "Describe validation procedure"
+    }
+  }
+} 

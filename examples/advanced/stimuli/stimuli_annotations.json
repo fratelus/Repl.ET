@@ -1,0 +1,111 @@
+{
+  "$schema": "../schemas/stimuli_annotations.schema.json",
+  "annotations": [
+    {
+      "stimulus_id": "ALGO_OPT_001",
+      "expert_annotations": [
+        {
+          "annotator_id": "EXPERT_001",
+          "experience_years": 15,
+          "specialization": "algorithms",
+          "time_to_solve": "4.2 minutes",
+          "confidence": 9,
+          "difficulty_rating": 6,
+          "key_insights": [
+            "Nested loop inefficiency immediately visible",
+            "O(n²) to O(n log n) optimization opportunity",
+            "Memory allocation pattern suboptimal"
+          ],
+          "gaze_prediction": "Focus on inner loop structure, then comparison operations"
+        },
+        {
+          "annotator_id": "EXPERT_002", 
+          "experience_years": 12,
+          "specialization": "performance_optimization",
+          "time_to_solve": "3.8 minutes",
+          "confidence": 10,
+          "difficulty_rating": 5,
+          "key_insights": [
+            "Cache locality issues in current implementation",
+            "Branch prediction optimization possible",
+            "Vectorization opportunities in inner loop"
+          ],
+          "gaze_prediction": "Linear scan through code, focus on data access patterns"
+        }
+      ],
+      "ground_truth": {
+        "optimal_solution_approach": "quicksort_with_median_pivot",
+        "expected_time_complexity": "O(n log n)",
+        "critical_code_regions": [
+          {"line_range": [15, 18], "importance": "high", "reason": "core_algorithm"},
+          {"line_range": [22, 25], "importance": "medium", "reason": "optimization_opportunity"},
+          {"line_range": [30, 33], "importance": "high", "reason": "termination_condition"}
+        ],
+        "common_errors": [
+          "Missing bounds checking",
+          "Inefficient pivot selection",
+          "Memory leak in recursive calls"
+        ]
+      }
+    },
+    {
+      "stimulus_id": "API_INT_002",
+      "expert_annotations": [
+        {
+          "annotator_id": "EXPERT_003",
+          "experience_years": 18,
+          "specialization": "api_design",
+          "time_to_solve": "7.5 minutes",
+          "confidence": 8,
+          "difficulty_rating": 8,
+          "key_insights": [
+            "Authentication flow complexity",
+            "Error handling insufficient",
+            "Rate limiting considerations missing"
+          ],
+          "gaze_prediction": "Focus on error handling blocks, then authentication logic"
+        },
+        {
+          "annotator_id": "EXPERT_001",
+          "experience_years": 15,
+          "specialization": "algorithms", 
+          "time_to_solve": "9.2 minutes",
+          "confidence": 7,
+          "difficulty_rating": 9,
+          "key_insights": [
+            "Asynchronous handling complexity",
+            "State management challenges",
+            "Integration testing requirements"
+          ],
+          "gaze_prediction": "Systematic top-down reading, focus on async patterns"
+        }
+      ],
+      "ground_truth": {
+        "optimal_solution_approach": "async_await_with_proper_error_handling",
+        "expected_implementation_time": "45-60 minutes",
+        "critical_code_regions": [
+          {"line_range": [25, 35], "importance": "high", "reason": "authentication_logic"},
+          {"line_range": [42, 48], "importance": "high", "reason": "error_handling"},
+          {"line_range": [55, 62], "importance": "medium", "reason": "response_processing"}
+        ],
+        "security_considerations": [
+          "Token validation required",
+          "Input sanitization critical",
+          "HTTPS enforcement necessary"
+        ]
+      }
+    }
+  ],
+  "annotation_methodology": {
+    "inter_rater_reliability": 0.89,
+    "consensus_protocol": "expert discussion for disagreements > 2 points",
+    "validation_method": "independent coding by 3rd expert",
+    "quality_assurance": "10% random re-annotation for consistency"
+  },
+  "cognitive_load_mapping": {
+    "low_load_indicators": ["sequential_reading", "familiar_patterns", "standard_syntax"],
+    "high_load_indicators": ["complex_nesting", "unfamiliar_apis", "error_conditions"],
+    "attention_hotspots": ["function_signatures", "conditional_logic", "loop_structures"],
+    "comprehension_checkpoints": ["variable_declarations", "return_statements", "method_calls"]
+  }
+} 

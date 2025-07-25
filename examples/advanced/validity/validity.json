@@ -1,0 +1,179 @@
+{
+  "$schema": "../schemas/validity.schema.json",
+  "threats": [
+    {
+      "threat_id": "practice_effect",
+      "category": "internal_validity",
+      "description": "Participants may improve performance across sessions due to familiarity with tasks and IDE environment",
+      "severity": "moderate",
+      "mitigation_strategies": [
+        "Counterbalanced task order using Latin square design across participants",
+        "Minimum 48-hour interval between sessions to reduce immediate learning effects",
+        "Different but equivalent stimuli sets for each session (validated for complexity)",
+        "Statistical control for session order as a covariate in all analyses"
+      ],
+      "assessment_method": "Mixed-effects modeling with session as random factor",
+      "evidence_level": "strong"
+    },
+    {
+      "threat_id": "calibration_drift",
+      "category": "measurement_validity", 
+      "description": "Eye tracker accuracy may degrade during long sessions affecting data quality",
+      "severity": "high",
+      "mitigation_strategies": [
+        "Automated drift correction every 10 minutes using 4-point validation",
+        "Real-time gaze quality monitoring with < 1.0° threshold",
+        "Session interruption and recalibration if accuracy drops below threshold",
+        "Post-hoc drift correction using fixation-based algorithms",
+        "Quality metrics logged for each trial (accuracy, precision, data loss)"
+      ],
+      "assessment_method": "Continuous quality monitoring with statistical process control",
+      "evidence_level": "very_strong"
+    },
+    {
+      "threat_id": "ecological_validity",
+      "category": "external_validity",
+      "description": "Laboratory environment may not reflect real-world programming contexts",
+      "severity": "moderate",
+      "mitigation_strategies": [
+        "Use of authentic enterprise codebases from open-source projects",
+        "Realistic time pressure and interruption patterns",
+        "Professional-grade development environment setup",
+        "Tasks based on real software engineering scenarios from industry partners",
+        "Post-session interviews to assess task authenticity and engagement"
+      ],
+      "assessment_method": "Qualitative validation through expert programmer review",
+      "evidence_level": "moderate"
+    },
+    {
+      "threat_id": "participant_bias",
+      "category": "internal_validity",
+      "description": "Participants may alter natural behavior due to awareness of being monitored",
+      "severity": "moderate",
+      "mitigation_strategies": [
+        "Extended habituation period (15 minutes) before data collection",
+        "Cover story emphasizing code quality assessment rather than monitoring",
+        "Unobtrusive eye tracking setup with minimal visual cues",
+        "Natural think-aloud protocol to maintain cognitive engagement",
+        "Comparison with baseline coding session without monitoring"
+      ],
+      "assessment_method": "Behavioral consistency analysis across conditions",
+      "evidence_level": "moderate"
+    },
+    {
+      "threat_id": "eeg_artifact_contamination",
+      "category": "measurement_validity",
+      "description": "Eye movements, muscle activity, and environmental noise may contaminate EEG signals",
+      "severity": "high",
+      "mitigation_strategies": [
+        "High-density electrode array (64 channels) for advanced spatial filtering",
+        "Independent Component Analysis (ICA) for artifact removal",
+        "Simultaneous EOG recording for eye movement artifact identification",
+        "EMG monitoring for muscle artifact detection and removal",
+        "Shielded recording chamber to minimize electromagnetic interference",
+        "Real-time impedance monitoring with automatic alerts"
+      ],
+      "assessment_method": "Automated artifact detection with manual expert review",
+      "evidence_level": "very_strong"
+    },
+    {
+      "threat_id": "experimenter_expectancy",
+      "category": "internal_validity", 
+      "description": "Researcher knowledge of participant expertise may bias data interpretation",
+      "severity": "low",
+      "mitigation_strategies": [
+        "Blinded data analysis with anonymized participant codes",
+        "Automated preprocessing pipelines to minimize subjective decisions",
+        "Independent analysis by multiple researchers",
+        "Pre-registered analysis plan with specified exclusion criteria",
+        "Machine learning classification to avoid human bias in expertise assessment"
+      ],
+      "assessment_method": "Inter-rater reliability assessment for subjective measures",
+      "evidence_level": "strong"
+    }
+  ],
+  "validity_assessment": {
+    "internal_validity": {
+      "rating": "high",
+      "justification": "Strong experimental control with randomization, counterbalancing, and statistical controls for confounding variables",
+      "key_controls": [
+        "Latin square task ordering",
+        "Standardized equipment setup",
+        "Automated quality monitoring",
+        "Blinded analysis procedures"
+      ]
+    },
+    "external_validity": {
+      "rating": "moderate_to_high",
+      "justification": "Authentic tasks and realistic programming environments, though laboratory setting limits generalizability",
+      "generalizability_scope": [
+        "Professional software development contexts",
+        "Enterprise codebase maintenance",
+        "Code review and debugging scenarios",
+        "IDE-based programming tasks"
+      ]
+    },
+    "construct_validity": {
+      "rating": "high",
+      "justification": "Multi-modal convergent validation using eye tracking, EEG, and behavioral measures",
+      "validation_evidence": [
+        "Factor analysis of cognitive load measures",
+        "Convergent validity between modalities",
+        "Discriminant validity across expertise levels",
+        "Known-groups validation"
+      ]
+    },
+    "statistical_conclusion_validity": {
+      "rating": "high",
+      "justification": "Adequate sample size, appropriate statistical methods, and control for multiple comparisons",
+      "power_analysis": {
+        "effect_size_expectation": "medium (d=0.5)",
+        "power_target": 0.80,
+        "alpha_level": 0.05,
+        "required_sample_size": 120,
+        "actual_sample_size": 120
+      }
+    }
+  },
+  "limitation_acknowledgments": [
+    {
+      "limitation": "Cross-sectional design limits causal inference about expertise development",
+      "impact": "Cannot establish developmental trajectories or training effectiveness",
+      "future_research": "Longitudinal study design with novice programmer tracking"
+    },
+    {
+      "limitation": "Laboratory setting may not capture full complexity of real-world development",
+      "impact": "Potential reduction in ecological validity for some findings",
+      "future_research": "Field studies using mobile eye tracking in actual workplaces"
+    },
+    {
+      "limitation": "Limited to specific programming languages and paradigms",
+      "impact": "Generalizability to other languages or paradigms uncertain",
+      "future_research": "Cross-language validation studies"
+    },
+    {
+      "limitation": "Cultural bias in task design may affect cross-cultural validity",
+      "impact": "Results may not generalize across different cultural programming practices",
+      "future_research": "Culture-specific validation with locally relevant tasks"
+    }
+  ],
+  "ethical_considerations": {
+    "participant_wellbeing": [
+      "Regular breaks to prevent eye strain and fatigue",
+      "Right to withdraw without penalty at any time",
+      "Confidential handling of performance data",
+      "Debriefing on study purpose and individual results"
+    ],
+    "data_protection": [
+      "Anonymization of all identifiable information",
+      "Secure storage with encryption and access controls",
+      "Retention policy with automatic deletion after 10 years",
+      "Participant consent for data sharing and reuse"
+    ],
+    "potential_risks": [
+      "Minimal risk of eye strain from extended screen viewing",
+      "Low risk of anxiety from performance monitoring",
+      "Negligible risk from EEG electrode application"
+    ]
+  }
+} 
