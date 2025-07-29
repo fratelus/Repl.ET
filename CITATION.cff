@@ -1,18 +1,20 @@
 cff-version: 1.2.0
-message: "If you use this template, please cite it as below."
-type: software
-title: "Repl.ET: Eye Tracking Replication Template"
-version: 1.0.0
-date-released: 2024-12-15
-url: "https://github.com/fratelus/Repl.ET"
+message: "If you use Repl.ET in your research, please cite it using the following metadata."
+title: "Repl.ET: A Framework for Reproducible Eye Tracking Experiments"
+version: "1.0.0"
+date-released: 2025-07-29
 authors:
-  - family-names: "Silva"
-    given-names: "Lucas"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-license: MIT
+  - family-names: Silva
+    given-names: Lucas
 keywords:
-  - eye-tracking
+  - eye tracking
   - reproducibility
-  - software-engineering
-  - hci
-  - template
+  - experimental design
+  - open science
+  - metadata
+  - research transparency
+repository-code: https://github.com/fratelus/Repl.ET
+license: "MIT"
+url: https://github.com/fratelus/Repl.ET
+abstract: >
+  Repl.ET is an open-source framework to support the design, documentation, and replication of eye-tracking experiments. It provides a structured repository template, JSON schemas for metadata and experimental assets, demo projects, and a usage guide. Designed to promote reproducibility and transparency, Repl.ET aligns with FAIR principles and Open Science practices.
